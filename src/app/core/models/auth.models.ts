@@ -1,9 +1,14 @@
 export class User {
-    id: number;
-    username: string;
+    id: string;
+    firstname: string;
+    lastname:string;
+    relationship:string;
+    email:string;
+    mobile:number;
     password: string;
-    firstName?: string;
-    lastName?: string;
+    cnfpassword:string;
+    // firstName?: string;
+    // lastName?: string;
     token?: string;
-    email: string;
+    
 }
