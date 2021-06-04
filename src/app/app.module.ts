@@ -23,7 +23,7 @@ import { ErrorInterceptor } from './core/helpers/error.interceptor';
 import { JwtInterceptor } from './core/helpers/jwt.interceptor';
 import { FakeBackendInterceptor } from './core/helpers/fake-backend';
 import { AssesmentModule } from './modules/assesment/assesment.module';
-
+import {AuthModule} from './modules/auth/auth.module';
 if (environment.defaultauth === 'firebase') {
   initFirebaseBackend(environment.firebaseConfig);
 } else {
@@ -54,6 +54,7 @@ export function createTranslateLoader(http: HttpClient): any {
     LayoutsModule,
     AssesmentModule,
     AppRoutingModule,
+    AuthModule,
     CarouselModule,
     NgbAccordionModule,
     NgbNavModule,
