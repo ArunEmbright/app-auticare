@@ -24,6 +24,7 @@ import { JwtInterceptor } from './core/helpers/jwt.interceptor';
 import { FakeBackendInterceptor } from './core/helpers/fake-backend';
 import { AssesmentModule } from './modules/assesment/assesment.module';
 import {AuthModule} from './modules/auth/auth.module';
+import { PagesModule } from './modules/pages/pages.module';
 if (environment.defaultauth === 'firebase') {
   initFirebaseBackend(environment.firebaseConfig);
 } else {
@@ -53,6 +54,7 @@ export function createTranslateLoader(http: HttpClient): any {
     }),
     LayoutsModule,
     AssesmentModule,
+    PagesModule,
     AppRoutingModule,
     AuthModule,
     CarouselModule,
@@ -60,7 +62,8 @@ export function createTranslateLoader(http: HttpClient): any {
     NgbNavModule,
     NgbTooltipModule,
     SharedModule,
-    ScrollToModule.forRoot()
+    ScrollToModule.forRoot(),
+  
   ],
   bootstrap: [AppComponent],
   providers: [

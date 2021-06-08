@@ -20,6 +20,6 @@ export class PatientDataComponent implements OnInit {
    .subscribe((result)=>{
      console.warn("resule", result)
    })*/
-  this.router.navigate(['/question-assesment'])
+  this.router.navigate(['/signup'])
  }
 }
