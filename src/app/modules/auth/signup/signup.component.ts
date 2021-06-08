@@ -71,7 +71,7 @@ cnfpassword='';
           this.successmsg = true;
           if (this.successmsg) {
            alert("successfully registered");
-            this.router.navigate(['/patient-data']);
+            this.router.navigate(['/dashboard']);
           }
         })
           .catch(error => {

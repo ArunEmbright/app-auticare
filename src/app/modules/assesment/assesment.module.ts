@@ -3,7 +3,7 @@ import { CommonModule } from '@angular/common';
 import { PatientDataComponent } from './patient-data/patient-data.component';
 import { QuestionAssesmentComponent } from './question-assesment/question-assesment.component';
 import {HttpClientModule} from "@angular/common/http"
-import { AssesmentRoutingModule } from './assessment.routing.module';
+import { AssesmentRoutingModule } from './assesment-routing.module';
 import { BrowserModule } from '@angular/platform-browser';
 import { FormsModule } from '@angular/forms';
 import { ArchwizardModule } from 'angular-archwizard';
