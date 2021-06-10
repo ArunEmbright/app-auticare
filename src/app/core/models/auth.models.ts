@@ -1,12 +1,12 @@
 export class User {
     id: string;
-    firstname: string;
-    lastname:string;
-    relationship:string;
+    firstName: string;
+    lastName:string;
+    relationType:string;
     email:string;
-    mobile:number;
+    mobileNumber:number;
     password: string;
-    cnfpassword:string;
+    confirmPassword:string;
     // firstName?: string;
     // lastName?: string;
     token?: string;
