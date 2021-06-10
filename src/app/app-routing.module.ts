@@ -6,7 +6,9 @@ import { CyptolandingComponent } from './cyptolanding/cyptolanding.component';
 const routes: Routes = [
   
   // tslint:disable-next-line: max-line-length
-   { path: 'crypto-ico-landing', component: CyptolandingComponent },
+   
+   { path: '', redirectTo: 'auth', pathMatch: 'full' },
+   { path: 'auth', loadChildren: () => import('./modules/auth/auth.module').then(m => m.AuthModule) },
   
 ];
 

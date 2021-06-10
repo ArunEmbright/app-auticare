@@ -8,6 +8,10 @@ import { first } from 'rxjs/operators';
 import { UserProfileService } from '../../../core/services/user.service';
 import { User } from '../../../core/models/auth.models';
 import { CustomValidationService } from './custom-validation.service';
+import { AuthService } from '../_services/auth.service';
+
+const lettersPattern = /^[a-zA-Z]+ ?([a-zA-Z]+$){1}/;
+
 @Component({
   selector: 'app-signup',
   templateUrl: './signup.component.html',
@@ -30,14 +34,14 @@ confirmPassword='';
   relationship: any = ['Father', 'Mother','Siblings']
   addVendorForm: any;
   // tslint:disable-next-line: max-line-length
-  constructor(private formBuilder: FormBuilder, private router: Router, private authenticationService: AuthenticationService,private customValidator:CustomValidationService) { }
+  constructor(private formBuilder: FormBuilder, private router: Router, private authService: AuthService,private customValidator:CustomValidationService) { }
 
   ngOnInit():void {
     this.signupForm = this.formBuilder.group({
 
       signupForm1:this.formBuilder.group({ 
       
-      firstName: [this.userItem.firstName, [Validators.required,Validators.pattern(/^[a-zA-Z]+ ?([a-zA-Z]+$){1}/)]],
+      firstName: [this.userItem.firstName, [Validators.required,Validators.pattern(lettersPattern)]],
       lastName: [this.userItem.lastName, [Validators.required,Validators.pattern(/^[a-zA-Z]+ ?([a-zA-Z]+$){1}/)]],
       relationType:[this.userItem.relationType,[Validators.required]],
       }),
@@ -72,13 +76,24 @@ confirmPassword='';
   onSubmit() {
     // this.submitted = true;
     // console.log(data);
-    alert('successfully registered');
+    // alert('successfully registered');
+
+    const form1 = this.signupForm.get('signupForm1').value;
+    const form2 = this.signupForm.get('signupForm2').value;
+
+    const registerForm = Object.assign({}, form1, form2);
+    console.log("🚀 ~ file: signup.component.ts ~ line 84 ~ SignupComponent ~ onSubmit ~ registerForm", registerForm);
+
+
   
-    this.authenticationService.signup(JSON.stringify(this.signupForm.value))
-    .subscribe(data=>{console.log(data)
-  
-     this.router.navigateByUrl('/patient-data')
+    this.authService.signup(registerForm).subscribe(data=>{
+      console.log("🚀 ~ file: signup.component.ts ~ line 90 ~ SignupComponent ~ this.authService.signup ~ data", data)
+    //  this.router.navigateByUrl('/patient-data')
    
+   },
+   (err) => {
+   console.log("🚀 ~ file: signup.component.ts ~ line 95 ~ SignupComponent ~ onSubmit ~ err", err)
+
    });
     
    

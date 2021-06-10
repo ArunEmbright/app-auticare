@@ -27,18 +27,18 @@
               </a>
             </div>
            <!-- icon wizard -->
-<div class="container-fluid">
+<div class="">
 
 
   <div class="row">
-    <div class="col-lg-8">
+    <div class="col-lg-12">
       <div class="card">
         <div class="card-body">
          <form class="needs-validation" name="signupForm" id="signupForm" [formGroup]="signupForm" (ngSubmit)="onSubmit()" novalidate>
           <ngb-alert type="success" *ngIf="successmsg" [dismissible]="false">Registeration successfull. </ngb-alert>
           <ngb-alert type="danger" *ngIf="error" [dismissible]="false">{{ error }}</ngb-alert>
           <aw-wizard [navBarLayout]="'large-empty-symbols'">
-            <aw-wizard-step formGroupName="signupForm1" stepTitle="signupForm1">
+            <aw-wizard-step formGroupName="signupForm1" stepTitle="">
               <ng-template awWizardStepSymbol><i class="fas fa-user"></i> </ng-template>
               <div class="row">
                 
@@ -110,7 +110,7 @@
             </ul>
             </aw-wizard-step>
 
-            <aw-wizard-step formGroupName="signupForm2" stepTitle="signupForm2">
+            <aw-wizard-step formGroupName="signupForm2" stepTitle="">
               <ng-template awWizardStepSymbol> <i class="fas fa-user-circle"></i></ng-template>
               <div class="row">
                 <div class="col-12">
