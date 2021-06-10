@@ -1,13 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
-import { ActivatedRoute, Router } from '@angular/router';
+import { Router } from '@angular/router';
 
-import { AuthenticationService } from '../../../core/services/auth.service';
-import { environment } from '../../../../environments/environment';
-import { first } from 'rxjs/operators';
-import { UserProfileService } from '../../../core/services/user.service';
 import { User } from '../../../core/models/auth.models';
-import { CustomValidationService } from './custom-validation.service';
+import { CustomValidationService } from '../_validators/custom-validation.service';
 import { AuthService } from '../_services/auth.service';
 
 const lettersPattern = /^[a-zA-Z]+ ?([a-zA-Z]+$){1}/;
@@ -86,7 +82,7 @@ confirmPassword='';
 
 
   
-    this.authService.signup(registerForm).subscribe(data=>{
+    this.authService.register(registerForm).subscribe(data=>{
       console.log("🚀 ~ file: signup.component.ts ~ line 90 ~ SignupComponent ~ this.authService.signup ~ data", data)
     //  this.router.navigateByUrl('/patient-data')
    

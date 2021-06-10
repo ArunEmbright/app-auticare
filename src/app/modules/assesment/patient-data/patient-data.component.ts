@@ -15,11 +15,7 @@ export class PatientDataComponent implements OnInit {
   ngOnInit(): void {
   }
  onSubmit(data){
-   console.warn(data)
-  /**  this.http.post('http://localhost:4200/patient/data', data)
-   .subscribe((result)=>{
-     console.warn("resule", result)
-   })*/
-  this.router.navigate(['/signup'])
+   
+   this.router.navigate(['/auth/signup'])
  }
 }
