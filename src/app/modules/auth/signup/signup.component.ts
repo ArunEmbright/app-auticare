@@ -16,81 +16,71 @@ import { CustomValidationService } from './custom-validation.service';
 export class SignupComponent implements OnInit {
 profiles:User|any;
   signupForm: FormGroup;
+  signupForm1:FormGroup;
+  signupForm2:FormGroup;
+  signup_form1=false;
   submitted = false;
   error = '';
   successmsg = false;
 hide=true;
-cnfpassword='';
+confirmPassword='';
   // set the currenr year
   year: number = new Date().getFullYear();
   userItem=new User();
   relationship: any = ['Father', 'Mother','Siblings']
+  addVendorForm: any;
   // tslint:disable-next-line: max-line-length
-  constructor(private formBuilder: FormBuilder, private route: ActivatedRoute, private router: Router, private authenticationService: AuthenticationService,
-    private userService: UserProfileService,private customValidator:CustomValidationService) { }
+  constructor(private formBuilder: FormBuilder, private router: Router, private authenticationService: AuthenticationService,private customValidator:CustomValidationService) { }
 
   ngOnInit():void {
     this.signupForm = this.formBuilder.group({
-      firstname: [this.userItem.firstname, [Validators.required,Validators.pattern(/^[a-zA-Z0-9]+ ?([a-zA-Z0-9]+$){1}/)]],
-      lastname: [this.userItem.lastname, [Validators.required,Validators.pattern(/^[a-zA-Z0-9]+ ?([a-zA-Z0-9]+$){1}/)]],
-      relationship:[this.userItem.relationship,[Validators.required]],
+
+      signupForm1:this.formBuilder.group({ 
+      
+      firstName: [this.userItem.firstName, [Validators.required,Validators.pattern(/^[a-zA-Z]+ ?([a-zA-Z]+$){1}/)]],
+      lastName: [this.userItem.lastName, [Validators.required,Validators.pattern(/^[a-zA-Z]+ ?([a-zA-Z]+$){1}/)]],
+      relationType:[this.userItem.relationType,[Validators.required]],
+      }),
+      
+      signupForm2: this.formBuilder.group({
       email: [this.userItem.email, [Validators.required, Validators.email]],
-      mobile:[this.userItem.mobile,[Validators.required,Validators.pattern("^((\\+91-?)|0)?[0-9]{10}$")]],
-      password: [this.userItem.password, [Validators.required,Validators.pattern(/^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[^a-zA-Z0-9])(?!.*\s).{8,15}$/)]],
-      cnfpassword:[this.cnfpassword,[Validators.required]]
+      mobileNumber:[this.userItem.mobileNumber,[Validators.required, Validators.pattern(/^\+?[1-9]\d{9,14}$/)]],
+      
+      password: [this.userItem.password, [Validators.required, Validators.pattern(/^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[^a-zA-Z0-9])(?!.*\s).{8,15}$/)]],
+      confirmPassword:[this.confirmPassword,[Validators.required]]
     },
     {
-      validator:this.customValidator.passwordMatchValidator('password','cnfpassword')
+      validator:this.customValidator.passwordMatchValidator('password','confirmPassword')
     
     
-     });
+     })
+    })
   }
   changeRelation(e) {
-    console.log(e.value)
-    this.relationship.setValue(e.target.value, {
-      onlySelf: true
-    })
+    console.log(e.target.value)
+    
   }
 
 
   // convenience getter for easy access to form fields
   get f() { return this.signupForm.controls; }
 
+ 
   /**
    * On submit form
    */
   onSubmit() {
-    this.submitted = true;
-
-    // stop here if form is invalid
-    if (this.signupForm.invalid) {
-      return;
-    } else {
-      if (environment.defaultauth === 'firebase') {
-        this.authenticationService.register(this.f.email.value, this.f.password.value).then((res: any) => {
-          this.successmsg = true;
-          if (this.successmsg) {
-           alert("successfully registered");
-            this.router.navigate(['/patient-data']);
-          }
-        })
-          .catch(error => {
-            this.error = error ? error : '';
-          });
-      } else {
-        this.userService.register(this.signupForm.value)
-          .pipe(first())
-          .subscribe(
-            data => {
-              this.successmsg = true;
-              if (this.successmsg) {
-                this.router.navigate(['/account/login']);
-              }
-            },
-            error => {
-              this.error = error ? error : '';
-            });
-      }
-    }
+    // this.submitted = true;
+    // console.log(data);
+    alert('successfully registered');
+  
+    this.authenticationService.signup(JSON.stringify(this.signupForm.value))
+    .subscribe(data=>{console.log(data)
+  
+     this.router.navigateByUrl('/patient-data')
+   
+   });
+    
+   
   }
 }

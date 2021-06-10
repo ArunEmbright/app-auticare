@@ -13,7 +13,8 @@ import { SignupComponent } from './signup/signup.component';
 // import {MatIconModule} from '@angular/material/icon';
 import { AuthRoutingModule } from './auth-routing';
 // import { PasswordresetComponent } from './passwordreset/passwordreset.component';
-
+import { HttpClientModule } from '@angular/common/http';
+import { ArchwizardModule } from 'angular-archwizard';
 @NgModule({
   declarations: [ SignupComponent],
   imports: [
@@ -21,7 +22,9 @@ import { AuthRoutingModule } from './auth-routing';
     // BrowserModule,
     ReactiveFormsModule,
     FormsModule,
+    HttpClientModule,
     NgbAlertModule,
+    ArchwizardModule,
     UIModule,
     AuthRoutingModule,
     CarouselModule,
