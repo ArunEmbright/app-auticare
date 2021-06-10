@@ -5,19 +5,15 @@ import { QuestionAssesmentComponent } from './question-assesment/question-assesm
 
 
 const routes: Routes = [
+  {
+    path: 'patient',
+    component: PatientDataComponent,
+  },
+  {
+    path: 'question',
+    component: QuestionAssesmentComponent
+  },
   
-    {
-        path:'', redirectTo:'patient-data',pathMatch:'full'
-      },
-    {
-    
-      path:'patient-data',
-      component:PatientDataComponent
-    },
-    {
-      path:'question-assesment',
-      component:QuestionAssesmentComponent
-    }
 ];
 
 @NgModule({
