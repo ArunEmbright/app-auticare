@@ -6,7 +6,8 @@ import { PatientDataComponent } from './modules/assesment/patient-data/patient-d
 
 const routes: Routes = [
    { path: '', redirectTo: 'patient-data', pathMatch: 'full' },
-   {path:'patient-data',component:PatientDataComponent},
+   {path:'patient-data',loadChildren:()=>import ('./modules/assesment/assesment.module').then(e=>e.AssesmentModule)},
+  
    { path: 'auth', loadChildren: () => import('./modules/auth/auth.module').then(m => m.AuthModule) },
    { path: 'dashboard', component: LayoutComponent, loadChildren: () => import('./modules/dashboard/dashboard.module').then(m => m.DashboardModule) },
    { path: 'therapist', component: LayoutComponent,  loadChildren: () => import('./modules/therapist/therapist.module').then(m => m.TherapistModule) },
