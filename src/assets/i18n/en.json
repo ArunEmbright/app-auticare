@@ -79,6 +79,9 @@
         "BLOG": "Blog"
       }
     },
+    "PATIENT": {
+      "TEXT": "Patients"
+    },
     "LAYOUTS": {
       "TEXT": "Layouts",
       "LIST": {

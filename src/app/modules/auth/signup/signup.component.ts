@@ -74,10 +74,12 @@ confirmPassword='';
     // console.log(data);
     // alert('successfully registered');
 
+
+    const patientData = JSON.parse(localStorage.getItem('patient'));
     const form1 = this.signupForm.get('signupForm1').value;
     const form2 = this.signupForm.get('signupForm2').value;
 
-    const registerForm = Object.assign({}, form1, form2);
+    const registerForm = Object.assign({}, form1, form2, patientData);
     console.log("🚀 ~ file: signup.component.ts ~ line 84 ~ SignupComponent ~ onSubmit ~ registerForm", registerForm);
 
 
