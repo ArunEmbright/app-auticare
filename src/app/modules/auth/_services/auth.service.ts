@@ -43,4 +43,12 @@ export class AuthService {
         }));
   }
 
+  otpVerify(params: any) {
+    return this.http.post<any>(this.url + 'auth/verify/otp', params)
+      .pipe(map(res => {
+          // login successful if there's a jwt token in the response
+          return res;
+      }));
+}
+
 }

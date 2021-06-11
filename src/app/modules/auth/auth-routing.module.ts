@@ -2,6 +2,7 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { LoginComponent } from 'src/app/modules/auth/login/login.component';
 import { SignupComponent } from 'src/app/modules/auth/signup/signup.component';
+import { TokenVerifyComponent } from './token-verify/token-verify.component';
 
 
 
@@ -19,6 +20,10 @@ const routes: Routes = [
       path: 'signup',
       component: SignupComponent
   },
+  {
+    path: 'verify/otp',
+    component: TokenVerifyComponent
+},
   
 
 ];
