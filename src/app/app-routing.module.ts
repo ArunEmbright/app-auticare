@@ -11,7 +11,7 @@ const routes: Routes = [
    { path: 'auth', loadChildren: () => import('./modules/auth/auth.module').then(m => m.AuthModule) },
    { path: 'dashboard', component: LayoutComponent, loadChildren: () => import('./modules/dashboard/dashboard.module').then(m => m.DashboardModule) },
    { path: 'therapist', component: LayoutComponent,  loadChildren: () => import('./modules/therapist/therapist.module').then(m => m.TherapistModule) },
-   { path: 'assessment',component:LayoutComponent, loadChildren: () => import('./modules/assesment/assesment.module').then(m => m.AssesmentModule) },
+   { path: 'assessment', loadChildren: () => import('./modules/assesment/assesment.module').then(m => m.AssesmentModule) },
    { path: 'settings', component: LayoutComponent, loadChildren: () => import('./modules/settings/settings.module').then(m => m.SettingsModule) },
    {path:'home', component:LayoutComponent, loadChildren:()=>import('../app/modules/home/home.module').then(e=>e.HomeModule)},
    {

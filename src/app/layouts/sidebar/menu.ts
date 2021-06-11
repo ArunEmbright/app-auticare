@@ -16,7 +16,7 @@ export const MENU: MenuItem[] = [
     },
     {
         id:2,
-        label:'MENUITEMS.HOME.TEXT',
+        label:'MENUITEMS.ASSESSMENT.TEXT',
         icon:'bx-store',
         link:'/home/data'
     }
