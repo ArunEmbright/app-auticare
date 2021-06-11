@@ -1,10 +1,12 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { LayoutComponent } from './layouts/layout.component';
+import { PatientDataComponent } from './modules/assesment/patient-data/patient-data.component';
 
 
 const routes: Routes = [
-   { path: '', redirectTo: 'auth', pathMatch: 'full' },
+   { path: '', redirectTo: 'patient-data', pathMatch: 'full' },
+   {path:'patient-data',component:PatientDataComponent},
    { path: 'auth', loadChildren: () => import('./modules/auth/auth.module').then(m => m.AuthModule) },
    { path: 'dashboard', component: LayoutComponent, loadChildren: () => import('./modules/dashboard/dashboard.module').then(m => m.DashboardModule) },
    { path: 'therapist', component: LayoutComponent,  loadChildren: () => import('./modules/therapist/therapist.module').then(m => m.TherapistModule) },

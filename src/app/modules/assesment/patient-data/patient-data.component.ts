@@ -40,7 +40,8 @@ export class PatientDataComponent implements OnInit {
       return;
     } else {      
        localStorage.setItem('patient', JSON.stringify(this.patientForm.value));
-       this.router.navigate(['/auth/signup']);
+       
+       this.router.navigateByUrl('/dashboard/classic')
     }
   }
 
