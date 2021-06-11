@@ -82,6 +82,9 @@
     "PATIENT": {
       "TEXT": "Patients"
     },
+    "HOME":{
+      "TEXT":"Home"
+    },
     "LAYOUTS": {
       "TEXT": "Layouts",
       "LIST": {

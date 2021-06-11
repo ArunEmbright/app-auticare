@@ -5,6 +5,8 @@ import { QuestionAssesmentComponent } from './question-assesment/question-assesm
 
 
 const routes: Routes = [
+  
+  {path:'', redirectTo:'patient', pathMatch:'full'},
   {
     path: 'patient',
     component: PatientDataComponent,

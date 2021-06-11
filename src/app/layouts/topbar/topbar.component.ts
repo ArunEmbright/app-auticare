@@ -91,8 +91,10 @@ export class TopbarComponent implements OnInit {
   //     this.authFackservice.logout();
   //   }
   //   this.router.navigate(['/account/login']);
-  // }
-
+  //}
+  logout() {
+    this.router.navigate(['/auth/login'])
+  }
   /**
    * Fullscreen method
    */
