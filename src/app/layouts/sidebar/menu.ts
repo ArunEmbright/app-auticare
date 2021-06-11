@@ -13,6 +13,12 @@ export const MENU: MenuItem[] = [
         icon: 'bx-group',
         link: '/assessment/patient',
         
+    },
+    {
+        id:2,
+        label:'MENUITEMS.HOME.TEXT',
+        icon:'bx-store',
+        link:'/home/data'
     }
 ];
 
