@@ -21,6 +21,7 @@ import { AssesmentModule } from './modules/assesment/assesment.module';
 import {AuthModule} from './modules/auth/auth.module';
 import { TherapistModule } from "./modules/therapist/therapist.module";
 import { LocationStrategy, HashLocationStrategy } from '@angular/common';
+import { HomeModule } from './modules/home/home.module';
 
 
 export function createTranslateLoader(http: HttpClient): any {
@@ -45,6 +46,7 @@ export function createTranslateLoader(http: HttpClient): any {
     LayoutsModule,
     AssesmentModule,
     TherapistModule,
+    HomeModule,
     AppRoutingModule,
     AuthModule,
     CarouselModule,
