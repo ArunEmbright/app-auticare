@@ -26,6 +26,7 @@ export class TokenVerifyComponent implements OnInit {
   otpCode = '';
   ngOnInit(): void {
     document.body.classList.remove('auth-body-bg');
+    this.successmsg();
   }
 
   onOtpChange($event: any) {
@@ -65,23 +66,22 @@ successmsg() {
   });
 }
 
+resendOtp() {
+
+  setTimeout(() => {
+    Swal.fire('', 'Please check your email to verify the otp', 'success');
+
+  }, 500);
+}
+
  confirm() {
   Swal.fire({
     title: '',
-    text: 'Your OTP is wrong!',
+    text: 'Your entered OTP is wrong!',
     icon: 'warning',
-    showCancelButton: true,
-    confirmButtonColor: '#34c38f',
-    cancelButtonColor: '#f46a6a',
-    confirmButtonText: 'Resend OTP'
-  }).then(result => {
-    if (result.value) {
-      setTimeout(() => {
-        Swal.fire('', 'Please check your email for verify Otp.', 'success');  
-      }, 500);
-      
-    }
-  });
+    confirmButtonText: 'close'
+
+  })
 }
 
 }
