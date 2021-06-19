@@ -5,6 +5,7 @@ import { Router } from '@angular/router';
 import { User } from '../../../core/models/auth.models';
 import { CustomValidationService } from '../_validators/custom-validation.service';
 import { AuthService } from '../_services/auth.service';
+import Swal from 'sweetalert2';
 
 const lettersPattern = /^[a-zA-Z]+ ?([a-zA-Z]+$){1}/;
 
@@ -86,7 +87,8 @@ confirmPassword='';
   
     this.authService.register(registerForm).subscribe(data=>{
       console.log("🚀 ~ file: signup.component.ts ~ line 90 ~ SignupComponent ~ this.authService.signup ~ data", data)
-    //  this.router.navigateByUrl('/patient-data')
+     this.successAlert();
+      // this.router.navigate(['/auth/login']);
    
    },
    (err) => {
@@ -96,4 +98,18 @@ confirmPassword='';
     
    
   }
+
+
+  successAlert() {
+    Swal.fire({
+      icon: 'success',
+      title: 'Your registeration has been successfull, Please check your email for verification',
+      showConfirmButton: false,
+      timer: 3000
+    }).then((result) => {
+      this.router.navigate(['/auth/login']);
+    });
+  }
+
+
 }
