@@ -88,12 +88,12 @@ confirmPassword='';
     this.authService.register(registerForm).subscribe(data=>{
       console.log("🚀 ~ file: signup.component.ts ~ line 90 ~ SignupComponent ~ this.authService.signup ~ data", data)
      this.successAlert();
-      // this.router.navigate(['/auth/login']);
    
    },
    (err) => {
    console.log("🚀 ~ file: signup.component.ts ~ line 95 ~ SignupComponent ~ onSubmit ~ err", err)
-
+    let errMsg = err.error.message;
+    this.errorAlert(errMsg);
    });
     
    
@@ -109,6 +109,14 @@ confirmPassword='';
     }).then((result) => {
       this.router.navigate(['/auth/login']);
     });
+  }
+
+  errorAlert(message: string) {
+    Swal.fire({
+      icon: 'error',
+      title: message,
+      showConfirmButton: false,
+    })
   }
 
 
