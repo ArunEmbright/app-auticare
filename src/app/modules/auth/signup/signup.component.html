@@ -18,13 +18,13 @@
           </div>
           <div class="card-body pt-0">
             <div>
-              <a href="/signup">
+             
                 <div class="avatar-md profile-user-wid mb-4">
                   <span class="avatar-title rounded-circle bg-light">
-                    <img src="assets/images/auticare-logo.png" alt="" class="rounded-circle" height="120">
+                    <img src="assets/images/auticare-logo.png" alt="" class="rounded-circle" height="100">
                   </span>
                 </div>
-              </a>
+            
             </div>
            <!-- icon wizard -->
 <div class="">
@@ -35,7 +35,7 @@
       <div class="card">
         <div class="card-body">
          <form class="needs-validation" name="signupForm" id="signupForm" [formGroup]="signupForm" (ngSubmit)="onSubmit()" novalidate>
-          <ngb-alert type="success" *ngIf="successmsg" [dismissible]="false">Registeration successfull. </ngb-alert>
+          <ngb-alert type="success" *ngIf="successmsg" [dismissible]="false">Registration successfull. </ngb-alert>
           <ngb-alert type="danger" *ngIf="error" [dismissible]="false">{{ error }}</ngb-alert>
           <aw-wizard [navBarLayout]="'large-empty-symbols'">
             <aw-wizard-step formGroupName="signupForm1" stepTitle="">
@@ -44,46 +44,41 @@
                 
                 <div class="col-12">
                   
-                  <div class="row mb-3">
-                    
-                    <!-- <div class="form-group"> -->
+                 <div class="row mb-3">
+                     
                    <label for="firstName" class="col-md-4 col-form-label">First Name</label>
                    <div class="col-md-8">
                     <input type="text" formControlName="firstName" class="form-control" [(ngModel)]="userItem.firstName"
                     [ngClass]="{ 'is-invalid': signup_form1 && f.firstName.errors }" id="firstName"
                     placeholder="Enter First Name"/>
                     
-                      <!-- sample -->
+                      
                     <div *ngIf="f.signupForm1['controls'].firstName.invalid && (f.signupForm1['controls'].firstName.dirty || f.signupForm1['controls'].firstName.touched)">
-                      <span  *ngIf="f.signupForm1['controls'].firstName.errors.required">First Name is required</span>
-                       <span *ngIf="f.signupForm1['controls'].firstName.errors.pattern">Only letters are allowed</span>
-                    </div>
-                    <!-- sample end -->
-                   </div>
+                      <span style="color:darkred" *ngIf="f.signupForm1['controls'].firstName.errors.required">First Name is required</span>
+                       <span style="color:darkred" *ngIf="f.signupForm1['controls'].firstName.errors.pattern">Only letters are allowed</span>
+                    </div>                 
+                  </div>
                  </div>
-                   <!-- </div> -->
+                   
 
                   <div class="row mb-3">
-                    <!-- <div class="form-group"> -->
+                    
                     <label for="lastName" class="col-md-4 col-form-label">Last Name</label>
                     <div class="col-md-8">
                       <input type="text" formControlName="lastName" class="form-control" [(ngModel)]="userItem.lastName"
                       [ngClass]="{ 'is-invalid': signup_form1 && f.lastName.errors }" id="lastName"
                       placeholder="Enter Last Name"/>
-                          <!-- sample -->
+                         
                         <div *ngIf="f.signupForm1['controls'].lastName.invalid && (f.signupForm1['controls'].lastName.dirty || f.signupForm1['controls'].lastName.touched)">
-                          <span  *ngIf="f.signupForm1['controls'].lastName.errors.required">Last Name is required</span>
-                          <span *ngIf="f.signupForm1['controls'].lastName.errors.pattern">Only letters are allowed</span>
-                        </div>
-                        <!-- sample end -->
+                          <span style="color:darkred" *ngIf="f.signupForm1['controls'].lastName.errors.required">Last Name is required</span>
+                          <span style="color:darkred" *ngIf="f.signupForm1['controls'].lastName.errors.pattern">Only letters are allowed</span>
+                        </div>                    
                     </div>
                   </div>
 
 
                   <div class="row mb-3">
-                    <!-- <div class="form-group"> -->
                     <label for="relationType" class="col-md-4 col-form-label">Relationship with Child</label>
-
                     <div class="col-md-8">
                      <select formControlName="relationType" class="form-control"  [ngClass]="{ 'is-invalid': signup_form1 && f.relationType.errors }"
                      id="relationType" class="form-select" [(ngModel)]="userItem.relationType" ngDefaultControl (change)="changeRelation($event)">
@@ -92,14 +87,14 @@
                       </option>
                      </select>
 
-                                    <!-- sample -->
+                                    
                       <div *ngIf="f.signupForm1['controls'].relationType.invalid && (f.signupForm1['controls'].relationType.dirty || f.signupForm1['controls'].relationType.touched)">
-                         <span  *ngIf="f.signupForm1['controls'].relationType.errors.required">Relationship is required</span>
+                         <span style="color:darkred" *ngIf="f.signupForm1['controls'].relationType.errors.required">Relationship is required</span>
                       </div>
-                            <!-- sample end -->
+                           
 
                     </div>
-                       <!-- </div> -->
+                       
                    </div>
                 </div>
               </div>
@@ -116,81 +111,75 @@
                 <div class="col-12">
                  
                   <div class="row mb-3">
-                    <!-- <div class="form-group"> -->
+                   
                     <label for="email" class="col-md-4 col-form-label">Email</label>
                     <div class="col-md-8">
                       <input type="email" formControlName="email" class="form-control"[(ngModel)]="userItem.email"
                       [ngClass]="{ 'is-invalid': signup_form1 && f.email.errors }" id="email" placeholder="Email" />
 
-                             <!-- sample -->
+                             
                        <div *ngIf="f.signupForm2['controls'].email.invalid && (f.signupForm2['controls'].email.dirty || f.signupForm2['controls'].email.touched)">
-                          <span  *ngIf="f.signupForm2['controls'].email.errors.required">Email is required</span>
-                          <span *ngIf="f.signupForm2['controls'].email.errors.email">Email must be a valid email address</span>
+                          <span style="color:darkred" *ngIf="f.signupForm2['controls'].email.errors.required">Email is required</span>
+                          <span style="color:darkred" *ngIf="f.signupForm2['controls'].email.errors.email">Email must be a valid email address</span>
                         </div>
-                            <!-- sample end -->
-                       <!-- </div> -->
-                    </div>
+                            
+                      </div>
                   </div>
 
 
                   <div class="row mb-3">
-                    <!-- <div class="form-group"> -->
+                    
                     <label for="mobileNumber" class="col-md-4 col-form-label">Mobile NUmber</label>
                    <div class="col-md-8">
                       <input type="text" formControlName="mobileNumber" class="form-control" [(ngModel)]="userItem.mobileNumber"
                       [ngClass]="{ 'is-invalid': signup_form1 && f.mobileNumber.errors }" id="mobileNumber"
                       placeholder="Enter Mobile Number" />
   
-                               <!-- sample -->
+                              
                          <div *ngIf="f.signupForm2['controls'].mobileNumber.invalid && (f.signupForm2['controls'].mobileNumber.dirty || f.signupForm2['controls'].mobileNumber.touched)">
-                             <span  *ngIf="f.signupForm2['controls'].mobileNumber.errors.required"> Mobile Number is required</span>
-                             <span *ngIf="f.signupForm2['controls'].mobileNumber.errors.pattern">Enter valid mobile  number</span>
+                             <span style="color:darkred" *ngIf="f.signupForm2['controls'].mobileNumber.errors.required"> Mobile Number is required</span>
+                             <span style="color:darkred" *ngIf="f.signupForm2['controls'].mobileNumber.errors.pattern">Enter valid mobile  number</span>
                         </div>
-                               <!-- sample end -->
-                       <!-- </div> -->
+                             
                     </div>
                   </div>
 
                   <div class="row mb-4">
-                    <!-- <div class="form-group"> -->
+                   
                     <label for="password" class="col-md-4 col-form-label">Password</label>
                     <div class="col-md-8">
                       <input input type="password" formControlName="password" class="form-control"  [(ngModel)]="userItem.password"
                       [ngClass]="{ 'is-invalid':signup_form1 && f.password.errors }" id="password" placeholder="Password" />
                      
-                           <!-- sample -->
+                           
                        <div *ngIf="f.signupForm2['controls'].password.invalid && (f.signupForm2['controls'].password.dirty || f.signupForm2['controls'].password.touched)">
-                          <span  *ngIf="f.signupForm2['controls'].password.errors.required"> Password is required </span>
-                          <span *ngIf="f.signupForm2['controls'].password.errors.pattern">must contain at least 8 characters ,one lowercase letter, one uppercase letter, one numeric digit, and one special character</span>
+                          <span style="color:darkred" *ngIf="f.signupForm2['controls'].password.errors.required"> Password is required </span>
+                          <span style="color:darkred" *ngIf="f.signupForm2['controls'].password.errors.pattern">must contain at least 8 characters ,one lowercase letter, one uppercase letter, one numeric digit, and one special character</span>
                        </div>
-                           <!-- sample end -->
-
                     </div>
                   </div>
-                  <!-- </div>  -->
+                
                       
                   <div class="row mb-3">
-                    <!-- <div class="form-group"> -->
+                    
                     <label for="confirmPassword" class="col-md-4 col-form-label">Confirm Password</label>
                     <div class="col-md-8">
-                      <input type="text" formControlName="confirmPassword" class="form-control" [(ngModel)]="confirmPassword"
+                      <input type="password" formControlName="confirmPassword" class="form-control" [(ngModel)]="confirmPassword"
                       [ngClass]="{ 'is-invalid': signup_form1 && f.confirmPassword.errors }" id="confirmPassword" placeholder="Confirm Password" />
 
-                              <!-- sample -->
+                              
                              <div *ngIf="f.signupForm2['controls'].confirmPassword.invalid && (f.signupForm2['controls'].confirmPassword.dirty || f.signupForm2['controls'].confirmPassword.touched)">
-                                <span  *ngIf="f.signupForm2['controls'].confirmPassword.errors.required"> Confirm password is required</span>
-                               <span *ngIf="f.signupForm2['controls'].confirmPassword.errors.passwordMismatch">Password and Confirm Password must be match.</span>
+                                <span style="color:darkred" *ngIf="f.signupForm2['controls'].confirmPassword.errors.required"> Confirm password is required</span>
+                               <span style="color:darkred" *ngIf="f.signupForm2['controls'].confirmPassword.errors.passwordMismatch">Password and Confirm Password must be match.</span>
                              </div>
-                               <!-- sample end -->
+                               
 
                      </div>
                   </div>
                       
                 </div>
              </div>
-                  
-                <!-- </div> -->
-                      
+                    
                     
                 <ul class="list-inline wizard mb-0">
                   <li class="previous list-inline-item"> <button class="btn btn-secondary" type="button" awPreviousStep>Previous</button>
@@ -203,6 +192,10 @@
             </aw-wizard-step>         
           </aw-wizard>
         </form>
+        <div class="mt-5 text-center">
+          <p>Already have an account ? <a routerLink="/auth/login" class="fw-medium text-primary"> Login Here</a>
+          </p>
+        </div>
         </div>
       </div>
     </div>
