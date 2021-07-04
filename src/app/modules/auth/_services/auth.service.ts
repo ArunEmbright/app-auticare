@@ -10,6 +10,7 @@ import { environment } from 'src/environments/environment';
 })
 export class AuthService {
 
+  
   private currentUserSubject: BehaviorSubject<User>;
   public currentUser: Observable<User>;
   private url = environment.apiUrl;
