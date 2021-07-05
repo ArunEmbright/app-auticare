@@ -1,5 +1,10 @@
+import {Role} from './role'
+
+export class User2{
+    role:Role
+}
 export class User {
-    id: string;
+    //id: string;
     firstName: string;
     lastName:string;
     relationType:string;
@@ -10,5 +15,6 @@ export class User {
     // firstName?: string;
     // lastName?: string;
     token?: string;
+    
     
 }

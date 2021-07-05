@@ -1,8 +1,11 @@
+import { identifierModuleUrl } from '@angular/compiler';
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
 import { OwlOptions } from 'ngx-owl-carousel-o';
 import { first } from 'rxjs/operators';
+import { Role } from 'src/app/core/models/role';
+import { AuthenticationService } from 'src/app/core/services/auth.service';
 import { AuthService } from '../_services/auth.service';
 
 @Component({
@@ -11,7 +14,8 @@ import { AuthService } from '../_services/auth.service';
   styleUrls: ['./login.component.scss']
 })
 export class LoginComponent implements OnInit {
-
+  
+  Role=Role;
   loginForm: FormGroup;
   submitted = false;
   error = '';
@@ -34,7 +38,7 @@ export class LoginComponent implements OnInit {
   }
 
   // tslint:disable-next-line: max-line-length
-  constructor(private formBuilder: FormBuilder, private route: ActivatedRoute, private router: Router,
+  constructor(private authenRole:AuthenticationService,private formBuilder: FormBuilder, private route: ActivatedRoute, private router: Router,
     private authService: AuthService) { }
 
   ngOnInit() {
@@ -77,4 +81,8 @@ export class LoginComponent implements OnInit {
     }
   }
 
+
+therapist(){
+  this.router.navigate(['auth/therapist-login'])
+}
 }

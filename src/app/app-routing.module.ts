@@ -1,5 +1,10 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
+import { AuthGuard } from './core/guards/authTherapist.guard';
+import { Role } from './core/models/role';
+import { AuthenticationService } from './core/services/auth.service';
+import { DoctorLayoutComponent } from './doctorLayout/layout.component';
+import { DoctorLayoutsModule } from './doctorLayout/layouts.module';
 import { LayoutComponent } from './layouts/layout.component';
 import { PatientDataComponent } from './modules/assesment/patient-data/patient-data.component';
 
@@ -16,8 +21,10 @@ const routes: Routes = [
     path: 'auth',
      loadChildren: () => import('./modules/auth/auth.module').then(m => m.AuthModule)
   },
+  
    {
-     path:'', component:LayoutComponent, 
+     path:'', 
+     component:LayoutComponent, 
      children:[
       { 
         path: 'dashboard',
@@ -38,19 +45,45 @@ const routes: Routes = [
         path:'home',  
         loadChildren:()=>import('../app/modules/home/home.module').then(e=>e.HomeModule)
       },
+      
+   ]
+  },
+  {
+    path:'',
+    component:DoctorLayoutComponent,
+    children:[
       {
-       path: '**',
-       redirectTo: 'dashboard',
-       pathMatch: 'full'
-     
-     }
-   ]},
+        path:'doctor',
+        canLoad:[AuthGuard],
+        canActivate:[AuthGuard],
+        data:{
+          roles:[
+            Role.THERAPIST
+          ]
+        },
+        loadChildren:()=>import('./modules/doctor/doctor.module').then(m=>m.DoctorModule)
+      },
+    ]
+  },
+  
+  {
+   path: '**',
+   redirectTo: 'dashboard',
+   pathMatch: 'full'
+ 
+ },
+  
    {path: 'assessment', loadChildren: () => import('./modules/assesment/assesment.module').then(m => m.AssesmentModule) },
+
 ];
 
 @NgModule({
   imports: [RouterModule.forRoot(routes, { scrollPositionRestoration: 'top', relativeLinkResolution: 'corrected', useHash: true })],
-  exports: [RouterModule]
+  exports: [RouterModule],
+  providers:[
+    AuthGuard,
+    AuthenticationService
+  ]
 })
 
 export class AppRoutingModule { }

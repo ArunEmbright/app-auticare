@@ -14,9 +14,10 @@ import { LoginComponent } from './login/login.component';
 import { AuthRoutingModule } from './auth-routing.module';
 import { TokenVerifyComponent } from './token-verify/token-verify.component';
 import { NgOtpInputModule } from  'ng-otp-input';
+import { TherapistLoginComponent } from './therapist-login/therapist-login.component';
 
 @NgModule({
-  declarations: [ SignupComponent, LoginComponent, TokenVerifyComponent],
+  declarations: [ SignupComponent, LoginComponent, TokenVerifyComponent, TherapistLoginComponent],
   imports: [
     CommonModule,
     ReactiveFormsModule,

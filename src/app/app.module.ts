@@ -22,6 +22,8 @@ import {AuthModule} from './modules/auth/auth.module';
 import { TherapistModule } from "./modules/therapist/therapist.module";
 import { LocationStrategy, HashLocationStrategy } from '@angular/common';
 import { HomeModule } from './modules/home/home.module';
+import { AuthenticationService } from './core/services/auth.service';
+import { DoctorLayoutsModule } from './doctorLayout/layouts.module';
 
 
 export function createTranslateLoader(http: HttpClient): any {
@@ -44,6 +46,7 @@ export function createTranslateLoader(http: HttpClient): any {
       }
     }),
     LayoutsModule,
+    DoctorLayoutsModule,
     AssesmentModule,
     TherapistModule,
     HomeModule,
@@ -59,7 +62,7 @@ export function createTranslateLoader(http: HttpClient): any {
   ],
   bootstrap: [AppComponent],
   providers: [
-    {provide: LocationStrategy, useClass: HashLocationStrategy}
+    {provide: LocationStrategy, useClass: HashLocationStrategy},AuthenticationService
   ],
 })
 export class AppModule { }
