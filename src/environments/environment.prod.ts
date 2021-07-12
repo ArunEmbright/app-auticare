@@ -10,5 +10,6 @@ export const environment = {
     messagingSenderId: '',
     appId: '',
     measurementId: ''
-  }
+  },
+  apiUrl:'http://13.233.22.49:4001/api/',
 };
