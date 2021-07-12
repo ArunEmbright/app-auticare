@@ -4,9 +4,7 @@ import { AuthGuard } from './core/guards/authTherapist.guard';
 import { Role } from './core/models/role';
 import { AuthenticationService } from './core/services/auth.service';
 import { DoctorLayoutComponent } from './doctorLayout/layout.component';
-import { DoctorLayoutsModule } from './doctorLayout/layouts.module';
 import { LayoutComponent } from './layouts/layout.component';
-import { PatientDataComponent } from './modules/assesment/patient-data/patient-data.component';
 
 
 const routes: Routes = [

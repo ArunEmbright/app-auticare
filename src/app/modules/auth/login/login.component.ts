@@ -1,4 +1,4 @@
-import { identifierModuleUrl } from '@angular/compiler';
+
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
@@ -21,7 +21,6 @@ export class LoginComponent implements OnInit {
   error = '';
   returnUrl: string;
 
-  // set the currenr year
   year: number = new Date().getFullYear();
 
   carouselOption: OwlOptions = {

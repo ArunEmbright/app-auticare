@@ -8,17 +8,23 @@ export const MENU: MenuItem[] = [
         link: '/dashboard',
     },
     {
-        id: 4,
+        id: 2,
         label: 'MENUITEMS.PATIENT.TEXT',
         icon: 'bx-group',
-        link: '/assessment/patient',
+        link: '/settings/profile',
         
     },
     {
-        id:2,
+        id:3,
         label:'MENUITEMS.ASSESSMENT.TEXT',
         icon:'bx-store',
-        link:'/home/data'
+        link:'/home/assessments'
+    },
+    {
+        id:4,
+        label:'MENUITEMS.APPOINTMENT.TEXT',
+        icon:'bx-store',
+        link:'/home/appointments'
     }
 ];
 
