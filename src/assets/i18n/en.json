@@ -85,6 +85,10 @@
     "ASSESSMENT":{
       "TEXT":"Assessment"
     },
+    "APPOINTMENT":{
+      "TEXT":"Appointment"
+
+    },
     "DOCTOR":{
       "TEXT":"Dashboard",
       "LIST": {
