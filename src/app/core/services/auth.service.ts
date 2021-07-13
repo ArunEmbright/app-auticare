@@ -29,8 +29,7 @@ hasRole(role: Role) {
     return this.isAuthorized() && this.user.role === role;
 }
 
-login(role: Role, 
-    ) {
+login(role: Role) {
 
   this.user = {  role: role,};
 }
