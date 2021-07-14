@@ -17,13 +17,13 @@ export const MENU: MenuItem[] = [
     {
         id:3,
         label:'MENUITEMS.ASSESSMENT.TEXT',
-        icon:'bx-store',
+        icon:' bx-envelope',
         link:'/home/assessments'
     },
     {
         id:4,
         label:'MENUITEMS.APPOINTMENT.TEXT',
-        icon:'bx-store',
+        icon:'bx-user-circle',
         link:'/home/appointments'
     }
 ];
