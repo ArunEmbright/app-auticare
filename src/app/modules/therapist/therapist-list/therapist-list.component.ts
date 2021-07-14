@@ -1,5 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
+import { environment } from 'src/environments/environment';
 
 @Component({
   selector: 'app-therapist-list',
@@ -14,6 +15,7 @@ export class TherapistListComponent implements OnInit {
   data: any;
   dropDownItem: Array<String>;
   isLoading: boolean;
+  private url = environment.apiUrl;
 
   constructor(private http: HttpClient) {}
 
@@ -29,10 +31,9 @@ export class TherapistListComponent implements OnInit {
   }
 
   private _fetchTherapistData() {
-    const _dataFetchUrl = "http://localhost:4001/api/therapist/all";
     let promise = new Promise<void>((resolve, reject) => {
       this.http
-        .get(_dataFetchUrl)
+        .get(this.url + 'therapist/all')
         .toPromise()
         .then(
           (res) => {
