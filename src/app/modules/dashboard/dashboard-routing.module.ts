@@ -5,11 +5,11 @@ import { DashboardComponent } from './dashboard/dashboard.component';
 const routes: Routes = [
   {
     path:'',
-    redirectTo: 'classic',
+    redirectTo: 'home',
     pathMatch: 'full'
   },
   {
-    path:'classic',
+    path:'home',
     component: DashboardComponent
   }
 ];

@@ -42,8 +42,8 @@ export class LoginComponent implements OnInit {
 
   ngOnInit() {
     this.loginForm = this.formBuilder.group({
-      email: ['sarancruzer@gmail.com', [Validators.required, Validators.email]],
-      password: ['123456', [Validators.required]],
+      email: ['', [Validators.required, Validators.email]],
+      password: ['', [Validators.required]],
     });
 
     // reset login status
