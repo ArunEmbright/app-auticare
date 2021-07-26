@@ -1,6 +1,9 @@
-import { HttpClient } from '@angular/common/http';
+
 import { Component, OnInit } from '@angular/core';
-import { environment } from 'src/environments/environment';
+import { therapistList } from './data';
+import { TherapistModel } from './therapist-model';
+
+import Swal from 'sweetalert2';
 
 @Component({
   selector: 'app-therapist-list',
@@ -11,62 +14,50 @@ export class TherapistListComponent implements OnInit {
 
   // bread crumb items
   breadCrumbItems: Array<{}>;
-  doctors: any;
-  data: any;
-  dropDownItem: Array<String>;
+  therapistList:TherapistModel[];
+  // doctors: any;
+  // data: any;
+  // dropDownItem: Array<String>;
   isLoading: boolean;
-  private url = environment.apiUrl;
+  public therapist: TherapistModel[]=[];
 
-  constructor(private http: HttpClient) {}
+  constructor() {}
 
   ngOnInit() {
     this.isLoading = true;
     this.breadCrumbItems = [
-      { label: "UI Elements" },
-      { label: "Filter", active: true },
     ];
 
-    // Fetch data for the dropdown as well as the cards
-    this._fetchTherapistData();
+    this.therapist = Object.assign([],therapistList );
+    this.therapistList = therapistList;
   }
 
-  private _fetchTherapistData() {
-    let promise = new Promise<void>((resolve, reject) => {
-      this.http
-        .get(this.url + 'therapist/all')
-        .toPromise()
-        .then(
-          (res) => {
-            this.data = res["data"];
-            let locations: Array<string> = [];
-            for (var i in this.data) {
-              if (locations.indexOf(this.data[i].location) === -1) {
-                locations.push(this.data[i].location);
-              }
-            }
-            this.doctors = this.data;
-            this.dropDownItem = locations;
-            resolve();
-            this.isLoading = false;
-          },
-          (msg) => console.log(msg)
-        );
-    });
-  }
+  
 
-  // Filter the data based on the location selected
-  public selectedLocation: any;
-  public locationFilter() {
-    let filteredContent = [];
-    for (var i in this.data) {
-      if (
-        this.data[i].location.toLowerCase() ===
-        this.selectedLocation.toLowerCase()
-      ) {
-        filteredContent.push(this.data[i]);
-      }
-    }
-    this.doctors = filteredContent;
-  }
+searchFilter(e){
+  const searchStr = e.target.value;
+  this.therapist = therapistList.filter(
+  (doctor)=>{
+    return doctor.location.toLowerCase().search(
+      searchStr.toLowerCase())!==-1;
+    
+  });
+}
+
+custom() {
+  
+  Swal.fire({
+    title: '<strong> Your Booking Confirmed! </strong>',
+    icon: 'success',
+   html:'<p> Our Team wiil contact you. Have a nice day!!!</p>',
+    showCloseButton: true,
+    showCancelButton: false,
+    focusConfirm: false,
+    // confirmButtonText: '<i class="fa fa-thumbs-up"></i> Back to Home!',
+    confirmButtonAriaLabel: 'Thumbs up, Back to Home',
+    
+  });
+  
+}
 
 }

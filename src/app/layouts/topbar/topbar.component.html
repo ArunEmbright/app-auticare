@@ -13,7 +13,7 @@
           </span> -->
         </a>
 
-        <a href="/" class="logo logo-light">
+        <a [routerLink]="['/dashboard']" routerLinkActive="router-link-active"  class="logo logo-light">
           <span class="logo-sm">
             <!-- <img src="assets/images/logo-light.svg" alt="" height="22"> -->
           </span>
@@ -171,7 +171,7 @@
 
       <div class="dropdown d-inline-block" ngbDropdown>
         <button type="button" class="btn header-item" ngbDropdownToggle id="page-header-user-dropdown">
-          <img class="rounded-circle header-profile-user" src="assets/images/users/avatar-1.jpg" alt="Header Avatar">
+          <img class="rounded-circle header-profile-user" src="assets\images\profile-img.png" alt="Header Avatar">
           <span class="d-none d-xl-inline-block ms-1">User</span>
           <i class="mdi mdi-chevron-down d-none d-xl-inline-block"></i>
         </button>
