@@ -11,10 +11,10 @@ const routes: Routes = [
    { 
      path: '', redirectTo: 'patient-data', pathMatch: 'full' 
     },
-   {
-     path:'patient-data',
-     loadChildren:()=>import ('./modules/assesment/assesment.module').then(e=>e.AssesmentModule)
-    },
+  //  {
+  //    path:'patient-data',
+  //    loadChildren:()=>import ('./modules/assesment/assesment.module').then(e=>e.AssesmentModule)
+  //   },
    {
     path: 'auth',
      loadChildren: () => import('./modules/auth/auth.module').then(m => m.AuthModule)
@@ -43,6 +43,14 @@ const routes: Routes = [
         path:'home',  
         loadChildren:()=>import('../app/modules/home/home.module').then(e=>e.HomeModule)
       },
+      {
+        path:'assessments',  
+        loadChildren:()=>import('../app/modules/assesment/assesment.module').then(e=>e.AssesmentModule)
+      },
+      // {
+      //   path:'home',  
+      //   loadChildren:()=>import('../app/modules/home/home-routing.module').then(e=>e.HomeModule)
+      // },
       
    ]
   },
