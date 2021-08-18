@@ -1,6 +1,6 @@
 export const environment = {
   production: true,
-  apiURL:'https://mindcare-backend.herokuapp.com',
+  apiURL:'https://auticare-backend.herokuapp.com',
   
 };
 
