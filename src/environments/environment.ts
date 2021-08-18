@@ -2,10 +2,13 @@
 // `ng build --prod` replaces `environment.ts` with `environment.prod.ts`.
 // The list of file replacements can be found in `angular.json`.
 
-export const environment = {
+export const environment = { 
   production: false,
-  // defaultauth: 'firebasee',
-  apiURL:'http://https://auticare-backend.herokuapp.com',
+  apiURL:'http://localhost:3000',
+  // razorPay:'https://app-mindcare.herokuapp.com/#/calendar/appointment'
+  // apiURL:'http://localhost:3000',
+  // razorPay:'http://localhost:4200/#/calendar/appointment'
+
 };
 
 /*
