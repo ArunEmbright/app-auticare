@@ -15,9 +15,13 @@ import { AuthRoutingModule } from './auth-routing.module';
 import { TokenVerifyComponent } from './token-verify/token-verify.component';
 import { NgOtpInputModule } from  'ng-otp-input';
 import { TherapistLoginComponent } from './therapist-login/therapist-login.component';
+import { ActiveComponent } from './active/active.component';
+import { ForgotPasswordComponent } from './forgot-password/forgot-password.component';
+import { VerifyOtpComponent } from './verify-otp/verify-otp.component';
+import { ChangePasswordComponent } from './change-password/change-password.component';
 
 @NgModule({
-  declarations: [ SignupComponent, LoginComponent, TokenVerifyComponent, TherapistLoginComponent],
+  declarations: [ SignupComponent, LoginComponent, TokenVerifyComponent, TherapistLoginComponent, ActiveComponent, ForgotPasswordComponent, VerifyOtpComponent, ChangePasswordComponent],
   imports: [
     CommonModule,
     ReactiveFormsModule,

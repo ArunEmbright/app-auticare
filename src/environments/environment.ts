@@ -4,8 +4,8 @@
 
 export const environment = {
   production: false,
-  defaultauth: 'firebasee',
-  apiUrl:'http://localhost:4001/api/',
+  // defaultauth: 'firebasee',
+  apiURL:'http://https://auticare-backend.herokuapp.com',
 };
 
 /*

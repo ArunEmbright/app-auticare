@@ -72,7 +72,14 @@ export class LoginComponent implements OnInit {
         this.authService.login(this.f.email.value, this.f.password.value)
           .pipe(first())
           .subscribe((res: any) => {
+            
+            if(this.f.email.value==="auticare@embrightinfotech.com"){
+              
+              this.router.navigate(['admin/dashboard'])
+            }else{
               this.router.navigate(['/dashboard']);
+            }
+              
             },
             error => {
               this.error = error ? error : '';

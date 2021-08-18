@@ -38,7 +38,9 @@ import { PatientresultComponent } from './patientresult/patientresult.component'
     AssessmentPage5Component,
     AssessmentPage6Component,
    
-    PatientresultComponent
+    PatientresultComponent,
+   
+    
   ],
   imports: [
     CommonModule,

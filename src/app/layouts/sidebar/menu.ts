@@ -4,16 +4,10 @@ export const MENU: MenuItem[] = [
     {
         id: 1,
         label: 'MENUITEMS.DASHBOARDS.TEXT',
-        icon: 'bx-home-circle',
-        link: '/dashboard',
+        icon: 'bx-box',
+        link: '/home/assessments',
     },
-    {
-        id: 2,
-        label: 'MENUITEMS.PATIENT.TEXT',
-        icon: 'bx-group',
-        link: '/settings/profile',
-        
-    },
+ 
     {
         id:3,
         label:'MENUITEMS.ASSESSMENT.TEXT',
@@ -25,6 +19,13 @@ export const MENU: MenuItem[] = [
         label:'MENUITEMS.APPOINTMENT.TEXT',
         icon:'bx-calendar',
         link:'/home/appointments'
+    },
+    {
+        id: 2,
+        label: 'MENUITEMS.PATIENT.TEXT',
+        icon: 'bx-group',
+        link: '/settings/profile',
+        
     }
 ];
 

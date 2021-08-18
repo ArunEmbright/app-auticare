@@ -70,7 +70,7 @@
       "TEXT": "Menu"
     },
     "DASHBOARDS": {
-      "TEXT": "Dashboard",
+      "TEXT": "Free Assessment",
       "BADGE": "04",
       "LIST": {
         "DEFAULT": "Default",
@@ -79,15 +79,16 @@
         "BLOG": "Blog"
       }
     },
-    "PATIENT": {
-      "TEXT": "Profile"
-    },
+    
     "ASSESSMENT":{
-      "TEXT":"Assessment"
+      "TEXT":"Skill Assessment"
     },
     "APPOINTMENT":{
-      "TEXT":"Appointment"
+      "TEXT":"Session Booking"
 
+    },
+    "PATIENT": {
+      "TEXT": "Profile"
     },
     "DOCTOR":{
       "TEXT":"Dashboard",

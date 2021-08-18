@@ -6,7 +6,6 @@ import { AuthenticationService } from './core/services/auth.service';
 import { DoctorLayoutComponent } from './doctorLayout/layout.component';
 import { LayoutComponent } from './layouts/layout.component';
 
-
 const routes: Routes = [
    { 
      path: '', redirectTo: 'patient-data', pathMatch: 'full' 
@@ -46,6 +45,14 @@ const routes: Routes = [
       {
         path:'assessments',  
         loadChildren:()=>import('../app/modules/assesment/assesment.module').then(e=>e.AssesmentModule)
+      },
+      {
+        path:'booking',  
+        loadChildren:()=>import('../app/modules/book-appointment/book-appointment.module').then(e=>e.BookAppointmentModule)
+      },
+      {
+        path:'admin',  
+        loadChildren:()=>import('./modules/admin/admin-.module').then(e=>e.AdminModule)
       },
       // {
       //   path:'home',  

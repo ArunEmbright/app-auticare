@@ -24,6 +24,8 @@ import { LocationStrategy, HashLocationStrategy } from '@angular/common';
 import { HomeModule } from './modules/home/home.module';
 import { AuthenticationService } from './core/services/auth.service';
 import { DoctorLayoutsModule } from './doctorLayout/layouts.module';
+import { BookAppointmentModule } from './modules/book-appointment/book-appointment.module';
+import { AdminDashboardComponent } from './modules/admin/admin-dashboard/admin-dashboard.component';
 
 
 export function createTranslateLoader(http: HttpClient): any {
@@ -33,6 +35,9 @@ export function createTranslateLoader(http: HttpClient): any {
 @NgModule({
   declarations: [
     AppComponent,
+    AdminDashboardComponent,
+   
+
   ],
   imports: [
     BrowserModule,
@@ -47,6 +52,7 @@ export function createTranslateLoader(http: HttpClient): any {
     }),
     LayoutsModule,
     DoctorLayoutsModule,
+    BookAppointmentModule,
     AssesmentModule,
     TherapistModule,
     HomeModule,

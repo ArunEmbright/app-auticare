@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-
+import { AuthService } from '../../auth/_services/auth.service';
 import { revenueBarChart, statData } from './data';
-
+import { User } from 'src/app/core/models/auth.models';
 import { ChartType } from './profile.model';
 
 @Component({
@@ -16,12 +16,18 @@ import { ChartType } from './profile.model';
 export class ProfileComponent implements OnInit {
   // bread crumb items
   breadCrumbItems: Array<{}>;
-
+  users:User[];
   revenueBarChart: ChartType;
   statData;
-  constructor() { }
+  constructor(private accountService: AuthService) { }
 
   ngOnInit() {
+    this.accountService.getUsers().subscribe((
+      users:User[]
+    )=>{
+      this.users=users;
+    })
+
     this.breadCrumbItems = [{ label: 'Contacts' }, { label: 'Profile', active: true }];
 
     // fetches the data

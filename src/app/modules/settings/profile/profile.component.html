@@ -8,7 +8,7 @@
             <div class="page-title-right">
                 <ol class="breadcrumb m-0">
                     <li class="breadcrumb-item"><a href="javascript: void(0);">Profile</a></li>
-                    <li class="breadcrumb-item active">Data</li>
+                    <li class="breadcrumb-item active">Auticare</li>
                 </ol>
             </div>
 
@@ -67,27 +67,27 @@
                 <tbody>
                   <tr>
                     <th scope="row">Child Name :</th>
-                    <td>Amanda</td>
+                    <td *ngFor="let user of users">{{user.patientName}}</td>
                   </tr>
                   <tr>
                     <th scope="row">Date of Birth :</th>
-                    <td>20/06/2005</td>
+                    <td *ngFor="let user of users">{{user.dob}}</td>
                   </tr>
                   <tr>
                     <th scope="row">User Name :</th>
-                    <td>Amanada</td>
+                    <td *ngFor="let user of users">{{user.firstName}} {{user.lastName}}</td>
                   </tr>
                   <tr>
                     <th scope="row">Relationship with the child :</th>
-                    <td>Mother</td>
+                    <td *ngFor="let user of users">{{user.relationType}}</td>
                   </tr>
                   <tr>
                     <th scope="row">Email :</th>
-                    <td>Amanda@gmail.com</td>
+                    <td *ngFor="let user of users">{{user.email}}</td>
                   </tr>
                   <tr>
                     <th scope="row">Mobile :</th>
-                    <td>8025214563</td>
+                    <td *ngFor="let user of users">{{user.mobileNumber}}</td>
                   </tr>
                 </tbody>
               </table>

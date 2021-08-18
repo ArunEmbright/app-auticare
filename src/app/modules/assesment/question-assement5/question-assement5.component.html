@@ -3,18 +3,19 @@
       
     </div>
   </div>
-  <div class="card text-center"> SENSORY ASPECTS</div>
+  <div class="card card-title text-center"><h5>SENSORY ASPECTS</h5> </div>
   <section id="ngx">
     <div class="card">
       <div class="card-content">
         <div class="card-body">
+          <form #workForm="ngForm" class="editForm" novalidate>
           <aw-wizard #wizard [navBarLayout]="'large-filled-symbols'">
             <aw-wizard-step
              
               [canEnter] ="true"
               [canEnter]="true" [navigationSymbol]="{ symbol: '31' }"
             >
-              <form #workForm="ngForm" class="editForm" novalidate>
+            
                 <h4 class="head text-center">Unusually sensitive to sensory stimuli</h4>
                 <br />
                 <div class="row justify-content-center">
@@ -25,10 +26,11 @@
                           type="radio"
                           #work
                           required
+                          [(ngModel)]="value"
                           id="customRadioInline1"
                           name="work"
-                          class="custom-control-input"
-                          value="Rarely"
+                          class="form-check-input"
+                          [value]="1"
                         />
                         <label
                           class="custom-control-label"
@@ -41,10 +43,11 @@
                           type="radio"
                           #work
                           required
+                          [(ngModel)]="value"
                           id="customRadioInline2"
                           name="work"
-                          class="custom-control-input"
-                          value="Sometimes"
+                          class="form-check-input"
+                          [value]="2"
                         />
                         <label
                           class="custom-control-label"
@@ -57,11 +60,12 @@
                             type="radio"
                             #work
                             required
+                            [(ngModel)]="value"
                             id="customRadioInline3"
                             checked
                             name="work"
-                            class="custom-control-input"
-                            value="Frequently"
+                            class="form-check-input"
+                            [value]="3"
                           />
                           <label
                             class="custom-control-label"
@@ -74,11 +78,12 @@
                           type="radio"
                           #work
                           required
+                          [(ngModel)]="value"
                           id="customRadioInline3"
                           checked
                           name="work"
-                          class="custom-control-input"
-                          value="Mostly"
+                          class="form-check-input"
+                          [value]="4"
                         />
                         <label
                           class="custom-control-label"
@@ -91,11 +96,12 @@
                             type="radio"
                             #work
                             required
+                            [(ngModel)]="value"
                             id="customRadioInline3"
                             checked
                             name="work"
-                            class="custom-control-input"
-                            value="Always"
+                            class="form-check-input"
+                            [value]="5"
                           />
                           <label
                             class="custom-control-label"
@@ -108,7 +114,7 @@
                   </div>
                 </div>
                 <div class="form-group text-center space-20">
-                  <button
+                  <!-- <button
                     uiSref="personal"
                     type="button"
                     class="btn btn-secondary mr-1"
@@ -118,13 +124,15 @@
                       <i class="ft-chevron-left"></i>
                     </span>
                     Previous
-                  </button>
+                  </button> -->
                   <button
                     uiSref="address"
                     type="button"
                     class="btn btn-info"
                     [disabled]="!workForm.valid"
-                    awNextStep
+                    (click)="increment()" 
+                                  
+                  awNextStep
                   >
                     Next
                     <span style="margin-left: 10px">
@@ -132,13 +140,13 @@
                     </span>
                   </button>
                 </div>
-              </form>
+              
             </aw-wizard-step>
             <aw-wizard-step
              [canEnter] ="true"
               [canEnter]="true" [navigationSymbol]="{ symbol: '32' }"
             >
-              <form #workForm="ngForm" class="editForm" novalidate>
+            
                 <h4 class="head text-center">Stares into space for long periods of time</h4>
                 <br />
                 <div class="row justify-content-center">
@@ -149,10 +157,11 @@
                           type="radio"
                           #work
                           required
+                          [(ngModel)]="value"
                           id="customRadioInline1"
                           name="work"
-                          class="custom-control-input"
-                          value="Rarely"
+                          class="form-check-input"
+                          [value]="1"
                         />
                         <label
                           class="custom-control-label"
@@ -165,10 +174,11 @@
                           type="radio"
                           #work
                           required
+                          [(ngModel)]="value"
                           id="customRadioInline2"
                           name="work"
-                          class="custom-control-input"
-                          value="Sometimes"
+                          class="form-check-input"
+                          [value]="2"
                         />
                         <label
                           class="custom-control-label"
@@ -181,11 +191,12 @@
                           type="radio"
                           #work
                           required
+                          [(ngModel)]="value"
                           id="customRadioInline3"
                           checked
                           name="work"
-                          class="custom-control-input"
-                          value="Frequently"
+                          class="form-check-input"
+                          [value]="3"
                         />
                         <label
                           class="custom-control-label"
@@ -198,11 +209,12 @@
                           type="radio"
                           #work
                           required
+                          [(ngModel)]="value"
                           id="customRadioInline3"
                           checked
                           name="work"
-                          class="custom-control-input"
-                          value="Mostly"
+                          class="form-check-input"
+                          [value]="4"
                         />
                         <label
                           class="custom-control-label"
@@ -215,11 +227,12 @@
                             type="radio"
                             #work
                             required
+                            [(ngModel)]="value"
                             id="customRadioInline3"
                             checked
                             name="work"
-                            class="custom-control-input"
-                            value="Always"
+                            class="form-check-input"
+                            [value]="5"
                           />
                           <label
                             class="custom-control-label"
@@ -232,7 +245,7 @@
                   </div>
                 </div>
                 <div class="form-group text-center space-20">
-                  <button
+                  <!-- <button
                     uiSref="personal"
                     type="button"
                     class="btn btn-secondary mr-1"
@@ -242,13 +255,15 @@
                       <i class="ft-chevron-left"></i>
                     </span>
                     Previous
-                  </button>
+                  </button> -->
                   <button
                     uiSref="address"
                     type="button"
                     class="btn btn-info"
                     [disabled]="!workForm.valid"
-                    awNextStep
+                    (click)="increment()" 
+                                  
+                  awNextStep
                   >
                     Next
                     <span style="margin-left: 10px">
@@ -256,13 +271,13 @@
                     </span>
                   </button>
                 </div>
-              </form>
+             
             </aw-wizard-step>
             <aw-wizard-step
              [canEnter] ="true"
               [canEnter]="true" [navigationSymbol]="{ symbol: '33' }"
             >
-            <form #workForm="ngForm" class="editForm" novalidate>
+      
               <h4 class="head text-center">Has difficulty in tracking objects</h4>
               <br />
               <div class="row justify-content-center">
@@ -273,10 +288,11 @@
                         type="radio"
                         #work
                         required
+                        [(ngModel)]="value"
                         id="customRadioInline1"
                         name="work"
-                        class="custom-control-input"
-                        value="Rarely"
+                        class="form-check-input"
+                        [value]="1"
                       />
                       <label
                         class="custom-control-label"
@@ -289,10 +305,11 @@
                         type="radio"
                         #work
                         required
+                        [(ngModel)]="value"
                         id="customRadioInline2"
                         name="work"
-                        class="custom-control-input"
-                        value="Sometimes"
+                        class="form-check-input"
+                        [value]="2"
                       />
                       <label
                         class="custom-control-label"
@@ -305,11 +322,12 @@
                         type="radio"
                         #work
                         required
+                        [(ngModel)]="value"
                         id="customRadioInline3"
                         checked
                         name="work"
-                        class="custom-control-input"
-                        value="Frequently"
+                        class="form-check-input"
+                        [value]="3"
                       />
                       <label
                         class="custom-control-label"
@@ -322,11 +340,12 @@
                         type="radio"
                         #work
                         required
+                        [(ngModel)]="value"
                         id="customRadioInline3"
                         checked
                         name="work"
-                        class="custom-control-input"
-                        value="Mostly"
+                        class="form-check-input"
+                        [value]="4"
                       />
                       <label
                         class="custom-control-label"
@@ -339,11 +358,12 @@
                           type="radio"
                           #work
                           required
+                          [(ngModel)]="value"
                           id="customRadioInline3"
                           checked
                           name="work"
-                          class="custom-control-input"
-                          value="Always"
+                          class="form-check-input"
+                          [value]="5"
                         />
                         <label
                           class="custom-control-label"
@@ -356,7 +376,7 @@
                 </div>
               </div>
               <div class="form-group text-center space-20">
-                <button
+                <!-- <button
                   uiSref="personal"
                   type="button"
                   class="btn btn-secondary mr-1"
@@ -366,12 +386,13 @@
                     <i class="ft-chevron-left"></i>
                   </span>
                   Previous
-                </button>
+                </button> -->
                 <button
                   uiSref="address"
                   type="button"
                   class="btn btn-info"
                   [disabled]="!workForm.valid"
+                  (click)="increment()" 
                   awNextStep
                 >
                   Next
@@ -380,13 +401,13 @@
                   </span>
                 </button>
               </div>
-            </form>
+          
             </aw-wizard-step>
             <aw-wizard-step
            [canEnter] ="true"
               [canEnter]="true" [navigationSymbol]="{ symbol: '34' }"
             >
-            <form #workForm="ngForm" class="editForm" novalidate>
+            
               <h4 class="head text-center">Has unusual vision</h4>
               <br />
               <div class="row justify-content-center">
@@ -397,10 +418,11 @@
                         type="radio"
                         #work
                         required
+                        [(ngModel)]="value"
                         id="customRadioInline1"
                         name="work"
-                        class="custom-control-input"
-                        value="Rarely"
+                        class="form-check-input"
+                        [value]="1"
                       />
                       <label
                         class="custom-control-label"
@@ -413,10 +435,11 @@
                         type="radio"
                         #work
                         required
+                        [(ngModel)]="value"
                         id="customRadioInline2"
                         name="work"
-                        class="custom-control-input"
-                        value="Sometimes"
+                        class="form-check-input"
+                        [value]="2"
                       />
                       <label
                         class="custom-control-label"
@@ -429,11 +452,12 @@
                         type="radio"
                         #work
                         required
+                        [(ngModel)]="value"
                         id="customRadioInline3"
                         checked
                         name="work"
-                        class="custom-control-input"
-                        value="Frequently"
+                        class="form-check-input"
+                        [value]="3"
                       />
                       <label
                         class="custom-control-label"
@@ -446,11 +470,12 @@
                         type="radio"
                         #work
                         required
+                        [(ngModel)]="value"
                         id="customRadioInline3"
                         checked
                         name="work"
-                        class="custom-control-input"
-                        value="Mostly"
+                        class="form-check-input"
+                        [value]="4"
                       />
                       <label
                         class="custom-control-label"
@@ -463,11 +488,12 @@
                           type="radio"
                           #work
                           required
+                          [(ngModel)]="value"
                           id="customRadioInline3"
                           checked
                           name="work"
-                          class="custom-control-input"
-                          value="Always"
+                          class="form-check-input"
+                          [value]="5"
                         />
                         <label
                           class="custom-control-label"
@@ -480,7 +506,7 @@
                 </div>
               </div>
               <div class="form-group text-center space-20">
-                <button
+                <!-- <button
                   uiSref="personal"
                   type="button"
                   class="btn btn-secondary mr-1"
@@ -490,12 +516,13 @@
                     <i class="ft-chevron-left"></i>
                   </span>
                   Previous
-                </button>
+                </button> -->
                 <button
                   uiSref="address"
                   type="button"
                   class="btn btn-info"
                   [disabled]="!workForm.valid"
+                  (click)="increment()" 
                   awNextStep
                 >
                   Next
@@ -504,13 +531,13 @@
                   </span>
                 </button>
               </div>
-            </form>
+           
             </aw-wizard-step>
             <aw-wizard-step
              [canEnter] ="true"
               [canEnter]="true" [navigationSymbol]="{ symbol: '35' }"
             >
-            <form #workForm="ngForm" class="editForm" novalidate>
+            
               <h4 class="head text-center">Insensitive to pain</h4>
               <br />
               <div class="row justify-content-center">
@@ -521,10 +548,11 @@
                         type="radio"
                         #work
                         required
+                        [(ngModel)]="value"
                         id="customRadioInline1"
                         name="work"
-                        class="custom-control-input"
-                        value="Rarely"
+                        class="form-check-input"
+                        [value]="1"
                       />
                       <label
                         class="custom-control-label"
@@ -537,10 +565,11 @@
                         type="radio"
                         #work
                         required
+                        [(ngModel)]="value"
                         id="customRadioInline2"
                         name="work"
-                        class="custom-control-input"
-                        value="Sometimes"
+                        class="form-check-input"
+                        [value]="2"
                       />
                       <label
                         class="custom-control-label"
@@ -553,11 +582,12 @@
                         type="radio"
                         #work
                         required
+                        [(ngModel)]="value"
                         id="customRadioInline3"
                         checked
                         name="work"
-                        class="custom-control-input"
-                        value="Frequently"
+                        class="form-check-input"
+                        [value]="3"
                       />
                       <label
                         class="custom-control-label"
@@ -570,11 +600,12 @@
                         type="radio"
                         #work
                         required
+                        [(ngModel)]="value"
                         id="customRadioInline3"
                         checked
                         name="work"
-                        class="custom-control-input"
-                        value="Mostly"
+                        class="form-check-input"
+                        [value]="4"
                       />
                       <label
                         class="custom-control-label"
@@ -587,11 +618,12 @@
                           type="radio"
                           #work
                           required
+                          [(ngModel)]="value"
                           id="customRadioInline3"
                           checked
                           name="work"
-                          class="custom-control-input"
-                          value="Always"
+                          class="form-check-input"
+                          [value]="5"
                         />
                         <label
                           class="custom-control-label"
@@ -604,7 +636,7 @@
                 </div>
               </div>
               <div class="form-group text-center space-20">
-                <button
+                <!-- <button
                   uiSref="personal"
                   type="button"
                   class="btn btn-secondary mr-1"
@@ -614,12 +646,13 @@
                     <i class="ft-chevron-left"></i>
                   </span>
                   Previous
-                </button>
+                </button> -->
                 <button
                   uiSref="address"
                   type="button"
                   class="btn btn-info"
                   [disabled]="!workForm.valid"
+                  (click)="increment()" 
                   awNextStep
                 >
                   Next
@@ -628,13 +661,13 @@
                   </span>
                 </button>
               </div>
-            </form>
+         
             </aw-wizard-step>
             <aw-wizard-step
              [canEnter] ="true"
               [canEnter]="true" [navigationSymbol]="{ symbol: '36' }"
             >
-            <form #workForm="ngForm" class="editForm" novalidate>
+          
               <h4 class="head text-center">Responds to objects/people unusually by
                 smelling, touching or tasting</h4>
               <br />
@@ -646,10 +679,11 @@
                         type="radio"
                         #work
                         required
+                        [(ngModel)]="value"
                         id="customRadioInline1"
                         name="work"
-                        class="custom-control-input"
-                        value="Rarely"
+                        class="form-check-input"
+                        [value]="1"
                       />
                       <label
                         class="custom-control-label"
@@ -662,10 +696,11 @@
                         type="radio"
                         #work
                         required
+                        [(ngModel)]="value"
                         id="customRadioInline2"
                         name="work"
-                        class="custom-control-input"
-                        value="Sometimes"
+                        class="form-check-input"
+                        [value]="2"
                       />
                       <label
                         class="custom-control-label"
@@ -678,11 +713,12 @@
                         type="radio"
                         #work
                         required
+                        [(ngModel)]="value"
                         id="customRadioInline3"
                         checked
                         name="work"
-                        class="custom-control-input"
-                        value="Frequently"
+                        class="form-check-input"
+                        [value]="3"
                       />
                       <label
                         class="custom-control-label"
@@ -695,11 +731,12 @@
                         type="radio"
                         #work
                         required
+                        [(ngModel)]="value"
                         id="customRadioInline3"
                         checked
                         name="work"
-                        class="custom-control-input"
-                        value="Mostly"
+                        class="form-check-input"
+                        [value]="4"
                       />
                       <label
                         class="custom-control-label"
@@ -712,11 +749,12 @@
                           type="radio"
                           #work
                           required
+                          [(ngModel)]="value"
                           id="customRadioInline3"
                           checked
                           name="work"
-                          class="custom-control-input"
-                          value="Always"
+                          class="form-check-input"
+                          [value]="5"
                         />
                         <label
                           class="custom-control-label"
@@ -729,7 +767,7 @@
                 </div>
               </div>
               <div class="form-group text-center space-20">
-                <button
+                <!-- <button
                   uiSref="personal"
                   type="button"
                   class="btn btn-secondary mr-1"
@@ -739,13 +777,15 @@
                     <i class="ft-chevron-left"></i>
                   </span>
                   Previous
-                </button>
+                </button> -->
                 <button
                   uiSref="address"
                   type="button"
                   class="btn btn-info"
                   routerLink="/assessments/assessment6"
                   [disabled]="!workForm.valid"
+                  (click)="increment()" 
+                  (click)="PostScore()" 
                   awNextStep
                 >
                   Next
@@ -754,10 +794,11 @@
                   </span>
                 </button>
               </div>
-            </form>
+           
             </aw-wizard-step>
            
           </aw-wizard>
+        </form>
         </div>
       </div>
     </div>

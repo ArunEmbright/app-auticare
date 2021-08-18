@@ -172,7 +172,7 @@
       <div class="dropdown d-inline-block" ngbDropdown>
         <button type="button" class="btn header-item" ngbDropdownToggle id="page-header-user-dropdown">
           <img class="rounded-circle header-profile-user" src="assets\images\profile-img.png" alt="Header Avatar">
-          <span class="d-none d-xl-inline-block ms-1">User</span>
+          <span class="d-none d-xl-inline-block ms-1" *ngFor="let user of users">{{user.patientName}}</span>
           <i class="mdi mdi-chevron-down d-none d-xl-inline-block"></i>
         </button>
         <div class="dropdown-menu dropdown-menu-end" ngbDropdownMenu>

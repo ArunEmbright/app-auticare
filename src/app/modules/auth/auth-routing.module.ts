@@ -4,7 +4,10 @@ import { LoginComponent } from 'src/app/modules/auth/login/login.component';
 import { SignupComponent } from 'src/app/modules/auth/signup/signup.component';
 import { TherapistLoginComponent } from './therapist-login/therapist-login.component';
 import { TokenVerifyComponent } from './token-verify/token-verify.component';
-
+import {ForgotPasswordComponent} from './forgot-password/forgot-password.component'
+import { ActiveComponent } from './active/active.component';
+import { VerifyOtpComponent } from './verify-otp/verify-otp.component';
+import { ChangePasswordComponent } from './change-password/change-password.component';
 
 
 const routes: Routes = [
@@ -28,7 +31,20 @@ const routes: Routes = [
 {
   path:'therapist-login',
   component:TherapistLoginComponent
-}
+},
+{
+  path:'update-password',
+  component:ChangePasswordComponent
+},
+{
+  path:'forgot-password',
+  component:ForgotPasswordComponent
+},
+{
+  path:'verify-otp',
+  component:VerifyOtpComponent
+},
+{ path: 'activate/:token', component:ActiveComponent },
   
 
 ];

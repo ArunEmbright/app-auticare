@@ -15,6 +15,7 @@ const lettersPattern = /^[a-zA-Z ]{0,30}$/;
 })
 export class SignupComponent implements OnInit {
 profiles:User|any;
+ users:User[];
   signupForm: FormGroup;
   signupForm1:FormGroup;
   signupForm2:FormGroup;
@@ -30,12 +31,19 @@ confirmPassword='';
   relationship: any = ['Father', 'Mother','Siblings']
   addVendorForm: any;
   
-  constructor(private formBuilder: FormBuilder, private router: Router, private authService: AuthService,private customValidator:CustomValidationService) { }
+  constructor(private accountService: AuthService,private formBuilder: FormBuilder, private router: Router, private authService: AuthService,private customValidator:CustomValidationService) { }
 
   ngOnInit():void {
+    this.accountService.getUser().subscribe((
+      users:User[]
+    )=>{
+      this.users=users;
+      console.log(users.length)
+    })
     this.signupForm = this.formBuilder.group({
 
       signupForm1:this.formBuilder.group({ 
+        userId: ['auticare'+Math.floor(Math.random()*10000)],
       firstName: [this.userItem.firstName, [Validators.required,Validators.pattern(lettersPattern)]],
       lastName: [this.userItem.lastName, [Validators.required,Validators.pattern(lettersPattern)]],
       relationType:[this.userItem.relationType,[Validators.required]],
@@ -94,7 +102,7 @@ confirmPassword='';
   successAlert() {
     Swal.fire({
       icon: 'success',
-      title: 'Your registeration has been successfull, Please check your email for verification',
+      title: 'Your registration has been successfully completed , Please check your email to activate your account',
       showConfirmButton: false,
       timer: 3000
     }).then((result) => {

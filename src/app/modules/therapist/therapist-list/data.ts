@@ -4,15 +4,15 @@ export const therapistList: TherapistModel[]=
 [
     {
         id:1,
-        category:'Therapist',
+        category:'Consultant Psychologist',
         location:"Bangalore, Chennai, Trivandrum, Kochi, Delhi",
         experience:2,
         name:'Danita',
-        image:['assets/images/Therapist/Screenshot_20210629-113806_Gallery.jpg']
+        image:['assets/images/Therapist/IMG_20210730_140741.jpg']
     },
     {
         id:2,
-        category:'Therapist',
+        category:'Consultant Psychologist',
         location:"Trivandrum, Kochi",
         experience:2,
         name:'Joanna ',
@@ -20,10 +20,10 @@ export const therapistList: TherapistModel[]=
     },
     {
         id:3,
-        category:'Therapist',
+        category:'Consultant Psychologist',
         location:"Trivandrum, Kochi",
         experience:2,
         name:'Ashitha ',
-        image:['assets/images/Therapist/IMG_20210730_140741.jpg']
+        image:['assets/images/Therapist/Screenshot_20210629-113806_Gallery.jpg']
     },
 ]

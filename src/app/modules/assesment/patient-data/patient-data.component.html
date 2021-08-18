@@ -30,6 +30,7 @@
                         </div>
                         <div class="p-2">
                             <form class="form-horizontal" [formGroup]="patientForm" (ngSubmit)="onSubmit()">
+                                
                                 <div class="mb-3">
                                     <label for="name">Name of the child</label>
 
@@ -44,7 +45,7 @@
 
                                 <div class="mb-3">
                                     <label for="dob">Date of Birth</label>
-                                    <input type="date" class="form-control" formControlName="dob"
+                                    <input type="date" class="form-control" formControlName="dob"   (change)="getAge($event.target.value)"
                                         [ngClass]="{ 'is-invalid': submitted && f.dob.errors }"
                                         placeholder="Enter your child Date of Birth" aria-label="dob"
                                         aria-describedby="dob-addon">
@@ -52,18 +53,35 @@
                                         <span *ngIf="f.dob.errors.required">Date of Birth is required</span>
                                     </div>
                                 </div>
-
+                                <div class="mb-3">
+                                    <fieldset disabled="disabled">
+                                    <label for="dob">Age</label>
+                                    <input
+                                    [disabled]="true"
+                                      type="text"
+                                      [(ngModel)]="age"
+                                      formControlName="age"
+                                      
+                                      [ngClass]="{ 'is-invalid': submitted && f.dob.errors }"
+                                      class="form-control"
+                                      placeholder="age"
+                                    />
+                                </fieldset>
+                                  </div>
 
 
                                 <div class="mt-3 d-grid">
-                                    <button class="btn btn-primary" type="submit">Start Now</button>
+                                    <button class="btn btn-primary"  type="submit">Start Now</button>
                                 </div>
 
                             </form>
                         </div>
 
 
-
+                        <div class="mt-5 text-center">
+                            <p>Already have an account ? <a routerLink="/auth/login" class="fw-medium text-primary"> Login Here</a>
+                            </p>
+                          </div>
                     </div>
 
 

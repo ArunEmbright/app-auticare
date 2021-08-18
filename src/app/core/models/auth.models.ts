@@ -5,6 +5,7 @@ export class User2{
 }
 export class User {
     //id: string;
+    userId:string
     firstName: string;
     lastName:string;
     relationType:string;
