@@ -30,6 +30,7 @@ export class ActiveComponent implements OnInit {
       },
       error => {
         console.log('Your link is expired')
+        this.inCorrectAuthorization()
         console.log(error)
       }
     )
@@ -44,5 +45,14 @@ export class ActiveComponent implements OnInit {
     }).then((result) => {
       this.route.navigate(['/auth/login']);
     });
+  }
+  inCorrectAuthorization(){
+    Swal.fire({
+      position:'top-end',
+      icon:'warning',
+      title:'Your link is expired',
+      showConfirmButton:false,
+      timer:1500
+    })
   }
 }

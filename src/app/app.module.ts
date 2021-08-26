@@ -16,16 +16,19 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { TranslateModule, TranslateLoader } from '@ngx-translate/core';
 import { TranslateHttpLoader } from '@ngx-translate/http-loader';
-
+import { AdminModule } from './modules/admin/admin-module';
 import { AssesmentModule } from './modules/assesment/assesment.module';
 import {AuthModule} from './modules/auth/auth.module';
 import { TherapistModule } from "./modules/therapist/therapist.module";
 import { LocationStrategy, HashLocationStrategy } from '@angular/common';
 import { HomeModule } from './modules/home/home.module';
+import { AdminLayoutsModule } from './adminLayout/layouts.module';
 import { AuthenticationService } from './core/services/auth.service';
 import { DoctorLayoutsModule } from './doctorLayout/layouts.module';
 import { BookAppointmentModule } from './modules/book-appointment/book-appointment.module';
 import { AdminDashboardComponent } from './modules/admin/admin-dashboard/admin-dashboard.component';
+
+
 
 
 export function createTranslateLoader(http: HttpClient): any {
@@ -36,6 +39,7 @@ export function createTranslateLoader(http: HttpClient): any {
   declarations: [
     AppComponent,
     AdminDashboardComponent,
+    
    
 
   ],
@@ -52,11 +56,13 @@ export function createTranslateLoader(http: HttpClient): any {
     }),
     LayoutsModule,
     DoctorLayoutsModule,
+    AdminLayoutsModule,
     BookAppointmentModule,
     AssesmentModule,
     TherapistModule,
     HomeModule,
     AppRoutingModule,
+    AdminModule,
     AuthModule,
     CarouselModule,
     NgbAccordionModule,

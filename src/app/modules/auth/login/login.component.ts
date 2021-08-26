@@ -7,6 +7,7 @@ import { first } from 'rxjs/operators';
 import { Role } from 'src/app/core/models/role';
 import { AuthenticationService } from 'src/app/core/services/auth.service';
 import { AuthService } from '../_services/auth.service';
+import Swal from 'sweetalert2';
 
 @Component({
   selector: 'app-login',
@@ -56,7 +57,25 @@ export class LoginComponent implements OnInit {
   // convenience getter for easy access to form fields
   get f() { return this.loginForm.controls; }
 
-
+  inCorrectAuthorization(){
+    Swal.fire({
+      position:'top-end',
+      icon:'warning',
+      title:'Invalid email or password',
+      showConfirmButton:false,
+      timer:1500
+    })
+  }
+  
+  isCorrectAuthorization(){
+    Swal.fire({
+      position:'top-end',
+      icon:'success',
+      title:'Welcome to AUTICARE',
+      showConfirmButton:false,
+      timer:1500
+    })
+  }
   
 
   /**
@@ -79,10 +98,11 @@ export class LoginComponent implements OnInit {
             }else{
               this.router.navigate(['/dashboard']);
             }
-              
+            this.isCorrectAuthorization();
             },
             error => {
               this.error = error ? error : '';
+              this.inCorrectAuthorization();
             });      
     }
   }

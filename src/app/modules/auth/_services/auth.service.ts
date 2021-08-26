@@ -130,6 +130,21 @@ getList() {
     });
   }
 
+bookAppointment(email,patientName:string,age:Number,userId:string){
+  this.data = {
+    email:email,
+    patientName:patientName,
+    age:age,
+    userId:userId
+  }
+  console.log("Dta",this.data)
+  return this.http.post(`${backURL}/auth/freeAppointment`, this.data, {
+    observe: "response",
+    
+  });
+}
+
+
   getUser() {
     return this.http.get(`${backURL}/auth/users`, {
       // headers: {

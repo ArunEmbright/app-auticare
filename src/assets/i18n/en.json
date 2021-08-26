@@ -99,6 +99,23 @@
         "PATIENT": "patient"
       }
     },
+    "ADMIN":{
+      "TEXT":"Dashboard",
+      "LIST": {
+        "CARECHILDEN": "Special Needs Children",
+        "THERAPIST": "Therapist",
+        "ASSESSMENTS": "Assessments",
+        "APPOINTMENTS": "Appointments"
+      }
+      
+      
+    },
+    "REPORT":{
+      "TEXT":"Report"
+    },
+    "BOOK":{
+      "TEXT":"Book Appointment"
+    },
     "LAYOUTS": {
       "TEXT": "Layouts",
       "LIST": {
