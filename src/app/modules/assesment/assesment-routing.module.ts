@@ -14,63 +14,24 @@ import { AssessmentPage3Component } from './assessment-page3/assessment-page3.co
 import { AssessmentPage4Component } from './assessment-page4/assessment-page4.component';
 import { AssessmentPage5Component } from './assessment-page5/assessment-page5.component';
 import { AssessmentPage6Component } from './assessment-page6/assessment-page6.component';
+import { AssessmentComponent } from './extrea/assessment/assessment.component';
+
 
 const routes: Routes = [
   
   {path:'', redirectTo:'child', pathMatch:'full'},
+ 
   {
     path: 'child',
     component: PatientDataComponent,
   },
-  {
-    path: 'question-1',
-    component: QuestionAssement1Component,
-  },
-  {
-    path: 'question-2',
-    component: QuestionAssement2Component,
-  },
-  {
-    path: 'question-3',
-    component: QuestionAssement3Component,
-  },
-  {
-    path: 'question-4',
-    component: QuestionAssement4Component,
-  },
-  {
-    path: 'question-5',
-    component: QuestionAssement5Component,
-  },
-  {
-    path: 'question-6',
-    component: QuestionAssement6Component,
-  },
-  {
-    path: 'assessment1',
-    component: AssessmentPageComponent,
-  },
-  {
-    path: 'assessment2',
-    component: AssessmentPage2Component,
-  },
-  {
-    path: 'assessment3',
-    component: AssessmentPage3Component,
-  },
-  {
-    path: 'assessment4',
-    component: AssessmentPage4Component,
-  },
-  {
-    path: 'assessment5',
-    component: AssessmentPage5Component,
-  }, {
-    path: 'assessment6',
-    component: AssessmentPage6Component,
-  }, {
+   {
     path: 'result',
     component: PatientresultComponent,
+  },
+  {
+    path:"assessment",
+    component:AssessmentComponent
   }
 
   

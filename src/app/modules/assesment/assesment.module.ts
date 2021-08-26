@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { PatientDataComponent } from './patient-data/patient-data.component';
-import { QuestionAssesmentComponent } from './question-assesment/question-assesment.component';
+
 import { AssesmentRoutingModule } from './assesment-routing.module';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { ArchwizardModule } from 'angular-archwizard';
@@ -17,13 +17,13 @@ import { AssessmentPage3Component } from './assessment-page3/assessment-page3.co
 import { AssessmentPage4Component } from './assessment-page4/assessment-page4.component';
 import { AssessmentPage5Component } from './assessment-page5/assessment-page5.component';
 import { AssessmentPage6Component } from './assessment-page6/assessment-page6.component';
-
 import { PatientresultComponent } from './patientresult/patientresult.component';
+import { AssessmentComponent } from './extrea/assessment/assessment.component';
 
 
 @NgModule({
   declarations: [
-    QuestionAssesmentComponent,
+ 
     PatientDataComponent,
     AssessmentPageComponent,
     QuestionAssement2Component,
@@ -39,6 +39,10 @@ import { PatientresultComponent } from './patientresult/patientresult.component'
     AssessmentPage6Component,
    
     PatientresultComponent,
+   
+    AssessmentComponent,
+   
+
    
     
   ],

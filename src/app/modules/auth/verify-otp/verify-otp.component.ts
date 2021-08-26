@@ -11,7 +11,7 @@ import { AuthService } from "../_services/auth.service";
 import { FormBuilder, FormGroup } from "@angular/forms";
 import { ActivatedRoute, Router } from "@angular/router";
 import { Observable } from "rxjs";
-
+import { OwlOptions } from 'ngx-owl-carousel-o';
 import Swal from "sweetalert2";
 
 @Component({
@@ -40,6 +40,18 @@ export class VerifyOtpComponent implements OnInit {
       this.email =this.authService.Mail;
       console.log(this.authService.Mail)
     })
+  }
+  carouselOption: OwlOptions = {
+    items: 1,
+    loop: false,
+    margin: 0,
+    nav: false,
+    dots: true,
+    responsive: {
+      680: {
+        items: 1
+      },
+    }
   }
   confirmed(){
     Swal.fire({

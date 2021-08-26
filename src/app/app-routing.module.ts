@@ -5,7 +5,7 @@ import { Role } from './core/models/role';
 import { AuthenticationService } from './core/services/auth.service';
 import { DoctorLayoutComponent } from './doctorLayout/layout.component';
 import { LayoutComponent } from './layouts/layout.component';
-
+import { AdminLayoutComponent } from './adminLayout/layout.component';
 const routes: Routes = [
    { 
      path: '', redirectTo: 'patient-data', pathMatch: 'full' 
@@ -50,10 +50,7 @@ const routes: Routes = [
         path:'booking',  
         loadChildren:()=>import('../app/modules/book-appointment/book-appointment.module').then(e=>e.BookAppointmentModule)
       },
-      {
-        path:'admin',  
-        loadChildren:()=>import('./modules/admin/admin-.module').then(e=>e.AdminModule)
-      },
+      
       // {
       //   path:'home',  
       //   loadChildren:()=>import('../app/modules/home/home-routing.module').then(e=>e.HomeModule)
@@ -62,13 +59,24 @@ const routes: Routes = [
    ]
   },
   {
+    path:'', 
+    component:AdminLayoutComponent, 
+    children:[
+      {
+        path:'admin',  
+        loadChildren:()=>import('./modules/admin/admin-module').then(e=>e.AdminModule)
+      },
+     
+  ]
+ },
+  {
     path:'',
     component:DoctorLayoutComponent,
     children:[
       {
         path:'doctor',
-        canLoad:[AuthGuard],
-        canActivate:[AuthGuard],
+        // canLoad:[AuthGuard],
+        // canActivate:[AuthGuard],
         data:{
           roles:[
             Role.THERAPIST
