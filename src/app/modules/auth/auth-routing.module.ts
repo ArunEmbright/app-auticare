@@ -29,7 +29,7 @@ const routes: Routes = [
     component: TokenVerifyComponent
 },
 {
-  path:'therapist-login',
+  path:'admin-login',
   component:TherapistLoginComponent
 },
 {

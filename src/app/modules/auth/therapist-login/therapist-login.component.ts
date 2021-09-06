@@ -33,8 +33,8 @@ export class TherapistLoginComponent implements OnInit {
 
   ngOnInit(): void {
     this.loginForm = this.formBuilder.group({
-      email: ['arun.fullstack.embrightinfotech@gmail.com', [Validators.required, Validators.email]],
-      password: ['watch@TV123', [Validators.required]],
+      email: ['admin@gmail.com', [Validators.required, Validators.email]],
+      password: ['78900011', [Validators.required]],
     });
   
     this.returnUrl = this.route.snapshot.queryParams['returnUrl'] || '/';
