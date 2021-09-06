@@ -41,23 +41,13 @@ export class VerifyOtpComponent implements OnInit {
       console.log(this.authService.Mail)
     })
   }
-  carouselOption: OwlOptions = {
-    items: 1,
-    loop: false,
-    margin: 0,
-    nav: false,
-    dots: true,
-    responsive: {
-      680: {
-        items: 1
-      },
-    }
-  }
+
+
   confirmed(){
     Swal.fire({
       position:'top-end',
       icon:'success',
-      title:'OTP Varified',
+      title:'OTP verified',
       showConfirmButton:false,
       timer:1500
     })
@@ -67,7 +57,7 @@ export class VerifyOtpComponent implements OnInit {
     Swal.fire({
       position:'top-end',
       icon:'warning',
-      title:'OTP is not varified',
+      title:'OTP is not verified',
       showConfirmButton:false,
       timer:1500
     })
@@ -84,6 +74,7 @@ export class VerifyOtpComponent implements OnInit {
   }
 
   VerifyOtp(){
+    console.log(this.otp)
     this.authService.OTPVarification(this.otp).subscribe(
       (res)=>{
         this.router.navigate(['auth/update-password'])

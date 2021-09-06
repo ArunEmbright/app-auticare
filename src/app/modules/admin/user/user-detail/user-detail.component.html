@@ -10,11 +10,11 @@
           </button>
 
         </div>
-<div class="float-right">
-  <button type="submit" class="btn btn-default">Add</button>
-</div>
+        
       </div>
-    </div>
+      <button class="btn btn-primary" [routerLink]="['/admin/add-user']" style="float: right;">Add
+    </button>
+      </div>
     <div class="card-body">
 
       <table class="table table-bordered ">
@@ -46,17 +46,17 @@
             <!--<td>
                   {{ list.firstName }}
                 </td>-->
-                <td>
-                  {{ user.firstName }} {{user.lastName}}
-                </td>
-                <td>
-                  {{ user.relationType }} 
-                </td>
+            <td>
+              {{ user.firstName }} {{user.lastName}}
+            </td>
+            <td>
+              {{ user.relationType }}
+            </td>
             <td>
               {{ user.mobileNumber }}
             </td>
-            
-           
+
+
             <td>
               {{ user.email}}
             </td>
@@ -66,10 +66,10 @@
                 </td>-->
 
             <td>
-              <a class="action-btn" >
+              <a class="action-btn">
                 <i class="material-icons">edit</i>
               </a>
-              
+
             </td>
           </tr>
 

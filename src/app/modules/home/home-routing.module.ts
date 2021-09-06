@@ -3,7 +3,7 @@ import { CommonModule } from '@angular/common';
 import { RouterModule, Routes } from '@angular/router';
 import { HomeComponent } from './home/home.component';
 import { AppointmentComponent } from './appointment/appointment.component';
-
+import { PricingComponent } from './pricing/pricing.component';
 const routes: Routes=[
   {
     path:'assessments',
@@ -12,6 +12,10 @@ const routes: Routes=[
   {
     path:'appointments',
     component:AppointmentComponent
+  },
+  {
+    path:'pricing',
+    component:PricingComponent
   }
 ]
 

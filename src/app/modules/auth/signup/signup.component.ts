@@ -4,6 +4,7 @@ import { Router } from '@angular/router';
 import { User } from '../../../core/models/auth.models';
 import { CustomValidationService } from '../_validators/custom-validation.service';
 import { AuthService } from '../_services/auth.service';
+import { AdminService } from '../../admin/admin.service';
 import Swal from 'sweetalert2';
 
 const lettersPattern = /^[a-zA-Z ]{0,30}$/;
@@ -31,15 +32,10 @@ confirmPassword='';
   relationship: any = ['Father', 'Mother','Siblings']
   addVendorForm: any;
   
-  constructor(private accountService: AuthService,private formBuilder: FormBuilder, private router: Router, private authService: AuthService,private customValidator:CustomValidationService) { }
+  constructor(private accountService: AdminService,private formBuilder: FormBuilder, private router: Router, private authService: AuthService,private customValidator:CustomValidationService) { }
 
   ngOnInit():void {
-    this.accountService.getUser().subscribe((
-      users:User[]
-    )=>{
-      this.users=users;
-      console.log(users.length)
-    })
+    
     this.signupForm = this.formBuilder.group({
 
       signupForm1:this.formBuilder.group({ 

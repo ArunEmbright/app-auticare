@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { AuthService } from '../../auth/_services/auth.service';
-
+import { AuthService } from '../../../auth/_services/auth.service';
+import { AdminService } from '../../admin.service';
 import { User } from 'src/app/core/models/auth.models';
 
 @Component({
@@ -14,7 +14,7 @@ export class UserDetailComponent implements OnInit {
   users:User[];
 
   statData;
-  constructor(private accountService: AuthService) { }
+  constructor(private accountService: AdminService) { }
 
   ngOnInit() {
     this.accountService.getUser().subscribe((

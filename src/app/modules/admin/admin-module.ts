@@ -2,15 +2,25 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
 import { AdminRoutingModule } from './admin-routing.module';
-import { UserDetailComponent } from './user-detail/user-detail.component';
+import { UserDetailComponent } from './user/user-detail/user-detail.component';
 import { UserScoreComponent } from './user-score/user-score.component';
-
-
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import {RlTagInputModule} from 'angular2-tag-input';
+import { TherapistFormComponent } from './therapist/therapist-form/therapist-form.component';
+import { TherapistDetailsComponent } from './therapist/therapist-details/therapist-details.component';
+import { AdminLoginComponent } from './admin-login/admin-login.component';
+import { FreeAppointmentComponent } from './free-appointment/free-appointment.component';
+import { AdminDashboardComponent } from './admin-dashboard/admin-dashboard.component';
+import { AddUserComponent } from './user/add-user/add-user.component';
 @NgModule({
-  declarations: [UserDetailComponent, UserScoreComponent],
+  declarations: [AdminDashboardComponent,UserDetailComponent, AddUserComponent, FreeAppointmentComponent,TherapistDetailsComponent, AdminLoginComponent,UserScoreComponent, TherapistFormComponent,],
   imports: [
     CommonModule,
-    AdminRoutingModule
+    AdminRoutingModule,
+    FormsModule,
+    ReactiveFormsModule,
+    RlTagInputModule 
+    
   ]
 })
 export class AdminModule { }

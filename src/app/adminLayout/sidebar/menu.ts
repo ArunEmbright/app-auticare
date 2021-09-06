@@ -17,7 +17,7 @@ export const MENU: MenuItem[] = [
             {
                 id: 3,
                 label: 'MENUITEMS.ADMIN.LIST.THERAPIST',
-                link: '/ADMIN',
+                link: '/admin/therapist-details',
                 parentId: 2 
             },
             
@@ -27,12 +27,22 @@ export const MENU: MenuItem[] = [
                 link: '/admin/score',
                 parentId: 2 
             },
+            
+        ]
+    },
+    {
+        id: 1,
+        label: 'MENUITEMS.APPOINTMENT.TEXT',
+        icon: 'bx-calendar',
+        link: '/ADMIN',
+        subItems: [
             {
                 id: 3,
                 label: 'MENUITEMS.ADMIN.LIST.APPOINTMENTS',
-                link: '/ADMIN',
+                link: '/admin/appointment',
                 parentId: 2 
             }
+         
         ]
     },
     {

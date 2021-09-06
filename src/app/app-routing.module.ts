@@ -63,7 +63,14 @@ const routes: Routes = [
     component:AdminLayoutComponent, 
     children:[
       {
-        path:'admin',  
+        path:'admin', 
+        // canLoad:[AuthGuard],
+        // canActivate:[AuthGuard], 
+        data:{
+          roles:[
+            Role.THERAPIST
+          ]
+        },
         loadChildren:()=>import('./modules/admin/admin-module').then(e=>e.AdminModule)
       },
      
@@ -75,8 +82,8 @@ const routes: Routes = [
     children:[
       {
         path:'doctor',
-        // canLoad:[AuthGuard],
-        // canActivate:[AuthGuard],
+        canLoad:[AuthGuard],
+        canActivate:[AuthGuard],
         data:{
           roles:[
             Role.THERAPIST
@@ -89,7 +96,7 @@ const routes: Routes = [
   
   {
    path: '**',
-   redirectTo: 'dashboard',
+   redirectTo: 'login',
    pathMatch: 'full'
  
  },

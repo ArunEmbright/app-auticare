@@ -1,63 +1,63 @@
 <div class="card">
-    <div class="wrapper">
-      <div class="card-header">
-        <div class="input-group input-group-sm" style="width: 150px;">
-          <input type="text" name="table_search" class="form-control float-right" placeholder="Search">
-  
-          <div class="input-group-append">
-            <button type="submit" class="btn btn-default">
-              <i class="fas fa-search"></i>
-            </button>
-  
-          </div>
-  <div class="float-right">
-    <button type="submit" class="btn btn-default">Add</button>
-  </div>
+  <div class="wrapper">
+    <div class="card-header">
+      <div class="input-group input-group-sm" style="width: 150px;">
+        <input type="text" name="table_search" class="form-control float-right" placeholder="Search">
+
+        <div class="input-group-append">
+          <button type="submit" class="btn btn-default">
+            <i class="fas fa-search"></i>
+          </button>
+
         </div>
-      </div>
-      <div class="card-body">
-  
-        <table class="table table-bordered ">
-          <thead>
-            <tr>
-              <th>User ID</th>
-              <th>Child Name</th>
-              <th>Age</th>
-              <th>ISAA Score</th>
-              <th>Degree Of Autism</th>
-              
-            </tr>
-          </thead>
-          <tbody>
-            <tr *ngFor="let score of scores">
-              <th>{{score.userId}}</th>
-              <td>
-                {{ score.patientName }}
-              </td>
-              <td>
-                {{ score.age }}
-              </td>
-              <td>
-                {{ score.sum }}
-              </td>
-              <td>
-                {{score.degreeOfAutism}}
-              </td>
-              <!--<td>
-                    {{ list.firstName }}
-                  </td>-->
-                 
-              <!--
-                  <td>
-                    {{ list.designation }}
-                  </td>-->
-  
-              
-            </tr>
-  
-          </tbody>
-        </table>
-  
+<div class="float-right">
+  <button type="submit" class="btn btn-default">Add</button>
+</div>
       </div>
     </div>
+    <div class="card-body">
+
+      <table class="table table-bordered ">
+        <thead>
+          <tr>
+            <th>User ID</th>
+            <th>Child Name</th>
+            <th>Age</th>
+            <th>ISAA Score</th>
+            <th>Degree Of Autism</th>
+            
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let score of scores">
+            <th>{{score.userId}}</th>
+            <td>
+              {{ score.patientName }}
+            </td>
+            <td>
+              {{ score.age }}
+            </td>
+            <td>
+              {{ score.sum }}
+            </td>
+            <td>
+              {{score.degreeOfAutism}}
+            </td>
+            <!--<td>
+                  {{ list.firstName }}
+                </td>-->
+               
+            <!--
+                <td>
+                  {{ list.designation }}
+                </td>-->
+
+            
+          </tr>
+
+        </tbody>
+      </table>
+
+    </div>
   </div>
+</div>

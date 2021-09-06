@@ -26,8 +26,6 @@ import { AdminLayoutsModule } from './adminLayout/layouts.module';
 import { AuthenticationService } from './core/services/auth.service';
 import { DoctorLayoutsModule } from './doctorLayout/layouts.module';
 import { BookAppointmentModule } from './modules/book-appointment/book-appointment.module';
-import { AdminDashboardComponent } from './modules/admin/admin-dashboard/admin-dashboard.component';
-
 
 
 
@@ -38,7 +36,12 @@ export function createTranslateLoader(http: HttpClient): any {
 @NgModule({
   declarations: [
     AppComponent,
-    AdminDashboardComponent,
+  
+   
+  
+    
+    
+    
     
    
 

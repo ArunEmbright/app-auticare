@@ -19,6 +19,8 @@ export class DashboardComponent implements OnInit {
   patientName:string;
   age:Number;
   relationType:string;
+  firstName:string;
+  lastName:string;
   mobileNumber:number;
   email:string;
   userId:string;
@@ -30,6 +32,8 @@ export class DashboardComponent implements OnInit {
     this.auth.getUsers().subscribe(res=>{
       this.patientName = res[0].patientName
       this.age = res[0].age
+      this.firstName = res[0].firstName
+      this.lastName = res[0].lastName
       this.relationType = res[0].relationType
       this.mobileNumber = res[0].mobileNumber
       this.email = res[0].email
@@ -60,8 +64,8 @@ export class DashboardComponent implements OnInit {
     this.modalService.open(this.content, { centered: true });
   } 
 
-  custom(email:string,patientName:string,age:Number,userId:string) {
-  this.auth.bookAppointment(email,patientName,age,userId).subscribe((res)=>{
+  custom(email:string,patientName:string,firstName:string,lastName:string,relationType:string,age:Number,userId:string) {
+  this.auth.bookAppointment(email,patientName,firstName,lastName,relationType,age,userId).subscribe((res)=>{
     Swal.fire({
       title: '<strong> Your Booking Confirmed! </strong>',
       icon: 'success',

@@ -1,9 +1,9 @@
-
 import { Component, OnInit } from '@angular/core';
-import { therapistList } from './data';
-import { TherapistModel } from './therapist-model';
-
+import { AdminService } from '../../admin/admin.service';
+import {Therapist} from '../../admin/therapist/therapist.model'
+import { AuthService } from '../../auth/_services/auth.service';
 import Swal from 'sweetalert2';
+
 
 @Component({
   selector: 'app-therapist-list',
@@ -14,29 +14,35 @@ export class TherapistListComponent implements OnInit {
 
   // bread crumb items
   breadCrumbItems: Array<{}>;
-  therapistList:TherapistModel[];
+  therapist: Therapist[];
   // doctors: any;
   // data: any;
   // dropDownItem: Array<String>;
   isLoading: boolean;
-  public therapist: TherapistModel[]=[];
+ 
 
-  constructor() {}
+  constructor(private auth:AdminService) {}
 
   ngOnInit() {
-    this.isLoading = true;
-    this.breadCrumbItems = [
-    ];
-
-    this.therapist = Object.assign([],therapistList );
-    this.therapistList = therapistList;
-  }
-
+    this.auth.getDoctor().subscribe((therapist:Therapist[]
+      )=>{
+        this.therapist =therapist
+        console.log(this.therapist)
+      })
   
+  
+   
+
+   
+    console.log(this.therapist)
+    
+  }
+ 
+
 
 searchFilter(e){
   const searchStr = e.target.value;
-  this.therapist = therapistList.filter(
+  this.therapist = this.therapist.filter(
   (doctor)=>{
     return doctor.location.toLowerCase().search(
       searchStr.toLowerCase())!==-1;
@@ -59,5 +65,4 @@ custom() {
   });
   
 }
-
 }

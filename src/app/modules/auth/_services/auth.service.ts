@@ -9,6 +9,11 @@ import { User } from "src/app/core/models/auth.models";
 import { catchError, map, tap } from "rxjs/operators";
 const backURL = `${environment.apiURL}`;
 
+
+function _window() : any {
+  return window;
+}
+
 @Injectable({
   providedIn: "root",
 })
@@ -18,6 +23,12 @@ export class AuthService {
   preValue : any ="0";
   private currentUserSubject: BehaviorSubject<User>;
   public currentUser: Observable<User>;
+
+
+  get nativeWindow():any{
+    return _window;
+  }
+
 
   constructor(
     private webService: WebRequestService,
@@ -81,29 +92,7 @@ export class AuthService {
     );
   }
   
-  // score(sum: any) {
-    
-  //   var first = parseInt(sum);
-  //   var second = parseInt(this.preValue);
-  //   this.preValue = Number(first + second);
-  //   //  console.log(first)
-  //   //  console.log(second)
-  //   console.log(this.preValue);
-  // }
 
-// scoreApi(){
-//   this.data = {
-//     sum: this.preValue,
-    
-//   };
-//   console.log("data",this.preValue)
-//   return this.http.post(`${backURL}/auth/score`, this.data, {
-//     headers: {
-//       "x-access-token": this.getAccessToken(),
-//     },
-//     responseType: 'text'});
-  
-// }
 getList() {
   return this.http.get(`${backURL}/auth/score`, {
     headers: {
@@ -130,35 +119,30 @@ getList() {
     });
   }
 
-bookAppointment(email,patientName:string,age:Number,userId:string){
+bookAppointment(email:string,patientName:string,firstName:string,lastName:string,relationType:string,age:Number,userId:string){
   this.data = {
     email:email,
     patientName:patientName,
+    firstName:firstName,
+    lastName:lastName,
+    relationType,
     age:age,
     userId:userId
   }
   console.log("Dta",this.data)
   return this.http.post(`${backURL}/auth/freeAppointment`, this.data, {
+    headers: {
+      "x-access-token": this.getAccessToken(),
+    },
     observe: "response",
     
   });
 }
 
 
-  getUser() {
-    return this.http.get(`${backURL}/auth/users`, {
-      // headers: {
-      //   'x-access-token': this.getAccessToken(),
-      // }
-    });
-  }
-  getScore() {
-    return this.http.get(`${backURL}/auth/result`, {
-      // headers: {
-      //   'x-access-token': this.getAccessToken(),
-      // }
-    });
-  }
+
+
+
 
   activate(token: any) {
     return this.http.put(`${backURL}/auth/activate/${token}`, {

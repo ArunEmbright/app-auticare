@@ -4,7 +4,7 @@ import { ActivatedRoute, Router } from "@angular/router";
 import { AuthService } from "../../../auth/_services/auth.service";
 import { AssessmentService } from "../../assessment.service";
 import { User } from 'src/app/core/models/auth.models';
-Survey.StylesManager.applyTheme("bootstrap");
+Survey.StylesManager.applyTheme("darkblue");
 Survey.JsonObject.metaData.addProperty("question", { name: "score:number" });
 
 var myCss = {
@@ -59,7 +59,7 @@ export class AssessmentComponent implements OnInit {
             ],
             name: "panel1",
 
-            title: "SOCIAL RELATIONSHIPAND RECIPROCITY",
+            title: "SOCIAL RELATIONSHIP AND RECIPROCITY",
           },
         ],
         name: "page0",
@@ -602,7 +602,7 @@ export class AssessmentComponent implements OnInit {
             ],
             name: "panel3",
 
-            title: "SOCIAL RELATIONSHIPAND RECIPROCITY",
+            title: "SOCIAL RELATIONSHIP AND RECIPROCITY",
           },
         ],
         name: "page3",
@@ -1217,7 +1217,7 @@ export class AssessmentComponent implements OnInit {
             ],
             name: "panel34",
 
-            title: "SOCIAL RELATIONSHIPAND RECIPROCITY",
+            title: "SOCIAL RELATIONSHIP AND RECIPROCITY",
           },
         ],
         name: "page5",
@@ -1457,7 +1457,7 @@ export class AssessmentComponent implements OnInit {
             ],
             name: "panel34",
 
-            title: "SOCIAL RELATIONSHIPAND RECIPROCITY",
+            title: "SOCIAL RELATIONSHIP AND RECIPROCITY",
           },
         ],
         name: "page6",

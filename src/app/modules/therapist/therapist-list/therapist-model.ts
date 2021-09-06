@@ -1,4 +1,3 @@
-
 export class TherapistModel{
     id:number;
     category:string;

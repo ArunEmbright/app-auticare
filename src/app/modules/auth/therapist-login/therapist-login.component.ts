@@ -33,8 +33,8 @@ export class TherapistLoginComponent implements OnInit {
 
   ngOnInit(): void {
     this.loginForm = this.formBuilder.group({
-      email: ['therapist@gmail.com', [Validators.required, Validators.email]],
-      password: ['123456', [Validators.required]],
+      email: ['arun.fullstack.embrightinfotech@gmail.com', [Validators.required, Validators.email]],
+      password: ['watch@TV123', [Validators.required]],
     });
   
     this.returnUrl = this.route.snapshot.queryParams['returnUrl'] || '/';
@@ -47,7 +47,7 @@ loginRole(role: Role,
   
  ){
   this.authenRole.login( role);
-    this.router.navigate(['/doctor']);
+    this.router.navigate(['/admin/dashboard']);
 }
 
 }
