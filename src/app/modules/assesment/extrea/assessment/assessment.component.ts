@@ -71,7 +71,7 @@ export class AssessmentComponent implements OnInit {
             type: "radiogroup",
 
             name: "myradiogroup1",
-            // isRequired: true,
+             isRequired: true,
             title: "Has poor eye contact",
             colCount: 1,
             choices: [
@@ -105,7 +105,7 @@ export class AssessmentComponent implements OnInit {
           {
             type: "radiogroup",
             name: "myradiogroup2",
-            // isRequired: true,
+             isRequired: true,
             title: "Lacks social smile",
             colCount: 1,
             choices: [
@@ -139,7 +139,7 @@ export class AssessmentComponent implements OnInit {
           {
             type: "radiogroup",
             name: "myradiogroup3",
-            // isRequired: true,
+             isRequired: true,
             title: "Remains aloof",
             colCount: 1,
             choices: [
@@ -173,7 +173,7 @@ export class AssessmentComponent implements OnInit {
           {
             type: "radiogroup",
             name: "myradiogroup4",
-            // isRequired: true,
+             isRequired: true,
             title: "Does not reach out to others",
             colCount: 1,
             choices: [
@@ -207,7 +207,7 @@ export class AssessmentComponent implements OnInit {
           {
             type: "radiogroup",
             name: "myradiogroup5",
-            // isRequired: true,
+             isRequired: true,
             title: "Unable to relate to people",
             colCount: 1,
             choices: [
@@ -241,7 +241,7 @@ export class AssessmentComponent implements OnInit {
           {
             type: "radiogroup",
             name: "myradiogroup6",
-            // isRequired: true,
+             isRequired: true,
             title: "Unable to respond to social/ environmental cues",
             colCount: 1,
             choices: [
@@ -275,7 +275,7 @@ export class AssessmentComponent implements OnInit {
           {
             type: "radiogroup",
             name: "myradiogroup7",
-            // isRequired: true,
+             isRequired: true,
             title: "Engages in solitary and repetitive play activities",
             colCount: 1,
             choices: [
@@ -309,7 +309,7 @@ export class AssessmentComponent implements OnInit {
           {
             type: "radiogroup",
             name: "myradiogroup8",
-            // isRequired: true,
+             isRequired: true,
             title: "Unable to take turns in social interaction",
             colCount: 1,
             choices: [
@@ -343,7 +343,7 @@ export class AssessmentComponent implements OnInit {
           {
             type: "radiogroup",
             name: "myradiogroup9",
-            // isRequired: true,
+             isRequired: true,
             title: "Does not maintain peer relationships",
             colCount: 1,
             choices: [
@@ -410,7 +410,7 @@ export class AssessmentComponent implements OnInit {
           {
             type: "radiogroup",
             name: "myradiogroup10",
-            // isRequired: true,
+             isRequired: true,
             title: "Shows inappropriate emotional response",
             colCount: 1,
             choices: [
@@ -444,7 +444,7 @@ export class AssessmentComponent implements OnInit {
           {
             type: "radiogroup",
             name: "myradiogroup11",
-            // isRequired: true,
+             isRequired: true,
             title: "Shows exaggerated emotions",
             colCount: 1,
             choices: [
@@ -478,7 +478,7 @@ export class AssessmentComponent implements OnInit {
           {
             type: "radiogroup",
             name: "myradiogroup12",
-            // isRequired: true,
+             isRequired: true,
             title: "Engages in self-stimulating emotions",
             colCount: 1,
             choices: [
@@ -512,7 +512,7 @@ export class AssessmentComponent implements OnInit {
           {
             type: "radiogroup",
             name: "myradiogroup13",
-            // isRequired: true,
+             isRequired: true,
             title: "Lacks fear of danger",
             colCount: 1,
             choices: [
@@ -546,7 +546,7 @@ export class AssessmentComponent implements OnInit {
           {
             type: "radiogroup",
             name: "myradiogroup14",
-            // isRequired: true,
+             isRequired: true,
             title: "Excited or agitated for no apparent reason",
             colCount: 1,
             choices: [
@@ -614,7 +614,7 @@ export class AssessmentComponent implements OnInit {
             type: "radiogroup",
 
             name: "myradiogroup15",
-            // isRequired: true,
+             isRequired: true,
             title: "Acquired speech and lost it",
             colCount: 1,
             choices: [
@@ -648,7 +648,7 @@ export class AssessmentComponent implements OnInit {
           {
             type: "radiogroup",
             name: "myradiogroup16",
-            // isRequired: true,
+             isRequired: true,
             title:
               "Has difficulty in using non-verbal language or gestures to communicate",
             colCount: 1,
@@ -684,7 +684,7 @@ export class AssessmentComponent implements OnInit {
             type: "radiogroup",
 
             name: "myradiogroup17",
-            // isRequired: true,
+             isRequired: true,
             title: "Engages in stereotyped and repetitive use of language",
             colCount: 1,
             choices: [
@@ -718,7 +718,7 @@ export class AssessmentComponent implements OnInit {
           {
             type: "radiogroup",
             name: "myradiogroup18",
-            // isRequired: true,
+             isRequired: true,
             title: "Engages in echolalic speech",
             colCount: 1,
             choices: [
@@ -752,7 +752,7 @@ export class AssessmentComponent implements OnInit {
           {
             type: "radiogroup",
             name: "myradiogroup19",
-            // isRequired: true,
+             isRequired: true,
             title: "Produces infantile squeals/ unusual noises",
             colCount: 1,
             choices: [
@@ -786,7 +786,7 @@ export class AssessmentComponent implements OnInit {
           {
             type: "radiogroup",
             name: "myradiogroup20",
-            // isRequired: true,
+             isRequired: true,
             title: "Unable to initiate or sustain conversation with others",
             colCount: 1,
             choices: [
@@ -820,7 +820,7 @@ export class AssessmentComponent implements OnInit {
           {
             type: "radiogroup",
             name: "myradiogroup21",
-            // isRequired: true,
+             isRequired: true,
             title: "Uses jargon or meaningless words",
             colCount: 1,
             choices: [
@@ -854,7 +854,7 @@ export class AssessmentComponent implements OnInit {
           {
             type: "radiogroup",
             name: "myradiogroup22",
-            // isRequired: true,
+             isRequired: true,
             title: "Uses pronoun reversals",
             colCount: 1,
             choices: [
@@ -888,7 +888,7 @@ export class AssessmentComponent implements OnInit {
           {
             type: "radiogroup",
             name: "myradiogroup23",
-            // isRequired: true,
+             isRequired: true,
             title: "Unable to grasp pragmatics of communication(real meaning)",
             colCount: 1,
             choices: [
@@ -956,7 +956,7 @@ export class AssessmentComponent implements OnInit {
             type: "radiogroup",
 
             name: "myradiogroup24",
-            // isRequired: true,
+             isRequired: true,
             title: "Engages in stereotyped and repetitive motor mannerisms",
             colCount: 1,
             choices: [
@@ -990,7 +990,7 @@ export class AssessmentComponent implements OnInit {
           {
             type: "radiogroup",
             name: "myradiogroup25",
-            // isRequired: true,
+             isRequired: true,
             title: "Shows attachment to inanimate objects",
             colCount: 1,
             choices: [
@@ -1025,7 +1025,7 @@ export class AssessmentComponent implements OnInit {
             type: "radiogroup",
 
             name: "myradiogroup26",
-            // isRequired: true,
+             isRequired: true,
             title: "Shows hyperactivity/ restlessness",
             colCount: 1,
             choices: [
@@ -1059,7 +1059,7 @@ export class AssessmentComponent implements OnInit {
           {
             type: "radiogroup",
             name: "myradiogroup27",
-            // isRequired: true,
+             isRequired: true,
             title: "Exhibits aggressive behavior",
             colCount: 1,
             choices: [
@@ -1093,7 +1093,7 @@ export class AssessmentComponent implements OnInit {
           {
             type: "radiogroup",
             name: "myradiogroup28",
-            // isRequired: true,
+             isRequired: true,
             title: "Throws temper tantrums",
             colCount: 1,
             choices: [
@@ -1127,7 +1127,7 @@ export class AssessmentComponent implements OnInit {
           {
             type: "radiogroup",
             name: "myradiogroup29",
-            // isRequired: true,
+             isRequired: true,
             title: "Engages in self-injurious behavior",
             colCount: 1,
             choices: [
@@ -1161,7 +1161,7 @@ export class AssessmentComponent implements OnInit {
           {
             type: "radiogroup",
             name: "myradiogroup30",
-            // isRequired: true,
+             isRequired: true,
             title: "Insists on sameness",
             colCount: 1,
             choices: [
@@ -1229,7 +1229,7 @@ export class AssessmentComponent implements OnInit {
             type: "radiogroup",
 
             name: "myradiogroup31",
-            // isRequired: true,
+             isRequired: true,
             title: "Unusually sensitive to sensory stimuli",
             colCount: 1,
             choices: [
@@ -1263,7 +1263,7 @@ export class AssessmentComponent implements OnInit {
           {
             type: "radiogroup",
             name: "myradiogroup32",
-            // isRequired: true,
+             isRequired: true,
             title: "Stares into space for long periods of time",
             colCount: 1,
             choices: [
@@ -1298,7 +1298,7 @@ export class AssessmentComponent implements OnInit {
             type: "radiogroup",
 
             name: "myradiogroup33",
-            // isRequired: true,
+             isRequired: true,
             title: "Has difficulty in tracking objects",
             colCount: 1,
             choices: [
@@ -1332,7 +1332,7 @@ export class AssessmentComponent implements OnInit {
           {
             type: "radiogroup",
             name: "myradiogroup34",
-            // isRequired: true,
+             isRequired: true,
             title: "Has unusual vision",
             colCount: 1,
             choices: [
@@ -1366,7 +1366,7 @@ export class AssessmentComponent implements OnInit {
           {
             type: "radiogroup",
             name: "myradiogroup35",
-            // isRequired: true,
+             isRequired: true,
             title: "Insensitive to pain",
             colCount: 1,
             choices: [
@@ -1400,7 +1400,7 @@ export class AssessmentComponent implements OnInit {
           {
             type: "radiogroup",
             name: "myradiogroup36",
-            // isRequired: true,
+             isRequired: true,
             title:
               "Responds to objects/people unusually by smelling, touching or tasting",
             colCount: 1,
@@ -1469,7 +1469,7 @@ export class AssessmentComponent implements OnInit {
             type: "radiogroup",
 
             name: "myradiogroup37",
-            // isRequired: true,
+             isRequired: true,
             title: "Inconsistent attention and concentration",
             colCount: 1,
             choices: [
@@ -1503,7 +1503,7 @@ export class AssessmentComponent implements OnInit {
           {
             type: "radiogroup",
             name: "myradiogroup38",
-            // isRequired: true,
+             isRequired: true,
             title: "Shows delay in responding ",
             colCount: 1,
             choices: [
@@ -1538,7 +1538,7 @@ export class AssessmentComponent implements OnInit {
             type: "radiogroup",
 
             name: "myradiogroup39",
-            // isRequired: true,
+             isRequired: true,
             title: "Has unusual memory of some kind",
             colCount: 1,
             choices: [
@@ -1572,7 +1572,7 @@ export class AssessmentComponent implements OnInit {
           {
             type: "radiogroup",
             name: "myradiogroup40",
-            // isRequired: true,
+            isRequired: true,
             title: "Has ‘savant’ ability",
             colCount: 1,
             choices: [
