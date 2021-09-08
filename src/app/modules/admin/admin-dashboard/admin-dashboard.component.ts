@@ -17,12 +17,14 @@ export class AdminDashboardComponent implements OnInit {
   length:number
   assesment:number;
   doctor:number;
+  FreeAppointment:number;
   constructor(private accountService: AdminService) { }
 
   ngOnInit(): void {
    this.userDetail()
   this.Assessment()
   this.therapists()
+  this.appointment()
   }
   private userDetail(){
     this.accountService.getUser().subscribe((
@@ -48,6 +50,14 @@ export class AdminDashboardComponent implements OnInit {
         this.doctor = this.therapist.length
         console.log(this.doctor)
       })
+  }
+  private appointment(){
+    this.accountService.getAppointment().subscribe((
+      users:User[]
+    )=>{
+      this.users=users;
+     this.FreeAppointment =this.users.length
+    })
   }
   
 }

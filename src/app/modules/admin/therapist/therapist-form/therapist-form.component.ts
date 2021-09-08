@@ -17,7 +17,7 @@ class ImageSnippet {
   styleUrls: ["./therapist-form.component.scss"],
 })
 export class TherapistFormComponent implements OnInit {
-  pageTitle = 'ADD Therapist';
+  pageTitle = 'Auticare';
   menuForm: FormGroup;
   selectedImage: ImageSnippet;
   imagePreview: string;

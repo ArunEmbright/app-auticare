@@ -7,7 +7,7 @@
                 <div class="title title2 title-inner">
                     <div class="main-title">
                         <!-- <button (click)="pay()" >pay</button> -->
-                        <h2 class="font-primary borders text-center main-text m-b-0 text-uppercase"><span>AutiCare Pricing</span></h2>
+                        <h2 class="font-primary borders text-center main-text m-b-0 text-uppercase"><span>Book for skill assessment</span></h2>
                     </div>
                 </div>
             </div>
@@ -28,7 +28,7 @@
                                 </div>
                                 <div class="price-features">
                                     <h5 class="price-feature text-center">{{slide.features1}}</h5>
-                                    <h5 class="price-feature text-center">{{slide.features2}}</h5>
+                                    <h5 class="invisible">{{slide.features2}}</h5>
                                     <h5 class="price-feature text-center" style="color: red;"><s>{{slide.features3}}</s></h5></div>
                                 <a  class="link"   (click)="goToDetail(slide.url)" class=" btn btn-primary btn-gradient text-white btn-app1-theme">{{slide.btn}}</a>
                                 <div class="set-abs bottom-0">
@@ -39,8 +39,11 @@
                         </div>
                       </ng-template>
                       </ng-container>
+                      
                     </owl-carousel-o> 
+                    
             </div>
+            
         </div>
     </div>
 </section>
@@ -51,4 +54,7 @@
 <!--pricing app2 start-->
 
 
+</div>
+<div style="padding-top: 129px;" class="text-center">
+    <h5>Unsure of what plan to choose? Do not hesitate to contact us at Written by <a href="mailto:auticare@embrightinfotech.com">Auticare</a>.<br> We are here to help.</h5>
 </div>

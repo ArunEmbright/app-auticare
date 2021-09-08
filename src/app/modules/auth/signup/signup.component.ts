@@ -109,7 +109,7 @@ confirmPassword='';
   errorAlert(message: string) {
     Swal.fire({
       icon: 'error',
-      title: message,
+      title: "your mail id already register!",
       showConfirmButton: false,
     })
   }

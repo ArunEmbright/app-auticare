@@ -44,8 +44,8 @@ pricing1 = [
     {  image: "assets/images/app_landing1/header-1-bg.png" ,
        
       price:"INR 999",
-      features1:"For 1 Consultation",
-     features3:"INR 999 ",
+      features1:"1 Skill Assessment",
+     features2:"INR 999 ",
     
       btn:"Book Now",
       img: "assets/images/app_landing1/pricing/11.png" ,
@@ -54,8 +54,8 @@ pricing1 = [
     {image: "assets/images/app_landing1/header-1-bg.png",
       
     price:"INR 2897",
-    features1:"For 2 Consultation",
-      features3:"INR 2897",
+    features1:"3 Skill Assessment",
+      features3:"INR 2997",
       btn:"Book Now",
       img: "assets/images/app_landing1/pricing/22.png" ,
       url:"2"
@@ -63,7 +63,7 @@ pricing1 = [
     {image: "assets/images/app_landing1/header-1-bg.png",
       
     price:"INR 4795",
-    features1:"For 3 Consultation",
+    features1:"5 Skill Assessment",
       features3:"INR 4995",
       btn:"Book Now",
       img: "assets/images/app_landing1/pricing/11.png" ,
@@ -75,11 +75,11 @@ pricing1 = [
     items: 3,
     margin: 30,
     nav: false,
-    autoplay: true,
-    slideSpeed: 300,
+    autoplay: false,
+    slideSpeed: 3000,
     paginationSpeed: 400,
-    loop: true,
-    dots: false,
+    loop: false,
+    dots: true,
     responsive: {
         0: {
             items: 1,

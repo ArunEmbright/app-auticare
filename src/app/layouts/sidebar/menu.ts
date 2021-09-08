@@ -12,13 +12,13 @@ export const MENU: MenuItem[] = [
         id:3,
         label:'MENUITEMS.ASSESSMENT.TEXT',
         icon:'bx-task',
-        link:'/home/assessments'
+        link:'/home/pricing'
     },
     {
         id:4,
         label:'MENUITEMS.APPOINTMENT.TEXT',
         icon:'bx-calendar',
-        link:'/home/appointments'
+        link:'/therapist/list'
     },
     {
         id: 2,
