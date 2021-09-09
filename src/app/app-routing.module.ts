@@ -64,8 +64,8 @@ const routes: Routes = [
     children:[
       {
         path:'admin', 
-        canLoad:[AuthGuard],
-        canActivate:[AuthGuard], 
+        // canLoad:[AuthGuard],
+        // canActivate:[AuthGuard], 
         data:{
           roles:[
             Role.THERAPIST

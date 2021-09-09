@@ -30,13 +30,20 @@ export class AdminService {
       
     });
   }
+  getBooking() {
+    return this.http.get(`${backURL}/admin/sessionBooking`, {
+      
+    });
+  }
+
+
   getDoctor() {
     return this.http.get(`${backURL}/therapist/therapist`, {
       
     });
   }
   getAppointment() {
-    return this.http.get(`${backURL}/admin/appointment`, {
+    return this.http.get(`${backURL}/admin/sessionBooking`, {
       // headers: {
       //   'x-access-token': this.getAccessToken(),
       // }
@@ -60,4 +67,9 @@ export class AdminService {
      
     );
   }
+
+deleteUser(_id:string){
+  return this.http.delete(`${backURL}/admin/user`+`/${_id}`)
+}
+
 }

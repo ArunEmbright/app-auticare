@@ -83,6 +83,10 @@
     "ASSESSMENT":{
       "TEXT":"Skill Assessment"
     },
+    "FREEASSESSMENT":{
+      "TEXT":"free assessment"
+    },
+    
     "APPOINTMENT":{
       "TEXT":"Session Booking"
 
@@ -94,6 +98,7 @@
       "TEXT":"Dashboard",
       "LIST": {
         "CALENDAR": "Calendar",
+        
         "APPOINTMENT": "Appointment",
         "PROFILE": "profile",
         "PATIENT": "patient"
@@ -104,6 +109,8 @@
       "LIST": {
         "CARECHILDEN": "Special Needs Children",
         "THERAPIST": "Therapist",
+        "FREEASSESSMENT":"free assessment",
+        "THERAPYSESSION":"session booking",
         "ASSESSMENTS": "Assessments",
         "APPOINTMENTS": "Appointments"
       }

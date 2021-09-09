@@ -3,10 +3,12 @@ import { RouterModule, Routes } from '@angular/router';
 import { AdminDashboardComponent } from './admin-dashboard/admin-dashboard.component';
 import { UserDetailComponent } from './user/user-detail/user-detail.component';
 import {UserScoreComponent} from './user-score/user-score.component'
-import { FreeAppointmentComponent } from './free-appointment/free-appointment.component';
+import { FreeAppointmentComponent } from './appointment/free-appointment/free-appointment.component';
 import { TherapistDetailsComponent } from './therapist/therapist-details/therapist-details.component'
 import { TherapistFormComponent } from './therapist/therapist-form/therapist-form.component';
 import { AddUserComponent } from './user/add-user/add-user.component';
+import { TherapySessionComponent } from './appointment/therapy-session/therapy-session.component';
+
 const routes: Routes = [
   
   {path:'', redirectTo:'child', pathMatch:'full'},
@@ -37,7 +39,10 @@ const routes: Routes = [
   {
     path: 'add-user',
     component: AddUserComponent,
-  },
+  },{
+    path: 'therapy-session',
+    component: TherapySessionComponent,
+  }
   
 
   

@@ -9,11 +9,13 @@ import {RlTagInputModule} from 'angular2-tag-input';
 import { TherapistFormComponent } from './therapist/therapist-form/therapist-form.component';
 import { TherapistDetailsComponent } from './therapist/therapist-details/therapist-details.component';
 import { AdminLoginComponent } from './admin-login/admin-login.component';
-import { FreeAppointmentComponent } from './free-appointment/free-appointment.component';
+import { FreeAppointmentComponent } from './appointment/free-appointment/free-appointment.component';
 import { AdminDashboardComponent } from './admin-dashboard/admin-dashboard.component';
 import { AddUserComponent } from './user/add-user/add-user.component';
+import { TherapySessionComponent } from './appointment/therapy-session/therapy-session.component';
+
 @NgModule({
-  declarations: [AdminDashboardComponent,UserDetailComponent, AddUserComponent, FreeAppointmentComponent,TherapistDetailsComponent, AdminLoginComponent,UserScoreComponent, TherapistFormComponent,],
+  declarations: [AdminDashboardComponent,TherapySessionComponent,UserDetailComponent, AddUserComponent, FreeAppointmentComponent,TherapistDetailsComponent, AdminLoginComponent,UserScoreComponent, TherapistFormComponent,],
   imports: [
     CommonModule,
     AdminRoutingModule,

@@ -70,4 +70,8 @@ export class SelectTherapistComponent implements OnInit {
     }
     this.doctors = filteredContent;
   }
+  // bookNow(name:string){
+  //   console.log(name)
+
+  // }
 }

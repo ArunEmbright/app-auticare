@@ -82,6 +82,20 @@ export class AuthService {
 
     return false;
   }
+
+checkScore(userId:string){
+  this.data ={
+    userId : userId
+  }
+  return this.http.post<any>(`${backURL}/auth/checkReport`, this.data).pipe(
+    map((res) => {
+      console.log(res)
+      // login successful if there's a jwt token in the response
+      return res;
+    })
+  );
+}
+
  
   register(params: any) {
     return this.http.post<any>(`${backURL}/auth/register`, params).pipe(
@@ -131,6 +145,26 @@ bookAppointment(email:string,patientName:string,firstName:string,lastName:string
   }
   console.log("Dta",this.data)
   return this.http.post(`${backURL}/auth/freeAppointment`, this.data, {
+    headers: {
+      "x-access-token": this.getAccessToken(),
+    },
+    observe: "response",
+    
+  });
+}
+sessionBooking(therapistName:string,email:string,patientName:string,firstName:string,lastName:string,age:Number,userId:string,mobileNumber:string){
+  this.data = {
+    therapistName:therapistName,
+    email:email,
+    patientName:patientName,
+    firstName:firstName,
+    lastName:lastName,
+    mobileNumber:mobileNumber,
+    age:age,
+    userId:userId
+  }
+  console.log("session booking",this.data)
+  return this.http.post(`${backURL}/auth/sessionBooking`, this.data, {
     headers: {
       "x-access-token": this.getAccessToken(),
     },

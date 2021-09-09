@@ -99,7 +99,7 @@ export class TopbarComponent implements OnInit {
   //   this.router.navigate(['/account/login']);
   //}
   logout() {
-    this.router.navigate(['/auth/login'])
+    this.router.navigate(['/auth/admin-login'])
   }
   /**
    * Fullscreen method

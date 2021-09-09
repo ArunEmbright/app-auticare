@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { AuthService } from '../../auth/_services/auth.service';
-import { AdminService } from '../admin.service';
+import { AuthService } from '../../../auth/_services/auth.service';
+import { AdminService } from '../../admin.service';
 import { User } from 'src/app/core/models/auth.models';
 @Component({
   selector: 'app-free-appointment',

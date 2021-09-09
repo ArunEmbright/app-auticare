@@ -1601,7 +1601,7 @@ export class AssessmentComponent implements OnInit {
         ],
       },
     ],
-    completedHtml: "<h4>Your Certificate begin processing.....please wait</h4>",
+    completedHtml: "<h4>Your Assessment report begin processing.....please wait</h4>",
   };
   surveyResultDisplay: boolean = false;
   constructor(

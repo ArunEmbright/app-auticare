@@ -4,6 +4,7 @@ export class User2{
     role:Role
 }
 export class User {
+    
     //id: string;
     userId:string
     firstName: string;
@@ -16,6 +17,7 @@ export class User {
     // firstName?: string;
     // lastName?: string;
     token?: string;
+  private _id: any;
     
     
 }
