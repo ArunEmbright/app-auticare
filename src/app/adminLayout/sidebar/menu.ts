@@ -22,6 +22,20 @@ export const MENU: MenuItem[] = [
     link: "/admin/score",
     icon: "bxs-report",
     parentId: 2,
+    subItems: [
+      {
+        id: 3,
+        label: "MENUITEMS.ADMIN.ASSESSMENTS.FREEASSESSMENT",
+        link: "/admin/score",
+        parentId: 2,
+      },
+      {
+        id: 3,
+        label: "MENUITEMS.ADMIN.ASSESSMENTS.THERAPYSESSION",
+        link: "/admin/therapy-session",
+        parentId: 2, 
+      },
+    ],
   },
 
   {
@@ -32,14 +46,20 @@ export const MENU: MenuItem[] = [
     subItems: [
       {
         id: 3,
-        label: "MENUITEMS.ADMIN.LIST.FREEASSESSMENT",
+        label: "MENUITEMS.ADMIN.APPOINTMENETS.FREEASSESSMENT",
         link: "/admin/appointment",
         parentId: 2,
       },
       {
         id: 3,
-        label: "MENUITEMS.ADMIN.LIST.THERAPYSESSION",
+        label: "MENUITEMS.ADMIN.APPOINTMENETS.THERAPYSESSION",
         link: "/admin/therapy-session",
+        parentId: 2,
+      },
+      {
+        id: 3,
+        label: "MENUITEMS.ADMIN.APPOINTMENETS.THERAPYBOOKING",
+        link: "/admin/therapy-booking",
         parentId: 2,
       },
     ],
@@ -49,6 +69,20 @@ export const MENU: MenuItem[] = [
     label: "MENUITEMS.BOOK.TEXT",
     icon: "bx-book",
     link: "/home/assessments",
+    subItems: [
+      {
+        id: 3,
+        label: "MENUITEMS.ADMIN.BOOKAPPOINTMENET.THERAPYBOOKING",
+        link: "/admin/therapy-booking",
+        parentId: 2,
+      },
+      {
+        id: 3,
+        label: "MENUITEMS.ADMIN.BOOKAPPOINTMENET.THERAPYSESSION",
+        link: "/admin/therapy-session",
+        parentId: 2,
+      },
+    ]
   },
   {
     id: 1,

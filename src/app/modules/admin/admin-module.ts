@@ -8,19 +8,21 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import {RlTagInputModule} from 'angular2-tag-input';
 import { TherapistFormComponent } from './therapist/therapist-form/therapist-form.component';
 import { TherapistDetailsComponent } from './therapist/therapist-details/therapist-details.component';
-import { AdminLoginComponent } from './admin-login/admin-login.component';
+
 import { FreeAppointmentComponent } from './appointment/free-appointment/free-appointment.component';
 import { AdminDashboardComponent } from './admin-dashboard/admin-dashboard.component';
 import { AddUserComponent } from './user/add-user/add-user.component';
 import { TherapySessionComponent } from './appointment/therapy-session/therapy-session.component';
-
+import { EditUserComponent } from './user/edit-user/edit-user.component';
+import { TherapyBookingComponent } from './appointment/therapy-booking/therapy-booking.component';
+import { SessionBookingComponent } from './booking/session-booking/session-booking.component';
 @NgModule({
-  declarations: [AdminDashboardComponent,TherapySessionComponent,UserDetailComponent, AddUserComponent, FreeAppointmentComponent,TherapistDetailsComponent, AdminLoginComponent,UserScoreComponent, TherapistFormComponent,],
+  declarations: [AdminDashboardComponent,TherapySessionComponent,UserDetailComponent, AddUserComponent, FreeAppointmentComponent,TherapyBookingComponent,TherapistDetailsComponent,UserScoreComponent, TherapistFormComponent,SessionBookingComponent,EditUserComponent],
   imports: [
     CommonModule,
     AdminRoutingModule,
     FormsModule,
-    ReactiveFormsModule,
+    ReactiveFormsModule,  
     RlTagInputModule 
     
   ]

@@ -8,13 +8,20 @@ import { TherapistDetailsComponent } from './therapist/therapist-details/therapi
 import { TherapistFormComponent } from './therapist/therapist-form/therapist-form.component';
 import { AddUserComponent } from './user/add-user/add-user.component';
 import { TherapySessionComponent } from './appointment/therapy-session/therapy-session.component';
-
+import { EditUserComponent } from './user/edit-user/edit-user.component';
+import { TherapyBookingComponent } from './appointment/therapy-booking/therapy-booking.component';
+import { SessionBookingComponent } from './booking/session-booking/session-booking.component';
 const routes: Routes = [
   
-  {path:'', redirectTo:'child', pathMatch:'full'},
+  {path:'', redirectTo:'dashboard', pathMatch:'full'},
+
   {
     path: 'dashboard',
     component: AdminDashboardComponent,
+  },
+  {
+    path: 'therapy-booking',
+    component: TherapyBookingComponent,
   },
   {
     path: 'users',
@@ -42,6 +49,13 @@ const routes: Routes = [
   },{
     path: 'therapy-session',
     component: TherapySessionComponent,
+  },{
+    path: 'edit-user/:userId',
+    component: EditUserComponent,
+  },
+  {
+    path: 'book-session',
+    component: SessionBookingComponent,
   }
   
 

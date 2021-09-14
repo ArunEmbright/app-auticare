@@ -1,18 +1,18 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
-import { first } from 'rxjs/operators';
 import { OwlOptions } from 'ngx-owl-carousel-o';
+import { first } from 'rxjs/operators';
 import { Role } from 'src/app/core/models/role';
 import { AuthenticationService } from 'src/app/core/services/auth.service';
-import { AuthService } from '../_services/auth.service';
+import { AuthService } from '../../auth/_services/auth.service';
 import Swal from 'sweetalert2';
 @Component({
-  selector: 'app-therapist-login',
-  templateUrl: './therapist-login.component.html',
-  styleUrls: ['./therapist-login.component.scss']
+  selector: 'app-admin-login',
+  templateUrl: './admin-login.component.html',
+  styleUrls: ['./admin-login.component.scss']
 })
-export class TherapistLoginComponent implements OnInit {
+export class AdminLoginComponent implements OnInit {
 
   Role=Role;
   loginForm: FormGroup;

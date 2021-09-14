@@ -21,6 +21,100 @@
               Add New child
             </h3>
             <div class="row">
+                <div class="col-md-6">
+                    <label for="LastName" style="font-weight: bold;"
+                      >User ID :
+                    </label>
+                    <input
+                      type="text"
+                      name=""
+                      id=""
+                      class="form-control"
+                      formControlName="userId"
+                      placeholder="userId"
+                      required
+                      [ngClass]="{
+                        'has-danger':
+                          addForm.controls.userId.invalid &&
+                          (addForm.controls.userId.dirty ||
+                            addForm.controls.userId.touched),
+                        'has-success':
+                          addForm.controls.userId.valid &&
+                          (addForm.controls.userId.dirty ||
+                            addForm.controls.userId.touched)
+                      }"
+                    />
+                
+                    <div
+                      class="form-control-feedback"
+                      *ngIf="
+                        addForm.get('userId').errors &&
+                        (addForm.get('userId').dirty ||
+                          addForm.get('userId').touched)
+                      "
+                    >
+                      <p
+                        style="color: red;"
+                        *ngIf="addForm.get('userId').errors.required"
+                      >
+                        First Name is required
+                      </p>
+                      <p
+                        style="color: red;"
+                        *ngIf="addForm.get('userId').errors.pattern"
+                      >
+                        Only albhabets allowed.
+                      </p>
+                    </div>
+                  </div>
+                <div class="col-md-6">
+                    <label for="LastName" style="font-weight: bold;"
+                      >Therapist Name :
+                    </label>
+                    <input
+                      type="text"
+                      name=""
+                      id=""
+                      class="form-control"
+                      formControlName="FirstName"
+                      placeholder="FirstName"
+                      required
+                      [ngClass]="{
+                        'has-danger':
+                          addForm.controls.therapistName.invalid &&
+                          (addForm.controls.therapistName.dirty ||
+                            addForm.controls.therapistName.touched),
+                        'has-success':
+                          addForm.controls.therapistName.valid &&
+                          (addForm.controls.therapistName.dirty ||
+                            addForm.controls.therapistName.touched)
+                      }"
+                    />
+    
+                    <div
+                      class="form-control-feedback"
+                      *ngIf="
+                        addForm.get('therapistName').errors &&
+                        (addForm.get('therapistName').dirty ||
+                          addForm.get('therapistName').touched)
+                      "
+                    >
+                      <p
+                        style="color: red;"
+                        *ngIf="addForm.get('therapistName').errors.required"
+                      >
+                        First Name is required
+                      </p>
+                      <p
+                        style="color: red;"
+                        *ngIf="addForm.get('therapistName').errors.pattern"
+                      >
+                        Only albhabets allowed.
+                      </p>
+                    </div>
+                  </div>
+            </div>
+            <div class="row">
               <div class="col-md-6">
                 <label for="LastName" style="font-weight: bold;"
                   >First Name :

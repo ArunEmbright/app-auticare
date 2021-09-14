@@ -12,7 +12,7 @@ export class TherapySessionComponent implements OnInit {
   constructor(private auth:AdminService) { }
 
   ngOnInit(): void {
-    this.auth.getAppointment().subscribe((
+    this.auth.getBooking().subscribe((
       users:User[]
     )=>{
       this.users=users;

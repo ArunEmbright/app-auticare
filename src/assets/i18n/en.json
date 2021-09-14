@@ -109,10 +109,25 @@
       "LIST": {
         "CARECHILDEN": "Special Needs Children",
         "THERAPIST": "Therapist",
-        "FREEASSESSMENT":"free assessment",
-        "THERAPYSESSION":"session booking",
+       
         "ASSESSMENTS": "Assessments",
         "APPOINTMENTS": "Appointments"
+        
+      },
+      "APPOINTMENETS":{
+        "FREEASSESSMENT":"free appointment",
+        "THERAPYSESSION":"session booking",
+        "THERAPYBOOKING":"therapy booking"
+      },
+      "ASSESSMENTS":{
+        "FREEASSESSMENT":"free assessment",
+        "THERAPYSESSION":"session booking"
+      
+      },
+      "BOOKAPPOINTMENET":{
+        "THERAPYSESSION":"session booking",
+        "THERAPYBOOKING":"therapy booking"
+      
       }
       
       

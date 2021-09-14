@@ -1,0 +1,43 @@
+<form [formGroup]="editForm">
+    <input
+    
+    type="text"
+    formControlName="firstName"
+    *ngIf="userItem?.firstName!==undefined"
+    name="firstName"
+    class="form-control"
+    formControlName="firstName"
+    [value]="userItem?.firstName"
+    [(ngModel)]="userItem.firstName"
+    />
+    <input
+    *ngIf="userItem?.lastName!==undefined"
+    type="text"
+    formControlName="lastName"
+    name="lastName"
+    class="form-control"
+    [value]="userItem?.lastName"
+    [(ngModel)]="userItem.lastName"
+    />
+    <input
+    *ngIf="userItem?.mobileNumber!==undefined"
+    type="text"
+    formControlName="mobileNumber"
+    name="mobileNumber"
+    class="form-control"
+    [value]="userItem?.mobileNumber"
+    [(ngModel)]="userItem.mobileNumber"
+    />
+    <input
+    *ngIf="userItem?.patientName!==undefined"
+    type="text"
+    formControlName="patientName"
+    name="patientName"
+    class="form-control"
+    [value]="userItem?.patientName"
+    [(ngModel)]="userItem.patientName"
+    
+    />
+    <button (click)="onSubmit()" class="btn btn-primary">submit</button>
+
+</form>

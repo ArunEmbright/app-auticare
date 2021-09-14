@@ -19,9 +19,9 @@ import { ActiveComponent } from './active/active.component';
 import { ForgotPasswordComponent } from './forgot-password/forgot-password.component';
 import { VerifyOtpComponent } from './verify-otp/verify-otp.component';
 import { ChangePasswordComponent } from './change-password/change-password.component';
-
+import { AdminLoginComponent } from './admin-login/admin-login.component';
 @NgModule({
-  declarations: [ SignupComponent, LoginComponent, TokenVerifyComponent, TherapistLoginComponent, ActiveComponent, ForgotPasswordComponent, VerifyOtpComponent, ChangePasswordComponent],
+  declarations: [ SignupComponent,AdminLoginComponent, LoginComponent, TokenVerifyComponent, TherapistLoginComponent, ActiveComponent, ForgotPasswordComponent, VerifyOtpComponent, ChangePasswordComponent],
   imports: [
     CommonModule,
     ReactiveFormsModule,
@@ -29,8 +29,8 @@ import { ChangePasswordComponent } from './change-password/change-password.compo
     NgbAlertModule,
     ArchwizardModule,
     UIModule,
-    AuthRoutingModule,
-    CarouselModule,
+    AuthRoutingModule, 
+    CarouselModule, 
     NgOtpInputModule
   ]
 })

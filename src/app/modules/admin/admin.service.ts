@@ -18,6 +18,9 @@ export class AdminService {
     private http: HttpClient,
     private router: Router) { }
 
+
+
+//**********User Action ********//
   getUser() {
     return this.http.get(`${backURL}/admin/users`, {
       // headers: {
@@ -25,25 +28,8 @@ export class AdminService {
       // }
     });
   }
-  getScore() {
-    return this.http.get(`${backURL}/admin/result`, {
-      
-    });
-  }
-  getBooking() {
-    return this.http.get(`${backURL}/admin/sessionBooking`, {
-      
-    });
-  }
-
-
-  getDoctor() {
-    return this.http.get(`${backURL}/therapist/therapist`, {
-      
-    });
-  }
-  getAppointment() {
-    return this.http.get(`${backURL}/admin/sessionBooking`, {
+  getSingleUser(_id:string) {
+    return this.http.get(`${backURL}/admin/users/${_id}`, {
       // headers: {
       //   'x-access-token': this.getAccessToken(),
       // }
@@ -57,6 +43,51 @@ export class AdminService {
       })
     );
   }
+  sessionBooking(params: any) {
+    return this.http.post<any>(`${backURL}/auth/sessionBooking`, params).pipe(
+      map((res) => {
+        // login successful if there's a jwt token in the response
+        return res;
+      })
+    );
+  }
+  deleteUser(_id:string){
+    return this.http.delete(`${backURL}/admin/users`+`/${_id}`)
+  }
+updateUser(_id:string,params:any){
+  console.log(params)
+  return this.http.patch(`${backURL}/admin/users/${_id}`,params).pipe(
+    map((res) => {
+      // login successful if there's a jwt token in the response
+      return res;
+    })
+  );
+  
+}
+
+//**********Score Action ********//
+  
+  getScore() {
+    return this.http.get(`${backURL}/admin/result`, {
+      
+    });
+  }
+
+//**********Session Booking Action ********//
+
+  getBooking() {
+    return this.http.get(`${backURL}/admin/sessionBooking`, {
+      
+    });
+  }
+
+//**********Therapist Action ********//
+  getDoctor() {
+    return this.http.get(`${backURL}/therapist/therapist`, {
+      
+    });
+  }
+
   uploadTherapist(formData){
     this.http.post(`${backURL}/therapist/therapist`, formData)
     .subscribe((res) => {
@@ -68,8 +99,18 @@ export class AdminService {
     );
   }
 
-deleteUser(_id:string){
-  return this.http.delete(`${backURL}/admin/user`+`/${_id}`)
-}
+  
+//********** Action ********//
+  getAppointment() {
+    return this.http.get(`${backURL}/admin/appointment`, {
+      // headers: {
+      //   'x-access-token': this.getAccessToken(),
+      // }
+    });
+  }
+  
+
+
+
 
 }

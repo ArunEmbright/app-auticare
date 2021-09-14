@@ -92,12 +92,9 @@ export class LoginComponent implements OnInit {
           .pipe(first())
           .subscribe((res: any) => {
             
-            if(this.f.email.value==="auticare@embrightinfotech.com"){
-              
-              this.router.navigate(['admin/dashboard'])
-            }else{
+            
               this.router.navigate(['/dashboard']);
-            }
+            
             this.isCorrectAuthorization();
             },
             error => {

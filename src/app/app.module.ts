@@ -29,6 +29,7 @@ import { BookAppointmentModule } from './modules/book-appointment/book-appointme
 
 
 
+
 export function createTranslateLoader(http: HttpClient): any {
   return new TranslateHttpLoader(http, 'assets/i18n/', '.json');
 }
@@ -36,6 +37,8 @@ export function createTranslateLoader(http: HttpClient): any {
 @NgModule({
   declarations: [
     AppComponent,
+   
+   
    
   
    

@@ -243,5 +243,11 @@ sessionBooking(therapistName:string,email:string,patientName:string,firstName:st
     localStorage.removeItem("user-id");
     localStorage.removeItem("x-access-token");
     localStorage.removeItem("x-refresh-token");
+    localStorage.clear();
+  }
+
+  isAuthorized(): boolean {
+    return localStorage.getItem("x-access-token") != null;
+  
   }
 }

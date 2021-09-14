@@ -6,6 +6,7 @@ import { AuthenticationService } from './core/services/auth.service';
 import { DoctorLayoutComponent } from './doctorLayout/layout.component';
 import { LayoutComponent } from './layouts/layout.component';
 import { AdminLayoutComponent } from './adminLayout/layout.component';
+
 const routes: Routes = [
    { 
      path: '', redirectTo: 'patient-data', pathMatch: 'full' 
@@ -25,6 +26,8 @@ const routes: Routes = [
      children:[
       { 
         path: 'dashboard',
+        canLoad:[AuthGuard],
+        canActivate:[AuthGuard], 
          loadChildren: () => import('./modules/dashboard/dashboard.module').then(m => m.DashboardModule)
       },
 
@@ -39,7 +42,9 @@ const routes: Routes = [
       },
 
       {
-        path:'home',  
+        path:'home', 
+        canLoad:[AuthGuard],
+        canActivate:[AuthGuard],  
         loadChildren:()=>import('../app/modules/home/home.module').then(e=>e.HomeModule)
       },
       {
@@ -64,8 +69,8 @@ const routes: Routes = [
     children:[
       {
         path:'admin', 
-        // canLoad:[AuthGuard],
-        // canActivate:[AuthGuard], 
+        canLoad:[AuthGuard],
+         canActivate:[AuthGuard], 
         data:{
           roles:[
             Role.THERAPIST

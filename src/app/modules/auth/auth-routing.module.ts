@@ -8,7 +8,7 @@ import {ForgotPasswordComponent} from './forgot-password/forgot-password.compone
 import { ActiveComponent } from './active/active.component';
 import { VerifyOtpComponent } from './verify-otp/verify-otp.component';
 import { ChangePasswordComponent } from './change-password/change-password.component';
-
+import { AdminLoginComponent } from './admin-login/admin-login.component';
 
 const routes: Routes = [
   {
@@ -16,6 +16,10 @@ const routes: Routes = [
       redirectTo: 'login', 
       pathMatch: 'full'
   },
+  {
+    path: 'admin-login',
+    component: AdminLoginComponent
+},
   {
       path: 'login',
       component: LoginComponent
@@ -29,7 +33,7 @@ const routes: Routes = [
     component: TokenVerifyComponent
 },
 {
-  path:'admin-login',
+  path:'therapist-login',
   component:TherapistLoginComponent
 },
 {

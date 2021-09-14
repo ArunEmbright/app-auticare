@@ -13,11 +13,12 @@
       <table class="table table-bordered ">
         <thead>
           <tr>
-            <th>User ID</th>
-            <th>Name</th>
-            <th>Date Of Birth</th>
+            <th>Child ID</th>
+            <th>Child Name</th>
             <th>Age</th>
-            <th>User Name</th>
+            <th>Date of Birth</th>
+            
+            <th>Full Name</th>
             <th>Relationship with child</th>
             <th>Mobile Number</th>
             <th>Email</th>
@@ -31,11 +32,12 @@
               {{ user.patientName }}
             </td>
             <td>
-              {{ user.dob }}
-            </td>
-            <td>
               {{ user.age }}
             </td>
+            <td>
+              {{ user.dob }}
+            </td>
+            
             <!--<td>
                   {{ list.firstName }}
                 </td>-->
@@ -59,6 +61,9 @@
                 </td>-->
 
             <td>
+              <a class="action-btn" [routerLink]="['/admin/edit-user', user._id]">
+                <i class="material-icons">edit</i>
+            </a>
               <a class="action-btn" (click)="onDelete(user._id)">
                 <i class="bx bx-x"></i>
               </a>

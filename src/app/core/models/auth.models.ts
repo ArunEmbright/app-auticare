@@ -9,9 +9,10 @@ export class User {
     userId:string
     firstName: string;
     lastName:string;
+    patientName:string;
     relationType:string;
     email:string;
-    mobileNumber:number;
+    mobileNumber:string;
     password: string;
     confirmPassword:string;
     // firstName?: string;
