@@ -79,64 +79,62 @@
         "BLOG": "Blog"
       }
     },
-    
-    "ASSESSMENT":{
-      "TEXT":"Skill Assessment"
-    },
-    "FREEASSESSMENT":{
-      "TEXT":"free assessment"
-    },
-    
-    "APPOINTMENT":{
-      "TEXT":"Session Booking"
 
+    "ASSESSMENT": {
+      "TEXT": "Skill Assessment"
+    },
+    "FREEASSESSMENT": {
+      "TEXT": "free assessment"
+    },
+
+    "APPOINTMENT": {
+      "TEXT": "Session Booking"
     },
     "PATIENT": {
       "TEXT": "Profile"
     },
-    "DOCTOR":{
-      "TEXT":"Dashboard",
+    "DOCTOR": {
+      "TEXT": "Dashboard",
+      "APPOINTMENTS":"Appointments",
       "LIST": {
-        "CALENDAR": "Calendar",
-        
-        "APPOINTMENT": "Appointment",
-        "PROFILE": "profile",
-        "PATIENT": "patient"
-      }
+        "SKILLASSESSMENT": "skill assessment",
+        "SESSIONBOOKING": "Appointment",
+        "CONSULTATION": "consultation"
+      },
+      "PROFILE":"profile"
     },
-    "ADMIN":{
-      "TEXT":"Dashboard",
+    
+    "ADMIN": {
+      "TEXT": "Dashboard",
       "LIST": {
         "CARECHILDEN": "Special Needs Children",
         "THERAPIST": "Therapist",
-       
+
         "ASSESSMENTS": "Assessments",
         "APPOINTMENTS": "Appointments"
+      },
+      "APPOINTMENETS": {
+        "FREEASSESSMENT": "free consultation",
+       
+        "THERAPYSESSION": "session booking",
+        "THERAPYBOOKING": "therapist booking"
+      },
+      "ASSESSMENTS": {
+        "FREEASSESSMENT": "free assessment",
+        "SKILLASSESSMENT":"skill assessment",
+        "THERAPYSESSION": "session booking"
+      },
+      "BOOKAPPOINTMENET": {
+        "THERAPYSESSION": "skill assessment",
         
-      },
-      "APPOINTMENETS":{
-        "FREEASSESSMENT":"free appointment",
-        "THERAPYSESSION":"session booking",
-        "THERAPYBOOKING":"therapy booking"
-      },
-      "ASSESSMENTS":{
-        "FREEASSESSMENT":"free assessment",
-        "THERAPYSESSION":"session booking"
-      
-      },
-      "BOOKAPPOINTMENET":{
-        "THERAPYSESSION":"session booking",
-        "THERAPYBOOKING":"therapy booking"
-      
+        "THERAPYBOOKING": "therapist booking"
       }
-      
-      
     },
-    "REPORT":{
-      "TEXT":"Report"
+    "REPORT": {
+      "TEXT": "Report"
     },
-    "BOOK":{
-      "TEXT":"Book Appointment"
+    "BOOK": {
+      "TEXT": "Book Appointment"
     },
     "LAYOUTS": {
       "TEXT": "Layouts",

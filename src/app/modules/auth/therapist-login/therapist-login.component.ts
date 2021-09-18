@@ -58,11 +58,11 @@ onSubmit() {
   if (this.loginForm.invalid) {
     return;
   } else {      
-      this.authService.login(this.f.email.value, this.f.password.value)
+      this.authService.TherapistLogin(this.f.email.value, this.f.password.value)
         .pipe(first())
         .subscribe((res: any) => {
       
-            this.router.navigate(['/admin']);
+            this.router.navigate(['/doctor']);
           },
          
         

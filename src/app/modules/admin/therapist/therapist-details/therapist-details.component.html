@@ -19,6 +19,7 @@
                 <th style="width: 20px">Experience</th>
                 <th>Qualification</th>
                 <th>Location</th>
+                <th>Action</th>
                 
             </tr>
         </thead>
@@ -30,6 +31,14 @@
                 <td>{{pp.experience}}</td>
                 <td>{{pp.qualification}}</td>
                <td>{{pp.location}}</td>
+               <td>
+                <a class="action-btn" [routerLink]="['/admin/edit-therapist', pp._id]">
+                    <i class="bx bx-edit" ></i>
+                </a>
+                  <a class="action-btn" (click)="onDelete(pp._id)">
+                    <i class="bx bx-x"></i>
+                  </a>
+               </td>
                 
             </tr>
             

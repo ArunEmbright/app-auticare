@@ -7,7 +7,9 @@ import { environment } from '../../../environments/environment';
 import { CookieService } from 'ngx-cookie-service';
 import { LanguageService } from '../../core/services/language.service';
 import { TranslateService } from '@ngx-translate/core';
-
+import { AuthService } from 'src/app/modules/auth/_services/auth.service';
+import { Therapist } from '../../modules/admin/therapist/therapist.model';
+import { DoctorService } from '../../modules/doctor/doctor.service';
 @Component({
   selector: 'app-topbar',
   templateUrl: './topbar.component.html',
@@ -16,7 +18,7 @@ import { TranslateService } from '@ngx-translate/core';
 
 /**
  * Topbar component
- */
+ */ 
 export class TopbarComponent implements OnInit {
 
   element;
@@ -24,8 +26,8 @@ export class TopbarComponent implements OnInit {
   flagvalue;
   countryName;
   valueset;
-
-  constructor(@Inject(DOCUMENT) private document: any, private router: Router, private authService: AuthenticationService,
+  therapist : Therapist[]
+  constructor(@Inject(DOCUMENT) private document: any,private doctor:DoctorService, private router: Router, private authService: AuthenticationService,private accountService: AuthService,
               private authFackservice: AuthfakeauthenticationService,
               public languageService: LanguageService,
               public translate: TranslateService,
@@ -46,6 +48,12 @@ export class TopbarComponent implements OnInit {
   @Output() mobileMenuButtonClicked = new EventEmitter();
 
   ngOnInit() {
+    this.doctor.getProfile().subscribe((
+      therapist:Therapist[]
+    )=>{
+      this.therapist=therapist;
+      console.log(therapist)
+    })
     this.openMobileMenu = false;
     this.element = document.documentElement;
 
@@ -93,7 +101,8 @@ export class TopbarComponent implements OnInit {
   //   this.router.navigate(['/account/login']);
   //}
   logout() {
-    this.router.navigate(['/auth/login'])
+    this.accountService.logout()
+    this.router.navigate(['/auth/therapist-login'])
   }
   /**
    * Fullscreen method

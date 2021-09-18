@@ -29,63 +29,17 @@
       </button>
 
       <!-- App Search-->
-      <form class="app-search d-none d-lg-block">
-        <div class="position-relative">
-          <input type="text" class="form-control" placeholder="{{'HEADER.SEARCH' | translate}}">
-          <span class="bx bx-search-alt"></span>
-        </div>
-      </form>
+      
 
      
     </div>
 
     <div class="d-flex">
 
-      <div class="dropdown d-inline-block d-lg-none ms-2" ngbDropdown>
-        <button type="button" class="btn header-item noti-icon" id="page-header-search-dropdown" data-toggle="dropdown"
-          aria-haspopup="true" ngbDropdownToggle aria-expanded="false">
-          <i class="mdi mdi-magnify"></i>
-        </button>
-        <div class="dropdown-menu dropdown-menu-lg dropdown-menu-end p-0" ngbDropdownMenu
-          aria-labelledby="page-header-search-dropdown">
 
-          <form class="p-3">
-            <div class="m-0">
-              <div class="input-group">
-                <input type="text" class="form-control" placeholder="Search ..." aria-label="Recipient's username">
-                <div class="input-group-append">
-                  <button class="btn btn-primary" type="submit"><i class="mdi mdi-magnify"></i></button>
-                </div>
-              </div>
-            </div>
-          </form>
-        </div>
-      </div>
-
+     
       <div class="dropdown d-inline-block" ngbDropdown>
-        <button type="button" class="btn header-item" id="page-header-user-dropdown" ngbDropdownToggle>
-          <img *ngIf="flagvalue !== undefined" src="{{flagvalue}}" alt="Header Language" height="16"> <span
-            class="ms-1">{{countryName}}</span>
-          <img *ngIf="flagvalue === undefined" src="{{valueset}}" alt="Header Language" height="16">
-          <span *ngIf="flagvalue === undefined" class="ms-1">English</span>
-        </button>
-        <div class="dropdown-menu dropdown-menu-end" ngbDropdownMenu>
-          <!-- item-->
-          <a href="javascript:void(0);" class="dropdown-item notify-item" *ngFor="let item of listLang"
-            (click)="setLanguage(item.text, item.lang, item.flag)" [ngClass]="{'active': cookieValue === item.lang}">
-            <img src="{{item.flag}}" alt="user-image" class="me-1" height="12"> <span
-              class="align-middle">{{item.text}}</span>
-          </a>
-          <!-- item-->
-        </div>
-      </div>
-
-      <div class="dropdown d-inline-block" ngbDropdown>
-        <button type="button" class="btn header-item noti-icon" id="page-header-notifications-dropdown"
-          ngbDropdownToggle>
-          <i class="bx bx-bell bx-tada"></i>
-          <span class="badge bg-danger rounded-pill">3</span>
-        </button>
+        
         <div class="dropdown-menu dropdown-menu-lg dropdown-menu-end p-0"
           aria-labelledby="page-header-notifications-dropdown" ngbDropdownMenu>
           <div class="p-3">
@@ -117,7 +71,7 @@
               </div>
             </a>
             <a href="javascript: void(0);" class="text-reset notification-item">
-              <div class="media">
+              <div class="media" >
                 <img src="assets/images/users/avatar-3.jpg" class="me-3 rounded-circle avatar-xs" alt="user-pic">
                 <div class="media-body">
                   <h6 class="mt-0 mb-1">{{ 'HEADER.NOTIFICATIONS.SECOND.TITLE' | translate}}</h6>
@@ -169,20 +123,18 @@
         </div>
       </div>
 
-      <div class="dropdown d-inline-block" ngbDropdown>
-        <button type="button" class="btn header-item" ngbDropdownToggle id="page-header-user-dropdown">
-          <img class="rounded-circle header-profile-user" src="assets/images/users/avatar-1.jpg" alt="Header Avatar">
+      <div class="dropdown d-inline-block" *ngFor="let user of therapist" ngbDropdown>
+        <button type="button"  class="btn header-item" ngbDropdownToggle id="page-header-user-dropdown">
+          <img class="rounded-circle header-profile-user" src= {{user.imagePath}} alt="Header Avatar">
           <span class="d-none d-xl-inline-block ms-1">Henry</span>
           <i class="mdi mdi-chevron-down d-none d-xl-inline-block"></i>
         </button>
         <div class="dropdown-menu dropdown-menu-end" ngbDropdownMenu>
           <!-- item-->
-          <a class="dropdown-item" routerLink="/settings/profile"><i class="bx bx-user font-size-16 align-middle me-1"></i>
+          <a class="dropdown-item" routerLink="/doctor/profile"><i class="bx bx-user font-size-16 align-middle me-1"></i>
             {{ 'HEADER.LOGIN.PROFILE' | translate}}</a>
 
-          <a class="dropdown-item d-block" href="javascript: void(0);"><span
-              class="badge bg-success float-end">11</span><i class="bx bx-wrench font-size-16 align-middle me-1"></i>{{
-            'HEADER.LOGIN.SETTINGS' | translate}} </a>         
+             
           <div class="dropdown-divider"></div>
           <a class="dropdown-item text-danger" href="javascript: void(0);" (click)="logout() "><i
               class="bx bx-power-off font-size-16 align-middle me-1 text-danger"></i>
@@ -199,3 +151,37 @@
     </div>
   </div>
 </header>
+///////////////////////////////////////////////////////////////|||||||||||||||||||||||||||\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
+|                                                                                                                                                                    |
+|                                                                                                                                                                    |
+|                                                                                                                                                                    |
+|                                                                                                                                                                    |
+|                                                                                                                                                                    |
+|                                                                                                                                                                    |
+|                                                                                                                                                                    |
+|                                                                                                                                                                    |
+|                                                                                                                                                                    |
+|                                                                                                                                                                    |
+|                                                                                                                                                                    |
+|                                                                                                                                                                    |
+|                                                                                                                                                                    |
+|                                                                                                                                                                    |
+|                                                                                                                                                                    |
+|                                                                                                                                                                    |
+|                                                                                                                                                                    |
+|                                                                                                                                                                    |
+|                                                                                                                                                                    |
+|                                                                                                                                                                    |
+|                                                                                                                                                                    |
+|                                                                                                                                                                    |
+|                                                                                                                                                                    |
+|                                                                                                                                                                    |
+|                                                                                                                                                                    |
+|                                                                                                                                                                    |
+|                                                                                                                                                                    |
+|                                                                                                                                                                    |
+|                                                                                                                                                                    |
+|                                                                                                                                                                    |
+|                                                                                                                                                                    |
+|                                                                                                                                                                    |
+\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\|||||||||||||||||||||||||||///////////////////////////////////////////////////////////////////////////

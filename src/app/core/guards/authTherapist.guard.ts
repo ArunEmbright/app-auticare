@@ -7,7 +7,7 @@ import { AuthService } from "src/app/modules/auth/_services/auth.service";
 
 @Injectable()
 
-export class AuthGuard implements CanActivate, CanLoad{
+export class AuthTherapistGuard implements CanActivate, CanLoad{
 
     constructor(private router: Router,
         private authService: AuthService){

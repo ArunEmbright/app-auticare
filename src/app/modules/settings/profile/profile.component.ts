@@ -26,6 +26,7 @@ export class ProfileComponent implements OnInit {
       users:User[]
     )=>{
       this.users=users;
+      console.log(users)
     })
 
     this.breadCrumbItems = [{ label: 'Contacts' }, { label: 'Profile', active: true }];

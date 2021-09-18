@@ -1,10 +1,11 @@
 export class TherapistModel{
+    userId:string
     id:number;
     category:string;
     location:string;
-    name:string;
+    therapistName:string;
     experience:number;
-    image:string[];
+    image:string;
 }
 
 export class FilterObject {

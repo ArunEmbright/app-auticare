@@ -67,6 +67,27 @@ export class WebReqInterceptor implements HttpInterceptor {
       }
       
     }
+
+    refreshTherapistAccessToken() {
+      if (this.refreshingAccessToken) {
+        return new Observable(observer => {
+          this.accessTokenRefreshed.subscribe(() => {
+            observer.next();
+            observer.complete();
+          })
+        })
+      } else {
+        this.refreshingAccessToken = true;
+        return this.authService.getTherapistAccessToken().pipe(
+          tap(() => {
+            console.log("Access Token Refreshed!");
+            this.refreshingAccessToken = false;
+            this.accessTokenRefreshed.next();
+          })
+        )
+      }
+      
+    }
   
   
     addAuthHeader(request: HttpRequest<any>) {

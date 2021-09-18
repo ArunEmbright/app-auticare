@@ -8,7 +8,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import {RlTagInputModule} from 'angular2-tag-input';
 import { TherapistFormComponent } from './therapist/therapist-form/therapist-form.component';
 import { TherapistDetailsComponent } from './therapist/therapist-details/therapist-details.component';
-
+EditTherapistComponent
 import { FreeAppointmentComponent } from './appointment/free-appointment/free-appointment.component';
 import { AdminDashboardComponent } from './admin-dashboard/admin-dashboard.component';
 import { AddUserComponent } from './user/add-user/add-user.component';
@@ -16,15 +16,16 @@ import { TherapySessionComponent } from './appointment/therapy-session/therapy-s
 import { EditUserComponent } from './user/edit-user/edit-user.component';
 import { TherapyBookingComponent } from './appointment/therapy-booking/therapy-booking.component';
 import { SessionBookingComponent } from './booking/session-booking/session-booking.component';
+import { EditTherapistComponent } from './therapist/edit-therapist/edit-therapist.component';
 @NgModule({
-  declarations: [AdminDashboardComponent,TherapySessionComponent,UserDetailComponent, AddUserComponent, FreeAppointmentComponent,TherapyBookingComponent,TherapistDetailsComponent,UserScoreComponent, TherapistFormComponent,SessionBookingComponent,EditUserComponent],
+  declarations: [AdminDashboardComponent,TherapySessionComponent,UserDetailComponent, AddUserComponent, FreeAppointmentComponent,TherapyBookingComponent,TherapistDetailsComponent,UserScoreComponent,EditTherapistComponent, TherapistFormComponent,SessionBookingComponent,EditUserComponent],
   imports: [
     CommonModule,
     AdminRoutingModule,
     FormsModule,
     ReactiveFormsModule,  
     RlTagInputModule 
-    
+     
   ]
 })
 export class AdminModule { }

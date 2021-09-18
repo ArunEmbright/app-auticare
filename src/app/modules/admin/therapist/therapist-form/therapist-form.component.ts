@@ -36,6 +36,7 @@ export class TherapistFormComponent implements OnInit {
     this.menuForm = this.fb.group({
      
       therapistName: [null],
+      email:[null],
       experience: [null],
       specialization: [null],
       qualification: [null],
@@ -62,6 +63,7 @@ processImage(image: any) {
 save() {
  
   var therapistName = this.menuForm.value.therapistName;
+  var email = this.menuForm.value.email;
   var specialization = this.menuForm.value.specialization;
   var experience = this.menuForm.value.experience;
   var qualification = this.menuForm.value.qualification;
@@ -70,6 +72,7 @@ save() {
 
   
   formData.append('therapistName', therapistName);
+  formData.append('email', email);
   formData.append('specialization',specialization);
   formData.append('experience', experience);
   formData.append('qualification', qualification);

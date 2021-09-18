@@ -11,6 +11,8 @@ import { TherapySessionComponent } from './appointment/therapy-session/therapy-s
 import { EditUserComponent } from './user/edit-user/edit-user.component';
 import { TherapyBookingComponent } from './appointment/therapy-booking/therapy-booking.component';
 import { SessionBookingComponent } from './booking/session-booking/session-booking.component';
+import { EditTherapistComponent } from './therapist/edit-therapist/edit-therapist.component';
+
 const routes: Routes = [
   
   {path:'', redirectTo:'dashboard', pathMatch:'full'},
@@ -52,6 +54,10 @@ const routes: Routes = [
   },{
     path: 'edit-user/:userId',
     component: EditUserComponent,
+  },
+  {
+    path: 'edit-therapist/:userId',
+    component: EditTherapistComponent,
   },
   {
     path: 'book-session',

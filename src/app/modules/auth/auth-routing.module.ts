@@ -9,7 +9,7 @@ import { ActiveComponent } from './active/active.component';
 import { VerifyOtpComponent } from './verify-otp/verify-otp.component';
 import { ChangePasswordComponent } from './change-password/change-password.component';
 import { AdminLoginComponent } from './admin-login/admin-login.component';
-
+import { TherapistVerifyComponent } from './therapist-verify/therapist-verify.component';
 const routes: Routes = [
   {
       path: '',
@@ -49,7 +49,7 @@ const routes: Routes = [
   component:VerifyOtpComponent
 },
 { path: 'activate/:token', component:ActiveComponent },
-  
+{ path: 'therapist_Verify', component:TherapistVerifyComponent },
 
 ];
 

@@ -24,6 +24,7 @@ export class UserDetailComponent implements OnInit {
     )=>{
       this.users=users;
       console.log(users.length)
+      console.log(users)
     })
 
 

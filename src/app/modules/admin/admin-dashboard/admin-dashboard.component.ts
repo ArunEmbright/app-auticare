@@ -15,9 +15,10 @@ export class AdminDashboardComponent implements OnInit {
   scores:Score[];
   therapist: Therapist[];
   length:number
-  assesment:number;
-  doctor:number;
-  FreeAppointment:number;
+  assesment:any[]=[];
+  user:any[]=[];
+  doctor:any[]=[];
+  FreeAppointment:any[]=[];
   constructor(private accountService: AdminService) { }
 
   ngOnInit(): void {
@@ -31,14 +32,14 @@ export class AdminDashboardComponent implements OnInit {
       users:User[]
     )=>{
       this.users=users;
-     this.length = users.length
+     this.user = this.users
     })
   }
   private Assessment(){
     this.accountService.getScore().subscribe((scores:Score[]
       )=>{
      this.scores = scores
-     this.assesment = this.scores.length
+     this.assesment = this.scores
     })
    
 
@@ -47,7 +48,7 @@ export class AdminDashboardComponent implements OnInit {
     this.accountService.getDoctor().subscribe((therapist:Therapist[]
       )=>{
         this.therapist =therapist
-        this.doctor = this.therapist.length
+        this.doctor = this.therapist
         console.log(this.doctor)
       })
   }
@@ -56,7 +57,7 @@ export class AdminDashboardComponent implements OnInit {
       users:User[]
     )=>{
       this.users=users;
-     this.FreeAppointment =this.users.length
+     this.FreeAppointment =this.users
     })
   }
   

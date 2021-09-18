@@ -44,7 +44,22 @@ export class AuthService {
   public get currentUserValue(): User {
     return this.currentUserSubject.value;
   }
- 
+  getTherapistAccessToken() {
+    return this.http 
+      .get(`${backURL}/therapist/me/access-token`, { 
+        headers: {
+          "x-refresh-token": this.getRefreshToken(),
+          _id: this.getUserId(),
+        },
+        observe: "response",
+      })
+      .pipe(
+        tap((res: HttpResponse<any>) => {
+          this.setAccessToken(res.headers.get("x-access-token"));
+        })
+      );
+  }
+  
   getNewAccessToken() {
     return this.http 
       .get(`${backURL}/auth/me/access-token`, { 
@@ -63,6 +78,19 @@ export class AuthService {
 
   login(email: string, password: string) {
     return this.webService.login(email, password).pipe(
+      shareReplay(),
+      tap((res: HttpResponse<any>) => {
+        this.setSession(
+          res.body._id,
+          res.headers.get("x-access-token"),
+          res.headers.get("x-refresh-token")
+        );
+        console.log("Successfully logged!");
+      })
+    );
+  }
+  TherapistLogin(email: string, password: string) {
+    return this.webService.therapistLogin(email, password).pipe(
       shareReplay(),
       tap((res: HttpResponse<any>) => {
         this.setSession(
@@ -207,7 +235,13 @@ sessionBooking(therapistName:string,email:string,patientName:string,firstName:st
     };
     return this.http.put(`${backURL}/auth/updatePassword`, this.data);
   }
-
+  verifyTherapist(email: string, password: string) {
+    this.data = {
+      password: password,
+      email: email,
+    };
+    return this.http.put(`${backURL}/therapist/updatePassword`, this.data);
+  }
   logout() {
     this.removeSession();
 

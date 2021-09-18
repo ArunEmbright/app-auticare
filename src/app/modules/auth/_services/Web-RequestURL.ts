@@ -28,6 +28,16 @@ export class WebRequestService {
       delete(uri: string) {
         return this.http.delete(`${backURL}/${uri}`);
       }
+      therapistLogin(email: string, password: string) {
+        return this.http.post(`${backURL}/therapist/login`, {
+          email,
+          password
+        }, {
+            observe: 'response'
+          });
+
+        
+      }
     
       login(email: string, password: string) {
         return this.http.post(`${backURL}/auth/login`, {

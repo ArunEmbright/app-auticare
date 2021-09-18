@@ -3,7 +3,7 @@ import { FormGroup, FormBuilder, Validators } from "@angular/forms";
 import { User } from 'src/app/core/models/auth.models';
 import { AuthService } from 'src/app/modules/auth/_services/auth.service';
 import { AdminService } from '../../admin.service';
-
+import { ActivatedRoute, Router } from '@angular/router';
 @Component({
   selector: 'app-add-user',
   templateUrl: './add-user.component.html',
@@ -15,7 +15,7 @@ export class AddUserComponent implements OnInit {
   submitted: boolean = false;
   relationship: any = ['Father', 'Mother','Siblings']
 
-  constructor(public formbuilder: FormBuilder, private authService: AdminService) { }
+  constructor(public formbuilder: FormBuilder,public route: Router, private authService: AdminService) { }
 
   subjectId: any;
   roleId: number;
@@ -25,7 +25,7 @@ export class AddUserComponent implements OnInit {
       FirstName: ["",[Validators.required, Validators.pattern("^[a-zA-Z]{1,20}$")]],
       LastName: ["",[Validators.required, Validators.pattern("^[a-zA-Z]{1,20}$")]],
       patientName: ["",[Validators.required, Validators.pattern("^[a-zA-Z]{1,20}$")]],
-      email: ["",[Validators.required,Validators.pattern("^[a-zA-Z0-9]{1,35}@[a-zA-Z]{1,10}.com$")]],
+      email: ["",[Validators.required,Validators.pattern('[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}$')]],
       mobileNumber: ["", [Validators.required, Validators.maxLength(10)]],
       dob: ["", Validators.required],
       relationType: ["",Validators.required],
@@ -40,7 +40,7 @@ console.log("!")
   
     this.authService.addUser(this.addForm.value).subscribe(data=>{
       console.log("🚀 ~ file: signup.component.ts ~ line 90 ~ SignupComponent ~ this.authService.signup ~ data", data)
-
+      this.route.navigate(['/admin/users'])
    
    },
    (err) => {

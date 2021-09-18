@@ -25,13 +25,13 @@ export const MENU: MenuItem[] = [
     subItems: [
       {
         id: 3,
-        label: "MENUITEMS.ADMIN.ASSESSMENTS.FREEASSESSMENT",
+        label: "MENUITEMS.ADMIN.ASSESSMENTS.FREEASSESSMENT", 
         link: "/admin/score",
         parentId: 2,
       },
       {
         id: 3,
-        label: "MENUITEMS.ADMIN.ASSESSMENTS.THERAPYSESSION",
+        label: "MENUITEMS.ADMIN.ASSESSMENTS.SKILLASSESSMENT",
         link: "/admin/therapy-session",
         parentId: 2, 
       },
@@ -88,6 +88,6 @@ export const MENU: MenuItem[] = [
     id: 1,
     label: "MENUITEMS.REPORT.TEXT",
     icon: "bx-task",
-    link: "/home/assessments",
+    link: "/admin/therapy-session",
   },
 ];

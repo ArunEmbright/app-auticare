@@ -38,10 +38,6 @@ export function createTranslateLoader(http: HttpClient): any {
   declarations: [
     AppComponent,
    
-   
-   
-  
-   
   
     
     

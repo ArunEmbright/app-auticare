@@ -1,12 +1,13 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
-import { AuthGuard } from './core/guards/authTherapist.guard';
+import { AuthGuard } from './core/guards/auth.guard';
 import { Role } from './core/models/role';
 import { AuthenticationService } from './core/services/auth.service';
 import { DoctorLayoutComponent } from './doctorLayout/layout.component';
 import { LayoutComponent } from './layouts/layout.component';
 import { AdminLayoutComponent } from './adminLayout/layout.component';
-
+import { AuthTherapistGuard } from './core/guards/authTherapist.guard';
+import { AuthAdminService } from './core/guards/admin.guard';
 const routes: Routes = [
    { 
      path: '', redirectTo: 'patient-data', pathMatch: 'full' 
@@ -69,8 +70,8 @@ const routes: Routes = [
     children:[
       {
         path:'admin', 
-        canLoad:[AuthGuard],
-         canActivate:[AuthGuard], 
+        canActivate:[AuthAdminService],
+        //  canActivate:[AuthGuard], 
         data:{
           roles:[
             Role.THERAPIST

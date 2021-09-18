@@ -20,8 +20,9 @@ import { ForgotPasswordComponent } from './forgot-password/forgot-password.compo
 import { VerifyOtpComponent } from './verify-otp/verify-otp.component';
 import { ChangePasswordComponent } from './change-password/change-password.component';
 import { AdminLoginComponent } from './admin-login/admin-login.component';
+import { TherapistVerifyComponent } from './therapist-verify/therapist-verify.component';
 @NgModule({
-  declarations: [ SignupComponent,AdminLoginComponent, LoginComponent, TokenVerifyComponent, TherapistLoginComponent, ActiveComponent, ForgotPasswordComponent, VerifyOtpComponent, ChangePasswordComponent],
+  declarations: [ SignupComponent,AdminLoginComponent, LoginComponent, TokenVerifyComponent, TherapistLoginComponent, ActiveComponent, ForgotPasswordComponent, VerifyOtpComponent, ChangePasswordComponent, TherapistVerifyComponent],
   imports: [
     CommonModule,
     ReactiveFormsModule,
