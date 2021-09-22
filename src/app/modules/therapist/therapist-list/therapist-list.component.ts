@@ -69,9 +69,9 @@ searchFilter(e){
   });
 }
 
-custom(therapistName:string,email:string,patientName:string,firstName:string,lastName:string,age:Number,userId:string,mobileNumber:string) {
+custom(therapistId:string,therapistName:string,email:string,patientName:string,firstName:string,lastName:string,age:Number,userId:string,mobileNumber:string) {
   
-  this.accountService.sessionBooking(therapistName,email,patientName,firstName,lastName,age,userId,mobileNumber).subscribe((res)=>{
+  this.accountService.sessionBooking(therapistId,therapistName,email,patientName,firstName,lastName,age,userId,mobileNumber).subscribe((res)=>{
     Swal.fire({
       title: '<strong> Your Booking Confirmed! </strong>',
       icon: 'success',

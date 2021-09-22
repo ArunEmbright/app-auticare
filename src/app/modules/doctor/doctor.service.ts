@@ -20,6 +20,13 @@ export class DoctorService {
     private router: Router) { }
 
 
+    getSessionBooking(){
+      return this.http.get(`${backURL}/Therapist/session`, {
+        headers: {
+          "x-access-token": this.getAccessToken(),
+        },
+      });
+    }
     getProfile(){
       return this.http.get(`${backURL}/Therapist/user`, {
         headers: {

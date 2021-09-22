@@ -16,6 +16,7 @@ export class UserScoreComponent implements OnInit {
       )=>{
      this.scores = scores
      console.log(this.scores.length)
+     console.clear();
     })
   }
 

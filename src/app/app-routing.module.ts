@@ -1,12 +1,12 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { AuthGuard } from './core/guards/auth.guard';
+import { AuthTherapistGuard } from './core/guards/therapist.gurad';
 import { Role } from './core/models/role';
 import { AuthenticationService } from './core/services/auth.service';
 import { DoctorLayoutComponent } from './doctorLayout/layout.component';
 import { LayoutComponent } from './layouts/layout.component';
 import { AdminLayoutComponent } from './adminLayout/layout.component';
-import { AuthTherapistGuard } from './core/guards/authTherapist.guard';
 import { AuthAdminService } from './core/guards/admin.guard';
 const routes: Routes = [
    { 
@@ -85,11 +85,13 @@ const routes: Routes = [
   {
     path:'',
     component:DoctorLayoutComponent,
+    canActivate:[AuthTherapistGuard],
+    canLoad:[AuthGuard],
     children:[
       {
         path:'doctor',
-        canLoad:[AuthGuard],
-        canActivate:[AuthGuard],
+        canLoad:[],
+        canActivate:[],
         data:{
           roles:[
             Role.THERAPIST
@@ -116,6 +118,7 @@ const routes: Routes = [
   exports: [RouterModule],
   providers:[
     AuthGuard,
+    AuthTherapistGuard,
     AuthenticationService
   ]
 })

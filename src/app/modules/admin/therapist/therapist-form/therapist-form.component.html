@@ -94,6 +94,11 @@
                         <input #imageMenu type="file" accept="image/*" (change)="processImage(imageMenu)"
                             formControlName="image" id="image" name="image">
                             </div>
+                            <label for="">Document<label class="red-text">*</label></label>
+                        <div class="input-group mb-6">
+                        <input #fileMenu type="file" accept="pdf/*" (change)="fileUpload(fileMenu)"
+                            formControlName="doc" id="doc" name="doc">
+                            </div>
                             
                     </div>
 

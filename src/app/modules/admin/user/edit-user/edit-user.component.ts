@@ -54,4 +54,9 @@ export class EditUserComponent implements OnInit {
       }
     );
   }
+  ngAfterViewInit() {
+    setTimeout(() => {
+      console.clear();
+    }, 200);
+  }
 }

@@ -34,6 +34,12 @@ export class AdminDashboardComponent implements OnInit {
       this.users=users;
      this.user = this.users
     })
+    
+  }
+  ngAfterViewInit() {
+    setTimeout(() => {
+      console.clear();
+    }, 200);
   }
   private Assessment(){
     this.accountService.getScore().subscribe((scores:Score[]

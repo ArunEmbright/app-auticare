@@ -95,9 +95,11 @@ export class AuthService {
       tap((res: HttpResponse<any>) => {
         this.setSession(
           res.body._id,
+          
           res.headers.get("x-access-token"),
           res.headers.get("x-refresh-token")
         );
+        localStorage.setItem('isAuthorized', JSON.stringify(101));
         console.log("Successfully logged!");
       })
     );
@@ -180,8 +182,9 @@ bookAppointment(email:string,patientName:string,firstName:string,lastName:string
     
   });
 }
-sessionBooking(therapistName:string,email:string,patientName:string,firstName:string,lastName:string,age:Number,userId:string,mobileNumber:string){
+sessionBooking(therapistId,therapistName:string,email:string,patientName:string,firstName:string,lastName:string,age:Number,userId:string,mobileNumber:string){
   this.data = {
+    therapistId:therapistId,
     therapistName:therapistName,
     email:email,
     patientName:patientName,
@@ -262,12 +265,15 @@ sessionBooking(therapistName:string,email:string,patientName:string,firstName:st
   setAccessToken(accessToken: string) {
     localStorage.setItem("x-access-token", accessToken);
   }
-
+private TherapistPriority(){
+  localStorage.setItem('isAuthorized', JSON.stringify(101));
+}
   private setSession(
     userId: string,
     accessToken: string,
     refreshToken: string
   ) {
+  
     localStorage.setItem("user-id", userId);
     localStorage.setItem("x-access-token", accessToken);
     localStorage.setItem("x-refresh-token", refreshToken);

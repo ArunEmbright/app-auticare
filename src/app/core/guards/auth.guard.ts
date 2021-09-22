@@ -30,14 +30,4 @@ export class AuthGuard implements CanActivate, CanLoad{
         return false;
       }
 }
-// @Injectable()
-// export class AuthService implements CanActivate {
-  
-//   constructor(
-//     private router: Router
-//   ) { }
 
-//   // Guard for preventing the unauthorized access
-//   canActivate(route: ActivatedRouteSnapshot, state: RouterStateSnapshot) {
-//   }
-// }

@@ -30,7 +30,7 @@ export const MENU: MenuItem[] = [
             {
                 id: 3,
                 label: 'MENUITEMS.DOCTOR.LIST.CONSULTATION',
-                link: '/doctor',
+                link: '/doctor/consultation',
                 parentId: 2 
             },
           
