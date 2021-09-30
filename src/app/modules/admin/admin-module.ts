@@ -5,7 +5,7 @@ import { AdminRoutingModule } from './admin-routing.module';
 import { UserDetailComponent } from './user/user-detail/user-detail.component';
 import { UserScoreComponent } from './user-score/user-score.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-import {RlTagInputModule} from 'angular2-tag-input';
+
 import { NgSelectModule } from '@ng-select/ng-select'
 
 import { TherapistFormComponent } from './therapist/therapist-form/therapist-form.component';

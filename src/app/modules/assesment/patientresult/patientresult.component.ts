@@ -23,14 +23,8 @@ export class PatientresultComponent implements OnInit {
   age: Number;
   userId: string;
   users: User[];
-  printDivStyle = {
-    printBillDiv: { marginRight: "3px", marginLeft: "3px", marginTop: "5px" },
-    table: { width: "100%", border: "1px dashed", textAlign: "center" },
-    // label: {width: '100%'},
-    tr: { border: "1px dashed", padding: "5 px" },
-    thead: { "border-style": "1px dashed" },
-  };
-  @ViewChild("pagetoRender") pagetoRender: ElementRef;
+
+
   constructor(
     private auth: AuthService,
     private route: ActivatedRoute,
@@ -51,7 +45,7 @@ export class PatientresultComponent implements OnInit {
   public downloadAsPDF() {
     const doc = new jsPDF();
 
-    const pagetoRender = this.pagetoRender.nativeElement;
+
 
     var html = htmlToPdfmake(`
     <h2>ISSA SCORE</h2>
