@@ -23,17 +23,15 @@ export class TherapistFormComponent implements OnInit {
   imagePreview: string;
   fileData: File;
   imageData: File;
-  categories: any;
-  subCategories: any;
-  restaurants: any;
+selectedCar: string;
+
+    cars = [{ id:'trivantrum' , name: 'Trivantrum' },{ id: 'kollam', name: 'Kollam' },{ id: 'kottayam', name: 'Kottayam' },{ id:'kochi', name: 'kochi' },];
   constructor(private auth: AdminService,private title: Title,
     private fb: FormBuilder,
     private location: Location, private http: HttpClient) {}
 
   ngOnInit(): void {
-    this.title.setTitle(this.pageTitle);
-
-    //Instantiat form
+   
     this.menuForm = this.fb.group({
       therapistId:['auticare'+Math.floor(Math.random()*1000)],
       therapistName: [null],
@@ -109,5 +107,8 @@ isUploaded(){
     showConfirmButton:false,
     timer:1500
   })
+}
+filter(){
+  
 }
 }

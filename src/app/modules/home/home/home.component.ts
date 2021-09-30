@@ -19,21 +19,23 @@ userId :string;
   }
 start(){
  
-    this.route.navigate(['/assessments/assessment'])
+  setTimeout(() => {
+    this.accountService.checkScore(this.userId).subscribe(data=>{
+      this.route.navigate(['/assessments/assessment'])
+      console.log( data)
+  
+   
+   },
+   (err) => {
+   console.log(err)
+   this.route.navigate(['assessments/result'])
+    
+    
+   });
+  }, 150);
   
   
-  this.accountService.checkScore(this.userId).subscribe(data=>{
-    this.route.navigate(['/assessments/assessment'])
-    console.log( data)
 
- 
- },
- (err) => {
- console.log(err)
- this.route.navigate(['assessments/result'])
-  
-  
- });
 } 
 
 }

@@ -6,9 +6,10 @@ import { UserDetailComponent } from './user/user-detail/user-detail.component';
 import { UserScoreComponent } from './user-score/user-score.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import {RlTagInputModule} from 'angular2-tag-input';
+import { NgSelectModule } from '@ng-select/ng-select'
+
 import { TherapistFormComponent } from './therapist/therapist-form/therapist-form.component';
 import { TherapistDetailsComponent } from './therapist/therapist-details/therapist-details.component';
-EditTherapistComponent
 import { FreeAppointmentComponent } from './appointment/free-appointment/free-appointment.component';
 import { AdminDashboardComponent } from './admin-dashboard/admin-dashboard.component';
 import { AddUserComponent } from './user/add-user/add-user.component';
@@ -22,10 +23,14 @@ import { EditTherapistComponent } from './therapist/edit-therapist/edit-therapis
   imports: [
     CommonModule,
     AdminRoutingModule,
+    NgSelectModule ,
     FormsModule,
     ReactiveFormsModule,  
-    RlTagInputModule 
+
+ 
+    
      
   ]
 })
 export class AdminModule { }
+ 
