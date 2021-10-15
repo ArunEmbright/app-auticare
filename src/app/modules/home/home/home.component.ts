@@ -36,6 +36,9 @@ start(){
   
   
 
-} 
+}
+  startEd(){
+  this.route.navigate(['/assessments/assessment'])
+}
 
 }
