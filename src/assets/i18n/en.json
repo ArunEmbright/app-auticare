@@ -109,9 +109,16 @@
       "LIST": {
         "CARECHILDEN": "Special Needs Children",
         "THERAPIST": "Therapist",
-
+        "INSTITUTION":"Institution",
+        "SKILLTRAININGPACK":"Auticare SKill Training ",
         "ASSESSMENTS": "Assessments",
         "APPOINTMENTS": "Appointments"
+      },
+      "SKILLTRAININGPACK":{
+        "AUTISUM":"Autism",
+        "LEARNINGDISABILITY":"Learning Disability",
+        "SPECIALEDUCATION":"Special Education"
+        
       },
       "APPOINTMENETS": {
         "FREEASSESSMENT": "free consultation",

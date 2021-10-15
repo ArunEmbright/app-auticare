@@ -12,6 +12,10 @@ import { EditUserComponent } from './user/edit-user/edit-user.component';
 import { TherapyBookingComponent } from './appointment/therapy-booking/therapy-booking.component';
 import { SessionBookingComponent } from './booking/session-booking/session-booking.component';
 import { EditTherapistComponent } from './therapist/edit-therapist/edit-therapist.component';
+import { InstitutionsFormComponent } from "./institutions/institutions-form/institutions-form.component";
+import { AutismComponent } from "./Skill-training-pack/autism/autism.component";
+import { AddActivityComponent } from './Skill-training-pack/add-activity/add-activity.component';
+import { EditActivityComponent } from "./Skill-training-pack/edit-activity/edit-activity.component";
 
 const routes: Routes = [
   
@@ -28,6 +32,10 @@ const routes: Routes = [
   {
     path: 'users',
     component: UserDetailComponent,
+  },
+  {
+    path: 'add-institution',
+    component: InstitutionsFormComponent,
   },
   {
     path: 'score',
@@ -60,8 +68,20 @@ const routes: Routes = [
     component: EditTherapistComponent,
   },
   {
+    path: 'autism-pack',
+    component: AutismComponent,
+  },
+  {
     path: 'book-session',
     component: SessionBookingComponent,
+  },
+  {
+    path: 'add-activity',
+    component: AddActivityComponent,
+  },
+  {
+    path: 'edit-activity/:userId',
+    component: EditActivityComponent,
   }
   
 

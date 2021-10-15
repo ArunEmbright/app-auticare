@@ -8,8 +8,10 @@ import { ArchwizardModule } from 'angular-archwizard';
 
 import { PatientresultComponent } from './patientresult/patientresult.component';
 import { AssessmentComponent } from './extrea/assessment/assessment.component';
+import { SkillActivityComponent } from './skill-activity/skill-activity.component';
+import { SkillContentComponent } from './skill-content/skill-content.component';
 
-
+ 
 @NgModule({
   declarations: [
  
@@ -19,6 +21,10 @@ import { AssessmentComponent } from './extrea/assessment/assessment.component';
     PatientresultComponent,
    
     AssessmentComponent,
+   
+    SkillActivityComponent,
+   
+    SkillContentComponent,
    
 
    

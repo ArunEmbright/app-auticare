@@ -15,6 +15,14 @@ export const MENU: MenuItem[] = [
     icon: "bx-user-plus",
     parentId: 2,
   },
+  {
+    id: 3,
+    label: "MENUITEMS.ADMIN.LIST.INSTITUTION",
+    link: "/admin/add-institution",
+    icon: "bx-user-plus",
+    parentId: 2,
+  },
+ 
 
   {
     id: 3,
@@ -32,6 +40,33 @@ export const MENU: MenuItem[] = [
       {
         id: 3,
         label: "MENUITEMS.ADMIN.ASSESSMENTS.SKILLASSESSMENT",
+        link: "/admin/therapy-session",
+        parentId: 2, 
+      },
+    ],
+  },
+  {
+    id: 3,
+    label: "MENUITEMS.ADMIN.LIST.SKILLTRAININGPACK",
+    link: "/admin/score",
+    icon: "bxs-report",
+    parentId: 2,
+    subItems: [
+      {
+        id: 3,
+        label: "MENUITEMS.ADMIN.SKILLTRAININGPACK.AUTISUM", 
+        link: "/admin/autism-pack",
+        parentId: 2,
+      },
+      {
+        id: 3,
+        label: "MENUITEMS.ADMIN.SKILLTRAININGPACK.LEARNINGDISABILITY",
+        link: "/admin/therapy-session",
+        parentId: 2, 
+      },
+      {
+        id: 3,
+        label: "MENUITEMS.ADMIN.SKILLTRAININGPACK.SPECIALEDUCATION",
         link: "/admin/therapy-session",
         parentId: 2, 
       },

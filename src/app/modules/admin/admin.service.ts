@@ -72,6 +72,32 @@ updateUser(_id:string,params:any){
       
     });
   }
+  //**********Activity Action ********//
+  getActivity() {
+    return this.http.get(`${backURL}/admin/getActivity`, {
+      
+    });
+  }
+  getSingleActivity(_id:string) {
+    return this.http.get(`${backURL}/admin/activity/${_id}`, {
+      // headers: {
+      //   'x-access-token': this.getAccessToken(),
+      // }
+    });
+  }
+  deleteActivity(_id:string){
+    return this.http.delete(`${backURL}/admin/activity`+`/${_id}`)
+  }
+updateActivity(_id:string,params:any){
+  console.log(params)
+  return this.http.patch(`${backURL}/admin/activity/${_id}`,params).pipe(
+    map((res) => {
+      // login successful if there's a jwt token in the response
+      return res;
+    })
+  );
+  
+}
 
 //**********Session Booking Action ********//
 
@@ -90,6 +116,26 @@ updateUser(_id:string,params:any){
 
   uploadTherapist(formData){
     this.http.post(`${backURL}/therapist/therapist`, formData)
+    .subscribe((res) => {
+        console.log('From server', res);
+        //this.successMsg = 'Contestant submit successfully';
+       
+      },
+     
+    );
+  }
+  uploadActivity(formData){
+    this.http.post(`${backURL}/admin/addActivity`, formData)
+    .subscribe((res) => {
+        console.log('From server', res);
+        //this.successMsg = 'Contestant submit successfully';
+       
+      },
+     
+    );
+  }
+  uploadInstitution(formData){
+    this.http.post(`${backURL}/institution/institution`, formData)
     .subscribe((res) => {
         console.log('From server', res);
         //this.successMsg = 'Contestant submit successfully';

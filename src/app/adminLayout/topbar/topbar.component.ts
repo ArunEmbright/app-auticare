@@ -16,7 +16,7 @@ import { User } from 'src/app/core/models/auth.models';
 })
 
 /**
- * Topbar component
+ * Topbar component 
  */
 export class TopbarComponent implements OnInit {
 
