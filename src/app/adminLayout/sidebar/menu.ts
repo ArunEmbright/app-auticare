@@ -61,13 +61,13 @@ export const MENU: MenuItem[] = [
       {
         id: 3,
         label: "MENUITEMS.ADMIN.SKILLTRAININGPACK.LEARNINGDISABILITY",
-        link: "/admin/therapy-session",
+        
         parentId: 2, 
       },
       {
         id: 3,
         label: "MENUITEMS.ADMIN.SKILLTRAININGPACK.SPECIALEDUCATION",
-        link: "/admin/therapy-session",
+       
         parentId: 2, 
       },
     ],
